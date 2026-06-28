@@ -6,9 +6,9 @@ import type { SourceMeta } from "./sources";
 
 export const hospitalityHero = {
   eyebrow: "DST Group for Hospitality",
-  title: "Giải pháp truyền thông cho Nhà hàng, Cafe & Khách sạn",
+  title: "Đưa trải nghiệm nhà hàng, cafe và khách sạn lên một hình ảnh xứng tầm hơn",
   subtitle:
-    "Xây dựng website, hình ảnh, nội dung và chiến dịch quảng cáo giúp thương hiệu hospitality nổi bật hơn trên nền tảng số.",
+    "DST Group xây dựng website, hình ảnh, video, nội dung social và quảng cáo giúp thương hiệu hospitality trở nên chỉn chu, dễ nhớ và dễ được khách hàng lựa chọn hơn.",
   video: "/assets/videos/hospitality-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/hospitality/birds-nest-cafe.webp",
@@ -17,23 +17,23 @@ export const hospitalityHero = {
 
 export const hospitalityProblems = [
   {
-    title: "Hình ảnh món ăn và không gian cần chỉn chu",
-    description: "Nhà hàng, cafe và khách sạn cần hình ảnh rõ không gian, rõ sản phẩm và đúng cảm giác thương hiệu.",
+    title: "Khách cảm nhận thương hiệu trước khi bước vào cửa",
+    description: "Ảnh món ăn, không gian, phòng nghỉ và dịch vụ trên fanpage/website quyết định cảm giác tin cậy ban đầu.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Nội dung social phải đều nhịp",
-    description: "Fanpage cần bài viết, thiết kế, poster theo concept, ảnh bài và avatar chủ đề để duy trì nhận diện.",
+    title: "Fanpage thiếu kế hoạch khiến thương hiệu dễ bị quên",
+    description: "Bài viết, poster, ảnh bìa và avatar theo concept giúp thương hiệu xuất hiện đều và nhất quán hơn.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Video ngắn giúp khách hiểu dịch vụ nhanh hơn",
-    description: "TikTok/Reels, kịch bản và video ngắn hỗ trợ giới thiệu không gian, món ăn, sự kiện và dịch vụ.",
+    title: "Video ngắn giúp khách thấy trải nghiệm thật hơn",
+    description: "TikTok/Reels, kịch bản và video ngắn giúp món ăn, không gian, sự kiện và dịch vụ được cảm nhận nhanh hơn.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Website và quảng cáo cần đi cùng kế hoạch",
-    description: "Website cơ bản, bài viết chuẩn SEO và quảng cáo đa kênh giúp thương hiệu có nền tảng tiếp cận rõ hơn.",
+    title: "Website và ads cần cùng một thông điệp",
+    description: "Website, bài SEO và quảng cáo đa kênh hiệu quả hơn khi cùng dẫn khách đến một hình ảnh thương hiệu rõ ràng.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" } satisfies SourceMeta,
   },
 ];
@@ -67,47 +67,47 @@ export const hospitalityProjects = projects
 
 export const hospitalityGoals = [
   {
-    title: "Tăng nhận diện thương hiệu",
-    description: "Định hình hình ảnh, nội dung và visual để khách dễ nhớ thương hiệu hơn.",
+    title: "Khách nhớ thương hiệu rõ hơn",
+    description: "Đồng bộ hình ảnh, nội dung và visual để khách dễ nhận ra bạn giữa nhiều lựa chọn cùng ngành.",
   },
   {
-    title: "Tăng khách đặt bàn / đặt phòng",
-    description: "Kết hợp website, social content và quảng cáo để hỗ trợ hành trình liên hệ.",
+    title: "Hỗ trợ hành trình đặt bàn / đặt phòng",
+    description: "Kết hợp website, social content và quảng cáo để khách có đủ thông tin trước khi liên hệ.",
   },
   {
-    title: "Tăng tương tác fanpage",
-    description: "Duy trì bài viết, thiết kế và video ngắn theo lịch nội dung đều nhịp.",
+    title: "Fanpage có nhịp nội dung ổn định",
+    description: "Duy trì bài viết, thiết kế và video ngắn để kênh social không bị bỏ trống.",
   },
   {
-    title: "Ra mắt món mới / sự kiện / ưu đãi",
-    description: "Tạo poster, video intro, nội dung nhắc lịch và visual chiến dịch theo từng giai đoạn.",
+    title: "Ra mắt món mới, ưu đãi hoặc sự kiện rõ ràng hơn",
+    description: "Tạo poster, video intro, nội dung nhắc lịch và visual theo từng giai đoạn truyền thông.",
   },
   {
-    title: "Xây dựng hình ảnh chuyên nghiệp",
-    description: "Đồng bộ nhận diện từ ảnh không gian, ảnh dịch vụ, banner đến nội dung quảng cáo.",
+    title: "Hình ảnh thương hiệu sạch và tin cậy hơn",
+    description: "Đồng bộ ảnh không gian, ảnh dịch vụ, banner, menu và nội dung quảng cáo.",
   },
 ];
 
 export const hospitalityProcess = [
   {
     step: "01",
-    title: "Khảo sát thương hiệu & mục tiêu kinh doanh",
-    description: "Xác định mô hình, nhóm khách, dịch vụ chủ lực và mục tiêu truyền thông cần ưu tiên.",
+    title: "Khảo sát mô hình và mục tiêu ưu tiên",
+    description: "Xác định nhóm khách, dịch vụ chủ lực, điểm mạnh không gian và mục tiêu truyền thông cần tập trung.",
   },
   {
     step: "02",
-    title: "Lên concept hình ảnh / nội dung / chiến dịch",
-    description: "Chốt mood hình ảnh, thông điệp, lịch bài và hạng mục media phù hợp.",
+    title: "Chốt concept hình ảnh và lịch nội dung",
+    description: "Xác định mood ảnh, thông điệp, lịch bài, hạng mục media và kênh quảng cáo phù hợp.",
   },
   {
     step: "03",
-    title: "Thiết kế, sản xuất media và triển khai quảng cáo",
-    description: "Triển khai bài viết, poster, video ngắn, website và quảng cáo theo kế hoạch.",
+    title: "Sản xuất nội dung, media, website và ads",
+    description: "Triển khai bài viết, poster, video ngắn, website và quảng cáo theo kế hoạch đã duyệt.",
   },
   {
     step: "04",
-    title: "Theo dõi hiệu quả và tối ưu",
-    description: "Theo dõi phản hồi, điều chỉnh nội dung và tối ưu kênh triển khai theo thực tế.",
+    title: "Theo dõi phản hồi và tối ưu",
+    description: "Điều chỉnh nội dung, visual và kênh triển khai theo phản hồi thực tế của từng giai đoạn.",
   },
 ];
 
@@ -120,7 +120,7 @@ export const hospitalityPackages = [
     title: "Gói tư vấn theo nhu cầu",
     price: "Liên hệ tư vấn",
     description:
-      "Giải pháp được đề xuất theo mục tiêu, quy mô thương hiệu và các kênh cần triển khai.",
+      "Đề xuất tổ hợp website, fanpage, hình ảnh, video và quảng cáo theo quy mô, mục tiêu và khả năng vận hành của từng thương hiệu.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   ...hospitalityPricingSources.map((item) => ({

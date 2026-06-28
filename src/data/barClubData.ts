@@ -7,9 +7,9 @@ export const barClubFacebookUrl = "https://www.facebook.com/share/1EvWCZnNBi/?mi
 
 export const barClubHero = {
   eyebrow: "DST Group for Bar / Club / Nightlife",
-  title: "Giải pháp truyền thông cho Bar, Club & Nightlife",
+  title: "Để mỗi đêm diễn không chỉ đông khách, mà còn trở thành nội dung đáng nhớ",
   subtitle:
-    "Xây dựng hình ảnh, nội dung, video và chiến dịch quảng cáo giúp thương hiệu nightlife nổi bật hơn trên nền tảng số.",
+    "DST Group giúp Bar, Club và Nightlife xây dựng line-up, poster, video recap, social content và quảng cáo đa kênh để thương hiệu nổi bật trước, trong và sau sự kiện.",
   video: "/assets/videos/bar-club-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/bar-club/valley-beach-club.webp",
@@ -18,23 +18,23 @@ export const barClubHero = {
 
 export const barClubProblems = [
   {
-    title: "Hình ảnh cần nổi bật ngay từ lần nhìn đầu",
-    description: "Nightlife cần visual đủ mạnh để truyền tải năng lượng sự kiện, không gian và trải nghiệm.",
+    title: "Event dễ trôi nếu thiếu truyền thông trước giờ diễn",
+    description: "Một đêm nhạc không chỉ cần sân khấu tốt. Khách cần thấy line-up, visual và thông điệp đủ sớm để nhớ và muốn đến.",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "medium" } satisfies SourceMeta,
   },
   {
-    title: "Nội dung social phải đều nhịp",
-    description: "Fanpage, poster, bài viết và video ngắn cần được lên lịch để giữ độ phủ cho từng chương trình.",
+    title: "Fanpage không thể chỉ đăng khi sắp có chương trình",
+    description: "Nội dung đều nhịp giúp thương hiệu giữ sự chú ý, thay vì chỉ xuất hiện rời rạc trước từng sự kiện.",
     source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Event cần recap và nhắc lịch chuyên nghiệp",
-    description: "Poster line-up, video intro, video recap và nội dung nhắc chương trình giúp chiến dịch có nhịp truyền thông rõ hơn.",
+    title: "Recap là tài sản truyền thông sau mỗi đêm diễn",
+    description: "Video intro, recap và nội dung sau sự kiện giúp cảm xúc của đêm diễn tiếp tục sống trên fanpage, TikTok và quảng cáo.",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Quảng cáo cần đúng kênh",
-    description: "Facebook, TikTok, Google và Zalo được dùng theo mục tiêu tiếp cận, tương tác và kéo khách.",
+    title: "Ads cần đi cùng thông điệp và hình ảnh",
+    description: "Quảng cáo chỉ hiệu quả hơn khi có nội dung, visual và mục tiêu rõ cho từng kênh Facebook, TikTok, Google hoặc Zalo.",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
 ];
@@ -60,23 +60,23 @@ export const barClubProjects = projects
 export const barClubProcess = [
   {
     step: "01",
-    title: "Khảo sát thương hiệu & mục tiêu",
-    description: "Xác định tệp khách, phong cách visual, lịch sự kiện và mục tiêu truyền thông cần ưu tiên.",
+    title: "Chốt lịch sự kiện và mục tiêu truyền thông",
+    description: "Xác định nhóm khách, phong cách nightlife, lịch line-up và kênh cần ưu tiên trước mỗi chiến dịch.",
   },
   {
     step: "02",
-    title: "Lên concept nội dung / event / campaign",
-    description: "Chốt thông điệp, key visual, lịch bài và hạng mục media phù hợp từng chương trình.",
+    title: "Lên concept visual và nhịp nội dung",
+    description: "Chốt thông điệp, key visual, lịch bài, poster, intro và các điểm chạm cần xuất hiện.",
   },
   {
     step: "03",
-    title: "Sản xuất hình ảnh, video, bài đăng, quảng cáo",
-    description: "Triển khai poster, video intro/recap, bài viết fanpage và chiến dịch quảng cáo đa kênh.",
+    title: "Sản xuất poster, recap, bài đăng và ads",
+    description: "Triển khai nội dung fanpage, video ngắn, recap và quảng cáo đa kênh theo lịch sự kiện.",
   },
   {
     step: "04",
-    title: "Theo dõi hiệu quả và tối ưu",
-    description: "Theo dõi phản hồi, tối ưu nội dung và điều chỉnh nhịp quảng cáo theo thực tế vận hành.",
+    title: "Theo dõi phản hồi và tối ưu nhịp chạy",
+    description: "Quan sát tương tác, điều chỉnh thông điệp và nhịp quảng cáo theo thực tế từng chương trình.",
   },
 ];
 
@@ -85,7 +85,7 @@ export const barClubPackages = [
     title: "Gói tư vấn theo nhu cầu",
     price: "Liên hệ tư vấn",
     description:
-      "Tư vấn tổ hợp fanpage, content, media và quảng cáo theo lịch sự kiện, mục tiêu truyền thông và ngân sách thực tế.",
+      "Tư vấn tổ hợp fanpage, content, line-up, recap, media và quảng cáo theo lịch sự kiện, mục tiêu truyền thông và ngân sách thực tế.",
     source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,
   },
   ...barClubServiceCards.map((service) => ({

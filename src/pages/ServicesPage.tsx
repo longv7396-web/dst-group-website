@@ -248,11 +248,11 @@ function ServicesHero() {
           <p className="mt-7 max-w-3xl text-lg leading-8 text-white/76">{servicesHero.subtitle}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href="#service-groups" className="premium-button">
-              Xem dịch vụ
+              Khám phá toàn bộ dịch vụ
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a href="#service-contact" className="ghost-button">
-              Liên hệ tư vấn
+              Nhận tư vấn gói phù hợp
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
@@ -273,8 +273,8 @@ function OverviewSection() {
   return (
     <section id="services-overview" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Tổng quan dịch vụ" title="Một hệ sinh thái dịch vụ số cho thương hiệu cần triển khai thực tế">
-          DST Group gom website, nội dung, media, thiết kế và quảng cáo thành các nhóm dịch vụ dễ chọn, dễ triển khai và dễ phối hợp.
+        <ServicesHeading eyebrow="Tổng quan dịch vụ" title="Khách không cần từng hạng mục rời rạc. Họ cần một hệ thống chạy cùng nhau.">
+          DST Group gom website, fanpage, content, media, thiết kế và quảng cáo thành các nhóm dịch vụ dễ chọn, dễ phối hợp và dễ quản lý.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-3">
           {servicesOverview.map((item, index) => (
@@ -294,8 +294,8 @@ function ServiceGroupsSection() {
   return (
     <section id="service-groups" className="services-section bg-[#080b0b] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Nhóm dịch vụ chính" title="Sáu nhóm dịch vụ để xây dựng hiện diện số chỉn chu">
-          Mỗi nhóm có phạm vi rõ: từ nền tảng website đến nội dung, media, design, ads và gói marketing theo tháng.
+        <ServicesHeading eyebrow="Nhóm dịch vụ chính" title="Sáu nhóm dịch vụ cho toàn bộ điểm chạm số của thương hiệu">
+          Từ nền tảng website đến nội dung, media, design, ads và gói marketing theo tháng, mỗi nhóm đều có vai trò riêng trong hành trình khách hàng.
         </ServicesHeading>
         <div className="services-card-grid">
           {serviceGroups.map((group, index) => {
@@ -315,7 +315,7 @@ function ServiceGroupsSection() {
                   ))}
                 </div>
                 <a href="#service-contact" className="mt-7 inline-flex items-center gap-2 text-sm font-black uppercase text-dst-gold">
-                  Nhận tư vấn
+                  Nhận gói phù hợp
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
               </article>
@@ -331,8 +331,8 @@ function PricingSection() {
   return (
     <section id="service-pricing" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Gói dịch vụ / bảng giá" title="Chỉ hiển thị giá và hạng mục đã có trong dữ liệu">
-          Các dòng chưa có giá cố định được giữ ở mức “Liên hệ tư vấn”, không tự bịa chi phí.
+        <ServicesHeading eyebrow="Gói dịch vụ / bảng giá" title="Có thể bắt đầu nhỏ, hoặc triển khai theo combo trọn gói">
+          Hạng mục có giá được giữ theo dữ liệu thật. Hạng mục cần tùy chỉnh sẽ được tư vấn theo mục tiêu, quy mô và kênh triển khai.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {servicePricing.map((item) => (
@@ -353,8 +353,8 @@ function IndustryLinksSection() {
   return (
     <section id="service-industries" className="services-section bg-[#080b0b] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Dịch vụ theo ngành" title="Đi từ trang dịch vụ tổng thể sang landing page chuyên ngành">
-          Trang này là trung tâm dịch vụ, liên kết ngược lại các landing page đã tạo cho từng nhóm khách hàng.
+        <ServicesHeading eyebrow="Dịch vụ theo ngành" title="Mỗi ngành cần cách kể chuyện và kênh triển khai khác nhau">
+          Chọn đúng nhóm ngành để xem cách DST tiếp cận nightlife, hospitality hoặc thương hiệu cần hệ sinh thái dịch vụ tổng thể.
         </ServicesHeading>
         <div className="grid gap-5 lg:grid-cols-3">
           {industryLinks.map((item) => (
@@ -374,7 +374,7 @@ function IndustryLinksSection() {
                   ))}
                 </div>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-black uppercase text-dst-gold">
-                  Xem chi tiết
+                  Xem giải pháp ngành này
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </span>
               </div>
@@ -390,7 +390,7 @@ function ProcessSection() {
   return (
     <section id="service-process" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Quy trình triển khai" title="Từ nhu cầu ban đầu đến sản xuất, tối ưu và bàn giao">
+        <ServicesHeading eyebrow="Quy trình triển khai" title="Từ vấn đề truyền thông đến kế hoạch có thể bắt đầu ngay">
           Quy trình 5 bước giúp khách hàng dễ nắm phạm vi, dễ duyệt hạng mục và dễ theo dõi tiến độ.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
@@ -415,8 +415,8 @@ function ProjectsSection() {
   return (
     <section id="service-projects" className="services-section bg-[#080b0b] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Dự án tiêu biểu" title="Một số thương hiệu đã xuất hiện trong dữ liệu dự án">
-          Ảnh được lấy từ asset thật trong project, chỉ dùng gradient nhẹ ở đáy để đọc tên dự án.
+        <ServicesHeading eyebrow="Dự án tiêu biểu" title="Proof tốt nhất là những thương hiệu đã có chất liệu thật">
+          Ảnh và dự án được lấy từ asset thật trong project để khách thấy rõ DST đã từng xử lý các nhóm ngành nào.
         </ServicesHeading>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {featuredServiceProjects.map((project) => (
@@ -453,9 +453,9 @@ function WhyChooseSection() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="services-reveal" data-services-reveal>
           <p className="section-eyebrow">Vì sao chọn DST Group</p>
-          <h2 className="services-section-title mt-3 text-white">Một đội triển khai đủ rộng cho nhiều nhu cầu truyền thông</h2>
+          <h2 className="services-section-title mt-3 text-white">Một đầu mối giúp thương hiệu không phải chia nhỏ việc cho quá nhiều bên</h2>
           <p className="mt-5 text-base leading-8 text-white/68">
-            Các hạng mục được tổ chức để khách hàng dễ chọn gói phù hợp, từ một landing page nhỏ đến một hệ thống marketing theo tháng.
+            Các hạng mục được tổ chức để khách dễ chọn gói phù hợp: từ một landing page nhỏ đến một hệ thống marketing theo tháng.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -480,13 +480,13 @@ function FinalCtaSection() {
       <div className="relative mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:p-12">
         <div>
           <p className="section-eyebrow">Liên hệ tư vấn</p>
-          <h2 className="services-section-title mt-4 text-white">Bạn cần một gói dịch vụ phù hợp với thương hiệu của mình?</h2>
+          <h2 className="services-section-title mt-4 text-white">Bạn cần biết nên bắt đầu từ website, fanpage, video hay ads?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
-            Hãy bắt đầu bằng mục tiêu cụ thể. Chúng tôi sẽ đề xuất giải pháp phù hợp cho website, nội dung, media và quảng cáo.
+            Chia sẻ tình trạng hiện tại của thương hiệu. DST sẽ đề xuất tổ hợp dịch vụ vừa đủ để triển khai rõ ràng hơn.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
-              Liên hệ tư vấn
+              Nhận tư vấn gói phù hợp
               <Phone className="h-4 w-4" aria-hidden="true" />
             </a>
             <Link to="/" className="ghost-button">

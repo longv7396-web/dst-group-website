@@ -10,77 +10,77 @@ export type Service = {
 
 export const coreServices: Service[] = [
   {
-    title: "ADS",
+    title: "Quảng cáo đa kênh có mục tiêu",
     group: "core",
-    summary: "Triển khai quảng cáo đa kênh để tăng nhận diện, tương tác và hiệu quả tiếp cận.",
+    summary: "Thiết lập Facebook, Google, YouTube và các kênh phù hợp trên nền nội dung, hình ảnh và thông điệp đã được chuẩn bị rõ.",
     items: ["Facebook", "Google", "YouTube"],
     source: { sourceFile: "HSNL CTY DST.pdf", page: 12, confidence: "high" },
   },
   {
-    title: "TikTok Shop Partner",
+    title: "Xây kênh TikTok / TikTok Shop",
     group: "core",
     summary:
-      "Đồng hành cùng doanh nghiệp xây kênh, vận hành gian hàng và phát triển bán hàng trên TikTok Shop.",
+      "Xây kênh, vận hành gian hàng và triển khai nội dung TikTok để thương hiệu có điểm chạm bán hàng rõ hơn.",
     items: ["Xây kênh TikTok", "Xây gian hàng TikTok Shop", "TikTok Ads"],
     source: { sourceFile: "HSNL CTY DST.pdf", page: 14, confidence: "high" },
   },
   {
-    title: "Design",
+    title: "Thiết kế nhận diện và ấn phẩm",
     group: "core",
     summary:
-      "Thiết kế hệ thống nhận diện, landing page và ấn phẩm truyền thông đồng bộ cho thương hiệu.",
+      "Thiết kế logo, landing page, hồ sơ năng lực và ấn phẩm để thương hiệu xuất hiện chỉn chu ở nhiều điểm chạm.",
     items: ["Web/landing page", "Logo", "Ấn phẩm in ấn", "Hồ sơ năng lực"],
     source: { sourceFile: "HSNL CTY DST.pdf", page: 26, confidence: "medium" },
   },
   {
-    title: "Booking",
+    title: "Booking và kết nối truyền thông",
     group: "core",
-    summary: "Kết nối nguồn lực truyền thông, đối tác và hoạt động booking theo mục tiêu chiến dịch.",
+    summary: "Kết nối nguồn lực, đối tác và hoạt động booking theo mục tiêu truyền thông của từng chiến dịch.",
     items: ["Dịch vụ Booking", "Kết nối đối tác"],
     source: { sourceFile: "HSNL CTY DST.pdf", page: 32, confidence: "medium" },
   },
   {
-    title: "Content",
+    title: "Nội dung social có kế hoạch",
     group: "core",
     summary:
-      "Xây dựng nội dung cho fanpage, chiến dịch và kênh social với lịch triển khai rõ ràng.",
+      "Xây dựng lịch bài, thông điệp và nội dung fanpage để kênh social không bị bỏ trống hoặc đăng rời rạc.",
     items: ["Bài viết", "Kế hoạch nội dung", "Content fanpage"],
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" },
   },
   {
-    title: "Studio",
+    title: "Sản xuất hình ảnh và video",
     group: "core",
-    summary: "Không gian sản xuất hình ảnh, video và nội dung phục vụ chiến dịch truyền thông.",
+    summary: "Sản xuất hình ảnh, video và tư liệu truyền thông để sản phẩm, không gian và sự kiện có chất liệu thật để kể chuyện.",
     items: ["Sản xuất hình ảnh", "Video", "Nội dung"],
     source: { sourceFile: "HSNL CTY DST.pdf", page: 34, confidence: "medium" },
   },
   {
-    title: "Media",
+    title: "Media / video ngắn / recap",
     group: "core",
     summary:
-      "Sản xuất video, hình ảnh, TVC và tư liệu truyền thông cho sản phẩm, dịch vụ, sự kiện.",
+      "Quay, chụp, dựng video ngắn, recap và tư liệu media giúp thương hiệu có nội dung dùng được trên nhiều kênh.",
     items: ["Quay video", "Edit video", "Chụp ảnh sản phẩm/dịch vụ", "TVC"],
     source: { sourceFile: "HSNL CTY DST.pdf", page: 10, confidence: "high" },
   },
   {
-    title: "Branding",
+    title: "Branding dễ ứng dụng",
     group: "core",
-    summary: "Xây dựng hình ảnh thương hiệu nhất quán từ logo, nhận diện đến biểu đạt thị giác.",
+    summary: "Đồng bộ logo, nhận diện và ngôn ngữ hình ảnh để khách hàng nhìn thấy thương hiệu nhất quán hơn.",
     items: ["Thiết kế logo", "Bộ nhận diện", "Hình ảnh thương hiệu"],
     source: { sourceFile: "HSNL CTY DST.pdf", page: 36, confidence: "medium" },
   },
   {
-    title: "Setup Restaurant - Hotel",
+    title: "Truyền thông cho Restaurant - Hotel",
     group: "core",
-    summary: "Tư vấn setup và phát triển hình ảnh cho nhà hàng, khách sạn và mô hình dịch vụ.",
+    summary: "Tư vấn hình ảnh, nội dung và truyền thông cho nhà hàng, khách sạn, du thuyền và mô hình dịch vụ.",
     items: ["Nhà hàng", "Khách sạn", "Du thuyền"],
     source: { sourceFile: "HSNL CTY DST.pdf", page: 38, confidence: "medium" },
   },
   {
-    title: "Xây dựng phòng Marketing",
+    title: "Đội marketing thuê ngoài",
     group: "core",
     summary:
-      "Thiết kế đội marketing thuê ngoài với kế hoạch, nội dung, quảng cáo và báo cáo vận hành.",
+      "Kết hợp tư vấn, quản trị kênh, nội dung, media và quảng cáo để doanh nghiệp có nhịp marketing đều hơn.",
     items: ["Tư vấn triển khai", "Quản trị kênh online", "Tối ưu quảng cáo"],
     source: { sourceFile: "HSNL CTY DST.pdf", page: 42, confidence: "medium" },
   },
@@ -88,26 +88,26 @@ export const coreServices: Service[] = [
 
 export const barclubServices: Service[] = [
   {
-    title: "Quản trị fanpage Barclub",
+    title: "Quản trị fanpage Bar/Club có lịch sự kiện",
     group: "barclub",
     summary:
-      "Quản trị fanpage với lịch nội dung, thiết kế hình ảnh và nhịp truyền thông theo tháng.",
+      "Lên lịch bài, nội dung, poster và video theo từng đêm diễn để fanpage giữ nhịp trước, trong và sau sự kiện.",
     items: ["Kế hoạch bài viết", "Bài viết", "Thiết kế", "Poster", "Video/Reels"],
     source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" },
   },
   {
-    title: "Poster, Line-up, Recap",
+    title: "Poster, line-up và recap sự kiện",
     group: "barclub",
     summary:
-      "Thiết kế visual sự kiện, line-up, recap và nội dung nhắc lịch theo tinh thần nightlife.",
+      "Thiết kế line-up, poster, video intro, recap và nội dung nhắc lịch để mỗi chương trình có chất liệu truyền thông riêng.",
     items: ["Poster chương trình", "Video intro line-up", "Video recap", "Video nhắc chương trình"],
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" },
   },
   {
-    title: "Quảng cáo online",
+    title: "Quảng cáo online cho nightlife",
     group: "barclub",
     summary:
-      "Tối ưu chiến dịch quảng cáo theo từng kênh phù hợp với lĩnh vực giải trí và dịch vụ.",
+      "Triển khai quảng cáo Facebook, TikTok, Google, Zalo theo mục tiêu tiếp cận, nhận diện và thu hút sự chú ý.",
     items: ["Facebook", "TikTok", "Google", "Zalo"],
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" },
   },
@@ -115,33 +115,33 @@ export const barclubServices: Service[] = [
 
 export const hospitalityServices: Service[] = [
   {
-    title: "Quản trị Facebook",
+    title: "Quản trị fanpage hospitality",
     group: "hospitality",
     summary:
-      "Vận hành fanpage cho nhà hàng, khách sạn, trung tâm sự kiện và coffee bằng nội dung đều nhịp.",
+      "Vận hành fanpage bằng bài viết, hình ảnh, poster và concept theo mùa để thương hiệu xuất hiện đều và sạch hơn.",
     items: ["Bài viết", "Thiết kế", "Poster theo concept", "Ảnh bài và avatar chủ đề"],
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" },
   },
   {
-    title: "Xây kênh TikTok/Reels",
+    title: "Xây kênh TikTok / Reels",
     group: "hospitality",
     summary:
-      "Xây dựng video ngắn, kịch bản và lịch đăng để tăng sức hút trên TikTok/Reels.",
+      "Lên kịch bản, quay và dựng video ngắn để món ăn, không gian, dịch vụ và sự kiện dễ được khách hàng cảm nhận hơn.",
     items: ["Quay full sự kiện", "20 video TikTok/Reel", "Kịch bản", "Nội dung"],
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" },
   },
   {
-    title: "Thiết kế đồ họa",
+    title: "Thiết kế đồ họa cho chiến dịch",
     group: "hospitality",
     summary:
-      "Thiết kế poster, concept ảnh bìa, avatar, menu và visual chiến dịch cho từng mùa bán hàng.",
+      "Thiết kế poster, ảnh bìa, avatar, menu và visual chiến dịch để từng đợt bán hàng có hình ảnh nhất quán.",
     items: ["Poster", "Ảnh bìa/avatar", "Menu", "Video intro line-up"],
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" },
   },
   {
-    title: "Thiết kế & chăm sóc website",
+    title: "Website và nội dung SEO",
     group: "hospitality",
-    summary: "Xây dựng website cơ bản và nội dung SEO phục vụ hiện diện số của thương hiệu.",
+    summary: "Xây dựng website, landing page và bài viết SEO để khách có nơi xem thông tin, tin tưởng và liên hệ dễ hơn.",
     items: ["Website cơ bản", "Bài viết chuẩn SEO web"],
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" },
   },

@@ -236,11 +236,11 @@ function BarClubHero() {
           <p className="mt-7 max-w-2xl text-lg leading-8 text-white/74">{barClubHero.subtitle}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href="#solutions" className="premium-button">
-              Xem giải pháp
+              Xem giải pháp Bar/Club
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a href="#bar-contact" className="ghost-button">
-              Liên hệ tư vấn
+              Tư vấn chiến dịch nightlife
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
@@ -261,8 +261,8 @@ function ProblemsSection() {
   return (
     <section id="problems" className="bar-section bg-[#050707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <BarSectionHeading eyebrow="Bài toán nightlife" title="Bar/Club cần truyền thông có nhịp, có hình ảnh và có lực kéo khách">
-          Mỗi chiến dịch cần một visual đủ mạnh, lịch nội dung rõ ràng và quảng cáo được triển khai đúng kênh.
+        <BarSectionHeading eyebrow="Bài toán nightlife" title="Mỗi sự kiện cần được kể trước, trong và sau đêm diễn">
+          Nếu chỉ đăng vài poster sát ngày, chương trình rất dễ trôi khỏi sự chú ý. DST giúp xây nhịp nội dung, visual, recap và ads rõ hơn cho từng chiến dịch.
         </BarSectionHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {barClubProblems.map((problem, index) => (
@@ -282,8 +282,8 @@ function ServicesSection() {
   return (
     <section id="solutions" className="bar-section bg-[#080707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <BarSectionHeading eyebrow="Giải pháp dành cho Bar/Club" title="Các hạng mục triển khai đúng với tài liệu DST Group">
-          Tập trung vào fanpage, nội dung sự kiện, poster/line-up/recap và quảng cáo online cho mô hình nightlife.
+        <BarSectionHeading eyebrow="Giải pháp dành cho Bar/Club" title="Từ line-up đến recap, mỗi điểm chạm đều có vai trò riêng">
+          DST triển khai fanpage, nội dung sự kiện, poster, video intro/recap và quảng cáo online để thương hiệu nightlife xuất hiện có kế hoạch hơn.
         </BarSectionHeading>
         <div className="barclub-service-grid">
           {barClubServiceCards.map((service, index) => {
@@ -315,8 +315,8 @@ function PortfolioSection() {
   return (
     <section id="bar-projects" className="bar-section bg-[#050707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <BarSectionHeading eyebrow="Portfolio Bar / Club" title="Dự án nightlife đã triển khai">
-          Ảnh dự án được giữ trực diện, rõ không gian và hạn chế overlay để người xem thấy đúng chất liệu thương hiệu.
+        <BarSectionHeading eyebrow="Portfolio Bar / Club" title="Dự án thật trong nhóm nightlife và F&B giải trí">
+          Những dự án này cho thấy cách DST xử lý visual, fanpage, media và nội dung sự kiện cho thương hiệu cần năng lượng cao.
         </BarSectionHeading>
         <div className="grid gap-5 lg:grid-cols-2">
           {barClubProjects.map((project) => (
@@ -351,8 +351,8 @@ function ProcessSection() {
   return (
     <section id="bar-process" className="bar-section bg-[#080707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <BarSectionHeading eyebrow="Quy trình triển khai" title="Từ concept sự kiện đến nội dung, media và quảng cáo">
-          Quy trình được giữ ngắn để chủ thương hiệu dễ nắm việc, duyệt nhanh và triển khai đều nhịp.
+        <BarSectionHeading eyebrow="Quy trình triển khai" title="Từ lịch diễn đến nội dung có thể chạy ngay">
+          Quy trình được giữ ngắn để chủ thương hiệu dễ duyệt line-up, visual, recap và nhịp quảng cáo theo từng chương trình.
         </BarSectionHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {barClubProcess.map((step) => (
@@ -372,8 +372,8 @@ function PackagesSection() {
   return (
     <section className="bar-section bg-[#050707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <BarSectionHeading eyebrow="Gói dịch vụ" title="Gói triển khai linh hoạt theo mục tiêu truyền thông">
-          DST Group tư vấn hạng mục theo nhu cầu thực tế của từng bar/club, từng lịch sự kiện và từng ngân sách truyền thông.
+        <BarSectionHeading eyebrow="Gói dịch vụ" title="Chọn hạng mục theo lịch sự kiện và mục tiêu truyền thông">
+          Có chương trình cần poster và bài nhắc lịch, có chương trình cần recap, fanpage và ads. DST tư vấn theo nhu cầu thực tế.
         </BarSectionHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {barClubPackages.map((item) => (
@@ -399,13 +399,13 @@ function FinalContactSection() {
       <div className="relative mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.5)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:p-12">
         <div>
           <p className="section-eyebrow">Liên hệ tư vấn</p>
-          <h2 className="barclub-section-title mt-4 text-white">Muốn Bar / Club của bạn nổi bật hơn trên nền tảng số?</h2>
+          <h2 className="barclub-section-title mt-4 text-white">Bạn có một sự kiện cần truyền thông bài bản hơn?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
-            Bắt đầu bằng một concept rõ ràng, hình ảnh chỉn chu và kế hoạch truyền thông phù hợp.
+            Trao đổi với DST để lên hướng fanpage, poster, recap, video và ads phù hợp với lịch sự kiện của bạn.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
-              Liên hệ tư vấn
+              Nhận đề xuất nightlife
               <Phone className="h-4 w-4" aria-hidden="true" />
             </a>
             <Link to="/" className="ghost-button">

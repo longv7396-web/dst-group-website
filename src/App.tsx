@@ -77,21 +77,21 @@ const gallery = [
 const industryCards = [
   {
     title: "Bar / Club / Nightlife",
-    description: "Visual năng lượng cao, nội dung sự kiện và quảng cáo cho mô hình giải trí cần độ phủ nhanh.",
+    description: "Line-up, recap, fanpage và quảng cáo cho những thương hiệu cần tạo nhịp truyền thông quanh từng sự kiện.",
     image: "/assets/showcase/valley-beach-club-hero.webp",
     services: ["Fanpage", "Poster line-up", "Video recap", "ADS đa kênh"],
     href: hashRouteHref("/bar-club"),
   },
   {
     title: "Nhà hàng / Cafe / Khách sạn",
-    description: "Hình ảnh chỉn chu, nội dung đều nhịp và kênh social rõ định vị cho ngành dịch vụ lưu trú, F&B.",
+    description: "Hình ảnh món ăn, không gian, website và social content giúp khách cảm nhận thương hiệu trước khi liên hệ.",
     image: "/assets/showcase/birds-nest-cafe-showcase.webp",
     services: ["Social content", "Menu / poster", "TikTok / Reels", "Website SEO"],
     href: hashRouteHref("/nha-hang-khach-san"),
   },
   {
     title: "Doanh nghiệp / Dịch vụ tổng thể",
-    description: "Website, media, nhận diện và đội marketing thuê ngoài cho thương hiệu cần triển khai bài bản.",
+    description: "Một đầu mối cho website, fanpage, content, media và ads khi thương hiệu cần triển khai đồng bộ hơn.",
     image: "/assets/showcase/grand-view-palace-showcase.webp",
     services: ["Website", "Branding", "Media", "Marketing tháng"],
     href: hashRouteHref("/dich-vu"),
@@ -100,48 +100,48 @@ const industryCards = [
 
 const featuredServices = [
   {
-    title: "Website / Landing page / SEO",
-    summary: "Xây dựng hiện diện số rõ ràng, dễ chuyển đổi và có nền tảng nội dung tìm kiếm.",
+    title: "Website / Landing page có điểm đến rõ",
+    summary: "Tạo nơi khách có thể xem dịch vụ, hiểu thương hiệu và liên hệ mà không phải hỏi lại quá nhiều thông tin.",
     icon: Globe2,
     items: ["Website", "Landing page", "SEO content"],
   },
   {
-    title: "Fanpage & social content",
-    summary: "Lịch nội dung, bài viết và visual giúp thương hiệu xuất hiện đều đặn trên mạng xã hội.",
+    title: "Fanpage & social content đều nhịp",
+    summary: "Xây lịch nội dung, bài viết và visual để fanpage không bị bỏ trống hoặc đăng rời rạc.",
     icon: Megaphone,
     items: ["Fanpage", "Content plan", "Bài viết"],
   },
   {
     title: "Video ngắn / TikTok / Reels",
-    summary: "Sản xuất video ngắn theo kịch bản, phù hợp hành vi xem nhanh và mục tiêu lan truyền.",
+    summary: "Sản xuất video ngắn theo kịch bản để sản phẩm, không gian và sự kiện dễ được cảm nhận hơn.",
     icon: Video,
     items: ["TikTok", "Reels", "Kịch bản"],
   },
   {
     title: "Poster / menu / intro / recap",
-    summary: "Thiết kế ấn phẩm và video sự kiện giúp chiến dịch bán hàng có hình ảnh đồng bộ.",
+    summary: "Thiết kế ấn phẩm và video để từng chiến dịch có hình ảnh đồng bộ, dễ nhớ và dễ triển khai.",
     icon: Palette,
     items: ["Poster", "Menu", "Intro / recap"],
   },
   {
-    title: "Ads Facebook / TikTok / Google / Zalo",
-    summary: "Thiết lập và tối ưu quảng cáo theo từng kênh, mục tiêu tiếp cận và ngân sách triển khai.",
+    title: "Ads theo mục tiêu từng kênh",
+    summary: "Triển khai quảng cáo sau khi đã có thông điệp, hình ảnh và nội dung đủ rõ cho từng nhóm khách.",
     icon: Zap,
     items: ["Facebook", "TikTok", "Google", "Zalo"],
   },
   {
     title: "Gói marketing theo tháng",
-    summary: "Kết hợp nội dung, thiết kế, media và quảng cáo để vận hành marketing đều nhịp.",
+    summary: "Kết hợp content, thiết kế, media và ads để thương hiệu có đội triển khai đều nhịp hơn.",
     icon: Layers3,
     items: ["Kế hoạch", "Triển khai", "Báo cáo"],
   },
 ];
 
 const whyChooseItems = [
-  "Hiểu ngành dịch vụ địa phương và nhịp triển khai thực tế.",
-  "Thiết kế hình ảnh chỉn chu, nhất quán với định vị thương hiệu.",
-  "Kết hợp website, media, social content và quảng cáo trong một kế hoạch.",
-  "Triển khai nhanh, dễ phối hợp và tối ưu theo mục tiêu kinh doanh.",
+  "Một đầu mối giúp khách không phải tách website, media, content và ads cho nhiều bên.",
+  "Hiểu nhịp vận hành của nhà hàng, cafe, khách sạn, nightlife và doanh nghiệp dịch vụ.",
+  "Hình ảnh chỉn chu nhưng vẫn dễ ứng dụng vào chiến dịch và vận hành hằng tháng.",
+  "Tư vấn theo mục tiêu, quy mô và khả năng triển khai thực tế của từng thương hiệu.",
 ];
 
 gsap.registerPlugin(ScrollTrigger);
@@ -470,7 +470,7 @@ function Hero() {
             animate={fadeIn}
             transition={{ duration: 0.85, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           >
-            Giải pháp số, media và marketing cho thương hiệu hiện đại
+            Một đội ngũ cho toàn bộ hình ảnh số của thương hiệu
           </motion.h1>
           <motion.p
             className="hero-subtitle mx-auto mt-7 max-w-3xl text-white/76"
@@ -478,7 +478,7 @@ function Hero() {
             animate={fadeIn}
             transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
           >
-            Chúng tôi xây dựng website, nội dung truyền thông, video ngắn và chiến dịch quảng cáo giúp thương hiệu nổi bật hơn trên nền tảng số.
+            DST Group kết hợp website, nội dung, video, thiết kế và quảng cáo để thương hiệu dịch vụ xuất hiện chỉn chu, dễ nhớ và dễ được khách hàng liên hệ hơn.
           </motion.p>
           <motion.div
             className="hero-actions mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap"
@@ -487,11 +487,11 @@ function Hero() {
             transition={{ duration: 0.85, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
             <a href="#services" className="premium-button hero-primary-button">
-              Khám phá dịch vụ
+              Nhận tư vấn gói phù hợp
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a href="#projects" className="ghost-button hero-secondary-button">
-              Xem dự án
+              Xem dự án đã triển khai
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </motion.div>
@@ -540,15 +540,15 @@ function About() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
         <Reveal>
           <p className="section-eyebrow">Giới thiệu</p>
-          <h2 className="section-title mt-3 text-white">Một đội ngũ triển khai hình ảnh số cho thương hiệu dịch vụ</h2>
+          <h2 className="section-title mt-3 text-white">Khách hàng không chỉ nhìn sản phẩm. Họ nhìn cách thương hiệu xuất hiện.</h2>
         </Reveal>
         <div className="grid gap-5">
           <Reveal className="about-panel">
             <p className="text-xl font-black leading-tight text-white sm:text-2xl">
-              DST Group cung cấp giải pháp website, media, marketing và nội dung số theo hướng thực chiến, chỉn chu, dễ triển khai.
+              Dịch vụ tốt cần một hệ thống hình ảnh, nội dung, video và quảng cáo đủ rõ để khách hiểu, nhớ và tin.
             </p>
             <p className="mt-5 text-base leading-8 text-white/68">
-              Chúng tôi đồng hành cùng bar/club, nhà hàng/cafe/khách sạn và các doanh nghiệp dịch vụ cần một hệ thống truyền thông rõ ràng hơn: từ website, fanpage, video ngắn, visual chiến dịch đến quảng cáo đa kênh.
+              DST Group đồng hành cùng bar/club, nhà hàng/cafe/khách sạn và doanh nghiệp dịch vụ bằng một đầu mối triển khai: website, fanpage, video ngắn, visual chiến dịch và quảng cáo đa kênh.
             </p>
           </Reveal>
           <div className="grid gap-4 md:grid-cols-3">
@@ -569,8 +569,8 @@ function Industries() {
   return (
     <section id="industries" className="section-reveal bg-[#080b0b] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Lĩnh vực phục vụ" title="Ba nhóm khách hàng, một hệ thống triển khai rõ ràng">
-          Website hiện tại gom nhiều mảng vì DST Group phục vụ nhiều ngành dịch vụ khác nhau bằng cùng một năng lực lõi: hình ảnh, nội dung, media và quảng cáo.
+        <SectionHeading eyebrow="Lĩnh vực phục vụ" title="Mỗi ngành có nhịp truyền thông riêng. DST triển khai theo đúng ngữ cảnh đó.">
+          Nightlife cần nhịp sự kiện, hospitality cần cảm giác tin cậy, doanh nghiệp dịch vụ cần một hệ thống nội dung rõ ràng và dễ quản lý.
         </SectionHeading>
         <div className="grid gap-5 lg:grid-cols-3">
           {industryCards.map((industry, index) => (
@@ -592,7 +592,7 @@ function Industries() {
                   </div>
                   {industry.href ? (
                     <span className="mt-6 inline-flex items-center gap-2 text-sm font-black uppercase text-dst-gold">
-                      Xem landing page
+                      Xem giải pháp ngành này
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   ) : null}
@@ -610,8 +610,8 @@ function Gallery() {
   return (
     <section className="section-reveal bg-[#070909] py-24 text-white lg:py-28" data-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Visual System" title="Hình ảnh thật. Cảm giác cao cấp.">
-          Bộ visual được chọn từ tài liệu nội bộ, xử lý lại để phục vụ trải nghiệm web sắc nét hơn.
+        <SectionHeading eyebrow="Dự án thật" title="Không chỉ nói về năng lực. Hãy nhìn cách DST đã triển khai hình ảnh.">
+          Ảnh và dự án được lấy từ tài liệu thật, giúp khách xem nhanh chất liệu thương hiệu DST từng xử lý.
         </SectionHeading>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
           {gallery.map((item, index) => (
@@ -667,8 +667,8 @@ function Services() {
   return (
     <section id="services" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Dịch vụ nổi bật" title="Các hạng mục chính để thương hiệu vận hành tốt hơn trên nền tảng số">
-          Dịch vụ được gom theo nhu cầu thực tế: có website chỉn chu, có nội dung đều nhịp, có media rõ hình ảnh và có quảng cáo để tăng độ phủ.
+        <SectionHeading eyebrow="Dịch vụ nổi bật" title="Từ một bài đăng đến cả hệ thống truyền thông, mọi thứ cần đi cùng nhau">
+          DST gom website, fanpage, content, media, thiết kế và ads thành các hạng mục dễ chọn theo mục tiêu của từng thương hiệu.
         </SectionHeading>
         <div className="responsive-card-grid">
           {featuredServices.map((service, index) => (
@@ -677,7 +677,7 @@ function Services() {
         </div>
         <Reveal className="mt-10 flex justify-center">
           <a href="#contact" className="premium-button">
-            Nhận tư vấn dịch vụ
+            Nhận đề xuất truyền thông
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </Reveal>
@@ -705,7 +705,7 @@ function FeaturedProject({ project }: { project: Project }) {
           ))}
         </div>
         <a href="#contact" className="premium-button mt-8">
-          Khám phá dự án
+          Trao đổi về dự án tương tự
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </a>
       </div>
@@ -730,7 +730,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           ))}
         </div>
         <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-dst-gold">
-          Xem chi tiết
+          Xem hướng triển khai
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </span>
       </div>
@@ -744,8 +744,8 @@ function Projects() {
   return (
     <section id="projects" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Dự án đã triển khai" title="Portfolio thực tế từ nightlife, F&B đến khách sạn và sự kiện">
-          Mỗi dự án giữ ảnh trực diện, tag ngành nghề rõ ràng và mô tả ngắn để người xem hiểu DST Group đã triển khai gì.
+        <SectionHeading eyebrow="Dự án đã triển khai" title="Những thương hiệu dịch vụ đã có mặt trong dữ liệu dự án">
+          Mỗi dự án cho thấy một nhu cầu truyền thông khác nhau: sự kiện, fanpage, visual, media, quảng cáo hoặc hình ảnh hospitality.
         </SectionHeading>
         <FeaturedProject project={featured} />
         <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -762,8 +762,8 @@ function Pricing() {
   return (
     <section id="pricing" className="section-reveal bg-[#080b0b] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Packages" title="Hạng mục dịch vụ linh hoạt theo mục tiêu">
-          Các gói được trình bày gọn để dễ chọn hướng triển khai. Hạng mục cần tinh chỉnh sẽ được tư vấn trực tiếp.
+        <SectionHeading eyebrow="Gói dịch vụ" title="Bắt đầu từ mục tiêu, rồi chọn đúng hạng mục cần triển khai">
+          Có thương hiệu chỉ cần website, có thương hiệu cần fanpage đều nhịp, có thương hiệu cần combo media, content và ads theo tháng.
         </SectionHeading>
         <div className="responsive-card-grid">
           {pricing.map((item, index) => (
@@ -773,7 +773,7 @@ function Pricing() {
               <p className="mt-4 text-3xl font-black text-white">{item.price}</p>
               <p className="mt-4 text-sm leading-6 text-white/60">{item.note}</p>
               <a href="#contact" className="mt-7 inline-flex items-center gap-2 text-sm font-black uppercase text-dst-gold">
-                Nhận tư vấn
+                Nhận gói phù hợp
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </Reveal>
@@ -795,7 +795,7 @@ function Process() {
   return (
     <section id="process" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Quy trình làm việc" title="Từ mục tiêu kinh doanh đến kế hoạch truyền thông có thể triển khai">
+        <SectionHeading eyebrow="Quy trình làm việc" title="Không bắt đầu bằng thiết kế. Bắt đầu bằng mục tiêu của thương hiệu.">
           Quy trình được giữ gọn để chủ thương hiệu dễ nắm việc, dễ duyệt nội dung và dễ theo dõi tiến độ.
         </SectionHeading>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -818,9 +818,9 @@ function WhyChoose() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <Reveal>
           <p className="section-eyebrow">Vì sao chọn DST Group</p>
-          <h2 className="section-title mt-3 text-white">Không chỉ làm đẹp hình ảnh, mà làm cho thương hiệu dễ triển khai hơn</h2>
+          <h2 className="section-title mt-3 text-white">Một đầu mối cho website, nội dung, media và quảng cáo</h2>
           <p className="mt-5 text-base leading-8 text-white/68">
-            DST Group phù hợp với các thương hiệu dịch vụ cần một đội triển khai thực tế: hiểu ngành, có media, có thiết kế, có quảng cáo và có tư duy vận hành đều nhịp.
+            DST Group phù hợp với thương hiệu dịch vụ muốn triển khai thực tế: có người tư vấn, có người làm hình ảnh, có người sản xuất nội dung và có người chạy quảng cáo trong cùng một kế hoạch.
           </p>
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -842,17 +842,17 @@ function FinalCTA() {
       <div className="cta-glow" aria-hidden="true" />
       <Reveal className="final-cta-panel mx-auto max-w-7xl text-center">
         <p className="section-eyebrow">Bắt đầu từ một kế hoạch rõ ràng</p>
-        <h2 className="section-title mx-auto mt-4 max-w-4xl text-white">Bạn muốn thương hiệu của mình nổi bật hơn?</h2>
+        <h2 className="section-title mx-auto mt-4 max-w-4xl text-white">Bạn đang cần thương hiệu xuất hiện chỉn chu và đều hơn?</h2>
         <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-white/70">
-          Bắt đầu từ một website chỉn chu, một chiến dịch nội dung rõ ràng và một kế hoạch truyền thông phù hợp.
+          Hãy bắt đầu bằng mục tiêu cụ thể. DST sẽ đề xuất tổ hợp website, content, media và ads phù hợp với ngành của bạn.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <a href="#contact" className="premium-button">
-            Liên hệ tư vấn
+            Nhận tư vấn gói phù hợp
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
           <a href="#services" className="ghost-button">
-            Xem dịch vụ
+            Xem giải pháp cho ngành của bạn
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
@@ -888,10 +888,10 @@ function Contact() {
       <div className="cta-glow" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <Reveal>
-          <p className="section-eyebrow">Contact</p>
-          <h2 className="section-title mt-3 text-white">Sẵn sàng nâng cấp hình ảnh thương hiệu?</h2>
+          <p className="section-eyebrow">Liên hệ</p>
+          <h2 className="section-title mt-3 text-white">Trao đổi với DST Group về hướng triển khai phù hợp</h2>
           <p className="mt-5 text-base leading-8 text-white/70">
-            Kết nối với DST Group để chọn hạng mục phù hợp cho ngành dịch vụ, giải trí, lưu trú hoặc doanh nghiệp của bạn.
+            Chia sẻ ngành, tình trạng kênh hiện tại và mục tiêu truyền thông. DST sẽ gợi ý hướng triển khai vừa đủ, dễ quản lý và có thể bắt đầu nhanh.
           </p>
           <div className="mt-8 space-y-4">
             <div className="flex gap-3 rounded-xl border border-white/10 bg-white/5 p-4">
