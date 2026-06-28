@@ -9,7 +9,7 @@ export const servicesHero = {
   title: "Toàn bộ giải pháp số cho thương hiệu hiện đại",
   subtitle:
     "Từ website, nội dung truyền thông, video ngắn đến quảng cáo đa nền tảng — chúng tôi giúp thương hiệu xây dựng hình ảnh chỉn chu và triển khai hiệu quả hơn trên môi trường số.",
-  video: "/assets/videos/services-hero.mp4",
+  video: "/assets/videos/services-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/showcase/service-collage-showcase.webp",
   source: { sourceFile: "HSNL CTY DST.pdf", page: 10, confidence: "high" } satisfies SourceMeta,

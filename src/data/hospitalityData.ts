@@ -9,7 +9,7 @@ export const hospitalityHero = {
   title: "Giải pháp truyền thông cho Nhà hàng, Cafe & Khách sạn",
   subtitle:
     "Xây dựng website, hình ảnh, nội dung và chiến dịch quảng cáo giúp thương hiệu hospitality nổi bật hơn trên nền tảng số.",
-  video: "/assets/videos/hospitality-hero.mp4",
+  video: "/assets/videos/hospitality-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/hospitality/birds-nest-cafe.webp",
   source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
