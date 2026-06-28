@@ -10,7 +10,7 @@ export const barClubHero = {
   title: "Giải pháp truyền thông cho Bar, Club & Nightlife",
   subtitle:
     "Xây dựng hình ảnh, nội dung, video và chiến dịch quảng cáo giúp thương hiệu nightlife nổi bật hơn trên nền tảng số.",
-  video: "/assets/videos/bar-club-hero.mp4?v=nightclub-1",
+  video: "/assets/videos/bar-club-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/bar-club/valley-beach-club.webp",
   source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,

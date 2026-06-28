@@ -17,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/bar-club" element={<BarClubPage />} />
           <Route path="/nha-hang-khach-san" element={<HospitalityPage />} />
           <Route path="/dich-vu" element={<ServicesPage />} />
+          <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>
     </HashRouter>

@@ -38,6 +38,13 @@ const navItems = [
   { label: "Liên hệ", href: "#contact" },
 ];
 
+const homeSectionIds = new Set(["home", "about", "industries", "services", "projects", "pricing", "process", "contact"]);
+
+function getCurrentHomeSectionId() {
+  const hash = window.location.hash.replace(/^#\/?/, "").split("?")[0];
+  return homeSectionIds.has(hash) ? hash : "";
+}
+
 const stats = [
   { value: "2020", label: "Thành lập", icon: CalendarDays },
   { value: "10 tỷ", label: "Vốn điều lệ", icon: CircleDollarSign },
@@ -305,6 +312,26 @@ function usePremiumScrollMotion() {
   }, []);
 }
 
+function useHomeSectionScroll() {
+  useLayoutEffect(() => {
+    const scrollToCurrentSection = () => {
+      const sectionId = getCurrentHomeSectionId();
+      if (!sectionId) return;
+
+      window.requestAnimationFrame(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ block: "start", behavior: "smooth" });
+      });
+    };
+
+    scrollToCurrentSection();
+    window.addEventListener("hashchange", scrollToCurrentSection);
+
+    return () => {
+      window.removeEventListener("hashchange", scrollToCurrentSection);
+    };
+  }, []);
+}
+
 function Reveal({
   children,
   className = "",
@@ -416,7 +443,7 @@ function Hero() {
         poster={assetPath("/assets/showcase/valley-beach-club-hero.webp")}
         aria-hidden="true"
       >
-        <source src={assetPath("/assets/videos/hero.mp4")} type="video/mp4" />
+        <source src={assetPath("/assets/videos/hero.mp4?v=final-20260628")} type="video/mp4" />
       </video>
       <div className="hero-video-fallback" aria-hidden="true" />
       <div className="hero-video-overlay" aria-hidden="true" />
@@ -919,6 +946,7 @@ function Contact() {
 
 function App() {
   usePremiumScrollMotion();
+  useHomeSectionScroll();
 
   return (
     <>
