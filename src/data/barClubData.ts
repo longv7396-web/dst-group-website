@@ -7,9 +7,9 @@ export const barClubFacebookUrl = "https://www.facebook.com/share/1EvWCZnNBi/?mi
 
 export const barClubHero = {
   eyebrow: "DST Group for Bar / Club / Nightlife",
-  title: "Để mỗi đêm diễn không chỉ đông khách, mà còn trở thành nội dung đáng nhớ",
+  title: "Để mỗi đêm diễn không chỉ diễn ra, mà còn trở thành nội dung đáng nhớ",
   subtitle:
-    "DST Group giúp Bar, Club và Nightlife xây dựng line-up, poster, video recap, social content và quảng cáo đa kênh để thương hiệu nổi bật trước, trong và sau sự kiện.",
+    "DST Group giúp Bar, Club và Nightlife xây dựng line-up, poster, video recap, social content và quảng cáo theo mục tiêu để thương hiệu có nhịp truyền thông trước, trong và sau sự kiện.",
   video: "/assets/videos/bar-club-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/bar-club/valley-beach-club.webp",
@@ -19,22 +19,22 @@ export const barClubHero = {
 export const barClubProblems = [
   {
     title: "Event dễ trôi nếu thiếu truyền thông trước giờ diễn",
-    description: "Một đêm nhạc không chỉ cần sân khấu tốt. Khách cần thấy line-up, visual và thông điệp đủ sớm để nhớ và muốn đến.",
+    description: "Một đêm nhạc không chỉ cần sân khấu tốt. Khách cần thấy line-up, visual và thông điệp đủ sớm để ghi nhớ chương trình.",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "medium" } satisfies SourceMeta,
   },
   {
     title: "Fanpage không thể chỉ đăng khi sắp có chương trình",
-    description: "Nội dung đều nhịp giúp thương hiệu giữ sự chú ý, thay vì chỉ xuất hiện rời rạc trước từng sự kiện.",
+    description: "Nội dung đều nhịp giúp thương hiệu giữ sự hiện diện, thay vì chỉ xuất hiện rời rạc trước từng sự kiện.",
     source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,
   },
   {
     title: "Recap là tài sản truyền thông sau mỗi đêm diễn",
-    description: "Video intro, recap và nội dung sau sự kiện giúp cảm xúc của đêm diễn tiếp tục sống trên fanpage, TikTok và quảng cáo.",
+    description: "Video intro, recap và nội dung sau sự kiện giúp cảm xúc của đêm diễn tiếp tục trở thành chất liệu cho fanpage, TikTok và ads.",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
   {
     title: "Ads cần đi cùng thông điệp và hình ảnh",
-    description: "Quảng cáo chỉ hiệu quả hơn khi có nội dung, visual và mục tiêu rõ cho từng kênh Facebook, TikTok, Google hoặc Zalo.",
+    description: "Ads cần có nội dung, visual và mục tiêu rõ cho từng kênh Facebook, TikTok, Google hoặc Zalo.",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
 ];
@@ -71,7 +71,7 @@ export const barClubProcess = [
   {
     step: "03",
     title: "Sản xuất poster, recap, bài đăng và ads",
-    description: "Triển khai nội dung fanpage, video ngắn, recap và quảng cáo đa kênh theo lịch sự kiện.",
+    description: "Triển khai nội dung fanpage, video ngắn, recap và ads theo mục tiêu của từng sự kiện.",
   },
   {
     step: "04",
@@ -85,7 +85,7 @@ export const barClubPackages = [
     title: "Gói tư vấn theo nhu cầu",
     price: "Liên hệ tư vấn",
     description:
-      "Tư vấn tổ hợp fanpage, content, line-up, recap, media và quảng cáo theo lịch sự kiện, mục tiêu truyền thông và ngân sách thực tế.",
+      "Tư vấn tổ hợp fanpage, content, line-up, recap, media và ads theo lịch sự kiện, mục tiêu truyền thông và ngân sách thực tế.",
     source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,
   },
   ...barClubServiceCards.map((service) => ({

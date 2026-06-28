@@ -8,7 +8,7 @@ export const hospitalityHero = {
   eyebrow: "DST Group for Hospitality",
   title: "Đưa trải nghiệm nhà hàng, cafe và khách sạn lên một hình ảnh xứng tầm hơn",
   subtitle:
-    "DST Group xây dựng website, hình ảnh, video, nội dung social và quảng cáo giúp thương hiệu hospitality trở nên chỉn chu, dễ nhớ và dễ được khách hàng lựa chọn hơn.",
+    "DST Group xây dựng website, hình ảnh, video, social content và quảng cáo để thương hiệu hospitality trở nên chỉn chu, dễ nhớ và tạo cảm giác tin cậy hơn trước khi khách liên hệ.",
   video: "/assets/videos/hospitality-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/hospitality/birds-nest-cafe.webp",
@@ -18,7 +18,7 @@ export const hospitalityHero = {
 export const hospitalityProblems = [
   {
     title: "Khách cảm nhận thương hiệu trước khi bước vào cửa",
-    description: "Ảnh món ăn, không gian, phòng nghỉ và dịch vụ trên fanpage/website quyết định cảm giác tin cậy ban đầu.",
+    description: "Ảnh món ăn, không gian, phòng nghỉ và dịch vụ trên fanpage/website tạo cảm giác tin cậy đầu tiên.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
@@ -28,12 +28,12 @@ export const hospitalityProblems = [
   },
   {
     title: "Video ngắn giúp khách thấy trải nghiệm thật hơn",
-    description: "TikTok/Reels, kịch bản và video ngắn giúp món ăn, không gian, sự kiện và dịch vụ được cảm nhận nhanh hơn.",
+    description: "Kịch bản và video ngắn giúp món ăn, không gian, sự kiện và dịch vụ được cảm nhận nhanh hơn trên nhiều nền tảng.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
     title: "Website và ads cần cùng một thông điệp",
-    description: "Website, bài SEO và quảng cáo đa kênh hiệu quả hơn khi cùng dẫn khách đến một hình ảnh thương hiệu rõ ràng.",
+    description: "Website, bài SEO và ads nên cùng dẫn khách đến một hình ảnh thương hiệu rõ ràng, sạch và dễ tin.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" } satisfies SourceMeta,
   },
 ];
@@ -68,7 +68,7 @@ export const hospitalityProjects = projects
 export const hospitalityGoals = [
   {
     title: "Khách nhớ thương hiệu rõ hơn",
-    description: "Đồng bộ hình ảnh, nội dung và visual để khách dễ nhận ra bạn giữa nhiều lựa chọn cùng ngành.",
+    description: "Đồng bộ hình ảnh, nội dung và visual để khách dễ nhận ra thương hiệu giữa nhiều lựa chọn cùng ngành.",
   },
   {
     title: "Hỗ trợ hành trình đặt bàn / đặt phòng",
@@ -76,7 +76,7 @@ export const hospitalityGoals = [
   },
   {
     title: "Fanpage có nhịp nội dung ổn định",
-    description: "Duy trì bài viết, thiết kế và video ngắn để kênh social không bị bỏ trống.",
+    description: "Duy trì bài viết, thiết kế và video ngắn để kênh social không bị bỏ trống hoặc rời rạc.",
   },
   {
     title: "Ra mắt món mới, ưu đãi hoặc sự kiện rõ ràng hơn",
@@ -84,7 +84,7 @@ export const hospitalityGoals = [
   },
   {
     title: "Hình ảnh thương hiệu sạch và tin cậy hơn",
-    description: "Đồng bộ ảnh không gian, ảnh dịch vụ, banner, menu và nội dung quảng cáo.",
+    description: "Đồng bộ ảnh không gian, ảnh dịch vụ, banner, menu và nội dung quảng cáo theo cùng một tinh thần.",
   },
 ];
 

@@ -77,21 +77,21 @@ const gallery = [
 const industryCards = [
   {
     title: "Bar / Club / Nightlife",
-    description: "Line-up, recap, fanpage và quảng cáo cho những thương hiệu cần tạo nhịp truyền thông quanh từng sự kiện.",
+    description: "Line-up, poster, recap, fanpage và quảng cáo theo mục tiêu để mỗi sự kiện có nhịp truyền thông trước, trong và sau đêm diễn.",
     image: "/assets/showcase/valley-beach-club-hero.webp",
-    services: ["Fanpage", "Poster line-up", "Video recap", "ADS đa kênh"],
+    services: ["Fanpage", "Poster line-up", "Video recap", "Ads theo mục tiêu"],
     href: hashRouteHref("/bar-club"),
   },
   {
     title: "Nhà hàng / Cafe / Khách sạn",
-    description: "Hình ảnh món ăn, không gian, website và social content giúp khách cảm nhận thương hiệu trước khi liên hệ.",
+    description: "Hình ảnh món ăn, không gian, website và social content giúp khách cảm nhận sự chỉn chu trước khi đặt bàn, đặt phòng hoặc liên hệ.",
     image: "/assets/showcase/birds-nest-cafe-showcase.webp",
     services: ["Social content", "Menu / poster", "TikTok / Reels", "Website SEO"],
     href: hashRouteHref("/nha-hang-khach-san"),
   },
   {
     title: "Doanh nghiệp / Dịch vụ tổng thể",
-    description: "Một đầu mối cho website, fanpage, content, media và ads khi thương hiệu cần triển khai đồng bộ hơn.",
+    description: "Một đầu mối cho website, fanpage, content, media và ads khi thương hiệu muốn triển khai rõ ràng hơn mà không chia nhỏ cho nhiều bên.",
     image: "/assets/showcase/grand-view-palace-showcase.webp",
     services: ["Website", "Branding", "Media", "Marketing tháng"],
     href: hashRouteHref("/dich-vu"),
@@ -101,47 +101,47 @@ const industryCards = [
 const featuredServices = [
   {
     title: "Website / Landing page có điểm đến rõ",
-    summary: "Tạo nơi khách có thể xem dịch vụ, hiểu thương hiệu và liên hệ mà không phải hỏi lại quá nhiều thông tin.",
+    summary: "Xây nơi khách có thể xem dịch vụ, hiểu điểm mạnh và liên hệ dễ hơn thay vì chỉ phụ thuộc vào fanpage.",
     icon: Globe2,
     items: ["Website", "Landing page", "SEO content"],
   },
   {
     title: "Fanpage & social content đều nhịp",
-    summary: "Xây lịch nội dung, bài viết và visual để fanpage không bị bỏ trống hoặc đăng rời rạc.",
+    summary: "Xây lịch đăng, bài viết và visual nhất quán để fanpage không bị bỏ trống và giữ nhịp xuất hiện với khách hàng.",
     icon: Megaphone,
     items: ["Fanpage", "Content plan", "Bài viết"],
   },
   {
-    title: "Video ngắn / TikTok / Reels",
-    summary: "Sản xuất video ngắn theo kịch bản để sản phẩm, không gian và sự kiện dễ được cảm nhận hơn.",
+    title: "Video ngắn cho nhiều nền tảng",
+    summary: "Sản xuất video ngắn theo kịch bản để món ăn, không gian, dịch vụ hoặc sự kiện có thêm chất liệu dùng cho social và ads.",
     icon: Video,
     items: ["TikTok", "Reels", "Kịch bản"],
   },
   {
     title: "Poster / menu / intro / recap",
-    summary: "Thiết kế ấn phẩm và video để từng chiến dịch có hình ảnh đồng bộ, dễ nhớ và dễ triển khai.",
+    summary: "Thiết kế ấn phẩm, menu, poster và video chiến dịch để hình ảnh thương hiệu đồng bộ hơn trên từng điểm chạm.",
     icon: Palette,
     items: ["Poster", "Menu", "Intro / recap"],
   },
   {
     title: "Ads theo mục tiêu từng kênh",
-    summary: "Triển khai quảng cáo sau khi đã có thông điệp, hình ảnh và nội dung đủ rõ cho từng nhóm khách.",
+    summary: "Triển khai quảng cáo dựa trên thông điệp, hình ảnh và mục tiêu rõ: nhận diện, tương tác, giới thiệu event hoặc dịch vụ.",
     icon: Zap,
     items: ["Facebook", "TikTok", "Google", "Zalo"],
   },
   {
     title: "Gói marketing theo tháng",
-    summary: "Kết hợp content, thiết kế, media và ads để thương hiệu có đội triển khai đều nhịp hơn.",
+    summary: "Kết hợp content, thiết kế, media và ads để thương hiệu có đội triển khai đều nhịp, dễ phối hợp và dễ theo dõi.",
     icon: Layers3,
     items: ["Kế hoạch", "Triển khai", "Báo cáo"],
   },
 ];
 
 const whyChooseItems = [
-  "Một đầu mối giúp khách không phải tách website, media, content và ads cho nhiều bên.",
-  "Hiểu nhịp vận hành của nhà hàng, cafe, khách sạn, nightlife và doanh nghiệp dịch vụ.",
-  "Hình ảnh chỉn chu nhưng vẫn dễ ứng dụng vào chiến dịch và vận hành hằng tháng.",
-  "Tư vấn theo mục tiêu, quy mô và khả năng triển khai thực tế của từng thương hiệu.",
+  "Một đầu mối cho website, media, content, thiết kế và ads, giúp khách dễ phối hợp hơn.",
+  "Hiểu nhịp vận hành của nhà hàng, cafe, khách sạn, nightlife và doanh nghiệp dịch vụ địa phương.",
+  "Hình ảnh chỉn chu nhưng vẫn dễ ứng dụng vào chiến dịch, fanpage và vận hành hằng tháng.",
+  "Tập trung vào mục tiêu kinh doanh của thương hiệu, không chỉ làm đẹp từng ấn phẩm riêng lẻ.",
 ];
 
 gsap.registerPlugin(ScrollTrigger);
@@ -487,11 +487,11 @@ function Hero() {
             transition={{ duration: 0.85, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
             <a href="#services" className="premium-button hero-primary-button">
-              Nhận tư vấn gói phù hợp
+              Xem giải pháp
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
-            <a href="#projects" className="ghost-button hero-secondary-button">
-              Xem dự án đã triển khai
+            <a href="#contact" className="ghost-button hero-secondary-button">
+              Nhận tư vấn gói phù hợp
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </motion.div>
@@ -545,10 +545,10 @@ function About() {
         <div className="grid gap-5">
           <Reveal className="about-panel">
             <p className="text-xl font-black leading-tight text-white sm:text-2xl">
-              Dịch vụ tốt cần một hệ thống hình ảnh, nội dung, video và quảng cáo đủ rõ để khách hiểu, nhớ và tin.
+              Dịch vụ tốt cần một hệ thống hình ảnh, nội dung, video và quảng cáo đủ rõ để khách hiểu nhanh, nhớ lâu hơn và có lý do liên hệ.
             </p>
             <p className="mt-5 text-base leading-8 text-white/68">
-              DST Group đồng hành cùng bar/club, nhà hàng/cafe/khách sạn và doanh nghiệp dịch vụ bằng một đầu mối triển khai: website, fanpage, video ngắn, visual chiến dịch và quảng cáo đa kênh.
+              DST Group đồng hành cùng bar/club, nhà hàng/cafe/khách sạn và doanh nghiệp dịch vụ bằng một đầu mối triển khai: website, fanpage, video ngắn, visual chiến dịch và quảng cáo theo mục tiêu.
             </p>
           </Reveal>
           <div className="grid gap-4 md:grid-cols-3">
@@ -667,8 +667,8 @@ function Services() {
   return (
     <section id="services" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Dịch vụ nổi bật" title="Từ một bài đăng đến cả hệ thống truyền thông, mọi thứ cần đi cùng nhau">
-          DST gom website, fanpage, content, media, thiết kế và ads thành các hạng mục dễ chọn theo mục tiêu của từng thương hiệu.
+        <SectionHeading eyebrow="Dịch vụ nổi bật" title="Từ một bài đăng đến cả hệ thống truyền thông, mọi điểm chạm cần đi cùng nhau">
+          DST gom website, fanpage, content, media, thiết kế và ads thành các hạng mục dễ chọn theo mục tiêu thật của từng thương hiệu.
         </SectionHeading>
         <div className="responsive-card-grid">
           {featuredServices.map((service, index) => (
@@ -744,8 +744,8 @@ function Projects() {
   return (
     <section id="projects" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Dự án đã triển khai" title="Những thương hiệu dịch vụ đã có mặt trong dữ liệu dự án">
-          Mỗi dự án cho thấy một nhu cầu truyền thông khác nhau: sự kiện, fanpage, visual, media, quảng cáo hoặc hình ảnh hospitality.
+        <SectionHeading eyebrow="Dự án đã triển khai" title="Dự án thật cho thấy DST xử lý nhiều kiểu bài toán truyền thông">
+          Mỗi dự án cho thấy một nhu cầu khác nhau: sự kiện, fanpage, visual, media, quảng cáo hoặc hình ảnh hospitality.
         </SectionHeading>
         <FeaturedProject project={featured} />
         <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -842,9 +842,9 @@ function FinalCTA() {
       <div className="cta-glow" aria-hidden="true" />
       <Reveal className="final-cta-panel mx-auto max-w-7xl text-center">
         <p className="section-eyebrow">Bắt đầu từ một kế hoạch rõ ràng</p>
-        <h2 className="section-title mx-auto mt-4 max-w-4xl text-white">Bạn đang cần thương hiệu xuất hiện chỉn chu và đều hơn?</h2>
+          <h2 className="section-title mx-auto mt-4 max-w-4xl text-white">Bạn đang cần một hướng truyền thông rõ ràng hơn cho thương hiệu?</h2>
         <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-white/70">
-          Hãy bắt đầu bằng mục tiêu cụ thể. DST sẽ đề xuất tổ hợp website, content, media và ads phù hợp với ngành của bạn.
+          Hãy bắt đầu bằng mục tiêu cụ thể. DST sẽ đề xuất tổ hợp website, content, media và ads phù hợp với ngành, ngân sách và nhịp vận hành của bạn.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <a href="#contact" className="premium-button">
@@ -980,7 +980,7 @@ function App() {
               <span>Website / Landing page</span>
               <span>Social content</span>
               <span>Video ngắn / Media</span>
-              <a href={hashRouteHref("/dich-vu")} className="hover:text-dst-gold">Quảng cáo đa kênh</a>
+              <a href={hashRouteHref("/dich-vu")} className="hover:text-dst-gold">Ads theo mục tiêu</a>
             </div>
           </div>
           <div>

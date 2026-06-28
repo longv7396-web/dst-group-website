@@ -8,7 +8,7 @@ export const servicesHero = {
   eyebrow: "DST Group Services",
   title: "Từ website đến quảng cáo, mọi điểm chạm thương hiệu được triển khai đồng bộ hơn",
   subtitle:
-    "DST Group kết hợp website, fanpage, video ngắn, poster, thiết kế và quảng cáo đa nền tảng để thương hiệu không phải làm việc với quá nhiều bên rời rạc.",
+    "DST Group kết hợp website, fanpage, video ngắn, poster, thiết kế và quảng cáo theo mục tiêu để thương hiệu không phải chia việc cho quá nhiều bên rời rạc.",
   video: "/assets/videos/services-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/showcase/service-collage-showcase.webp",
@@ -21,20 +21,20 @@ const findPricing = (item: string) => pricing.find((price) => price.item === ite
 
 const websiteService = findHospitality("Website và nội dung SEO");
 const contentService = findCore("Nội dung social có kế hoạch");
-const mediaService = findCore("Media / video ngắn / recap");
+const mediaService = findCore("Sản xuất video ngắn và recap");
 const designService = findCore("Thiết kế nhận diện và ấn phẩm");
 const brandingService = findCore("Branding dễ ứng dụng");
-const adsService = findCore("Quảng cáo đa kênh có mục tiêu");
+const adsService = findCore("Quảng cáo theo mục tiêu rõ ràng");
 const marketingService = findCore("Đội marketing thuê ngoài");
 
 export const servicesOverview = [
   {
     title: "Một đầu mối cho nhiều nhu cầu",
-    description: "Website, fanpage, content, media, thiết kế và ads được kết nối trong cùng một kế hoạch để khách dễ quản lý hơn.",
+    description: "Website, fanpage, content, media, thiết kế và ads được kết nối trong cùng một kế hoạch để khách dễ phối hợp và dễ quản lý hơn.",
   },
   {
     title: "Dịch vụ bám theo nhu cầu thật",
-    description: "Các nhóm dịch vụ được tổng hợp từ hồ sơ năng lực, báo giá Bar/Club và báo giá nhà hàng, khách sạn.",
+    description: "Mỗi gói được tư vấn theo ngành, tình trạng kênh hiện tại và mục tiêu truyền thông cần ưu tiên.",
   },
   {
     title: "Phù hợp thương hiệu dịch vụ địa phương",
@@ -45,25 +45,25 @@ export const servicesOverview = [
 export const serviceGroups = [
   {
     title: "Website & SEO",
-    summary: "Tạo nơi khách có thể xem thông tin, hiểu dịch vụ và liên hệ dễ hơn thông qua website, landing page và bài SEO.",
+    summary: "Xây website, landing page và bài SEO để khách xem thông tin, hiểu dịch vụ và liên hệ dễ hơn.",
     items: ["Website giới thiệu", "Landing page", "Bài viết chuẩn SEO", "Tối ưu giao diện và trải nghiệm người dùng"],
     source: websiteService?.source ?? ({ sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" } satisfies SourceMeta),
   },
   {
-    title: "Social Content & Fanpage",
-    summary: "Xây lịch đăng, thông điệp và bài viết để fanpage giữ được nhịp xuất hiện, không bị bỏ trống hoặc đăng rời rạc.",
-    items: ["Quản trị fanpage", "Lên kế hoạch nội dung", "Bài đăng truyền thông", "Nội dung theo campaign/event"],
+    title: "Fanpage & Social Content",
+    summary: "Xây lịch đăng, thông điệp, bài viết và hình ảnh để fanpage không bị bỏ trống và giữ được nhịp xuất hiện với khách hàng.",
+    items: ["Quản trị fanpage có kế hoạch", "Lên lịch đăng", "Bài đăng truyền thông", "Nội dung theo campaign/event"],
     source: contentService?.source ?? ({ sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta),
   },
   {
     title: "Media & Video",
     summary: "Sản xuất ảnh, video ngắn, recap và tư liệu thật để thương hiệu có chất liệu dùng trên fanpage, TikTok, website và ads.",
-    items: ["Video TikTok/Reels", "Video recap sự kiện", "Video giới thiệu thương hiệu", "Chụp/quay sản phẩm, món ăn, không gian"],
+    items: ["Video ngắn cho social", "Video recap sự kiện", "Video giới thiệu thương hiệu", "Chụp/quay sản phẩm, món ăn, không gian"],
     source: mediaService?.source ?? ({ sourceFile: "HSNL CTY DST.pdf", page: 10, confidence: "high" } satisfies SourceMeta),
   },
   {
     title: "Design & Branding",
-    summary: "Thiết kế poster, menu, banner và ấn phẩm để mỗi chiến dịch có hình ảnh đồng bộ, dễ nhận diện và dễ triển khai.",
+    summary: "Thiết kế poster, menu, banner và nhận diện để mỗi chiến dịch có hình ảnh đồng bộ, dễ nhận diện và dễ triển khai.",
     items: ["Poster", "Menu", "Banner", "Ấn phẩm truyền thông", "Nhận diện hình ảnh"],
     source: designService?.source ?? brandingService?.source ?? ({ sourceFile: "HSNL CTY DST.pdf", page: 26, confidence: "medium" } satisfies SourceMeta),
   },
@@ -96,14 +96,14 @@ export const servicePricing = [
 export const industryLinks = [
   {
     title: "Bar / Club / Nightlife",
-    description: "Fanpage, line-up, poster, video recap và ads cho thương hiệu cần tạo nhịp truyền thông quanh từng sự kiện.",
+    description: "Fanpage, line-up, poster, video recap và ads cho thương hiệu cần tạo nhịp truyền thông trước, trong và sau từng sự kiện.",
     href: "/bar-club",
     image: "/assets/bar-club/valley-beach-club.webp",
-    tags: ["Nightlife", "Event", "ADS"],
+    tags: ["Nightlife", "Event", "Ads"],
   },
   {
     title: "Nhà hàng / Cafe / Khách sạn",
-    description: "Website, hình ảnh, social content, video ngắn và ads giúp thương hiệu hospitality tạo cảm giác tin cậy hơn.",
+    description: "Website, hình ảnh, social content, video ngắn và ads giúp thương hiệu hospitality tạo cảm giác chỉn chu, sạch và tin cậy hơn.",
     href: "/nha-hang-khach-san",
     image: "/assets/hospitality/birds-nest-cafe.webp",
     tags: ["Hospitality", "F&B", "Website"],
@@ -121,7 +121,7 @@ export const serviceProcess = [
   {
     step: "01",
     title: "Tiếp nhận nhu cầu",
-    description: "Làm rõ ngành, tình trạng fanpage/website hiện tại, ngân sách và mục tiêu truyền thông ưu tiên.",
+    description: "Làm rõ ngành, tình trạng fanpage/website hiện tại, ngân sách và mục tiêu truyền thông cần ưu tiên.",
   },
   {
     step: "02",
@@ -152,10 +152,10 @@ export const featuredServiceProjects = projects.slice(0, 7).map((project) => ({
 
 export const whyChooseServices = [
   "Một đầu mối cho website, fanpage, content, media, thiết kế và ads.",
+  "Hiểu nhịp truyền thông của nhà hàng, cafe, khách sạn, bar/club và sự kiện địa phương.",
+  "Kết hợp thiết kế, media, content và ads trong cùng một kế hoạch triển khai.",
   "Hình ảnh chỉn chu nhưng vẫn dễ triển khai trong vận hành thực tế.",
-  "Hiểu nhịp truyền thông của nhà hàng, cafe, khách sạn, bar/club và sự kiện.",
-  "Tư vấn theo mục tiêu và quy mô, không ép khách dùng một công thức cố định.",
-  "Có dự án và hình ảnh thật từ nhiều nhóm ngành dịch vụ để khách dễ kiểm chứng.",
+  "Tập trung vào mục tiêu kinh doanh, không chỉ làm đẹp từng ấn phẩm riêng lẻ.",
 ];
 
 export const servicesContact = {

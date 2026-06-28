@@ -245,7 +245,7 @@ function BarClubHero() {
             </a>
           </div>
           <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
-            {["Fanpage", "Line-up / Recap", "ADS đa kênh"].map((item) => (
+            {["Fanpage", "Line-up / Recap", "Ads theo mục tiêu"].map((item) => (
               <span key={item} className="rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-black text-white/78 backdrop-blur">
                 {item}
               </span>
@@ -261,8 +261,8 @@ function ProblemsSection() {
   return (
     <section id="problems" className="bar-section bg-[#050707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <BarSectionHeading eyebrow="Bài toán nightlife" title="Mỗi sự kiện cần được kể trước, trong và sau đêm diễn">
-          Nếu chỉ đăng vài poster sát ngày, chương trình rất dễ trôi khỏi sự chú ý. DST giúp xây nhịp nội dung, visual, recap và ads rõ hơn cho từng chiến dịch.
+        <BarSectionHeading eyebrow="Bài toán nightlife" title="Một sự kiện không chỉ sống trong một đêm">
+          Với bar/club, truyền thông cần bắt đầu trước đêm diễn, được ghi lại bằng hình ảnh/video trong sự kiện và tiếp tục trở thành nội dung sau đó.
         </BarSectionHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {barClubProblems.map((problem, index) => (
@@ -282,8 +282,8 @@ function ServicesSection() {
   return (
     <section id="solutions" className="bar-section bg-[#080707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <BarSectionHeading eyebrow="Giải pháp dành cho Bar/Club" title="Từ line-up đến recap, mỗi điểm chạm đều có vai trò riêng">
-          DST triển khai fanpage, nội dung sự kiện, poster, video intro/recap và quảng cáo online để thương hiệu nightlife xuất hiện có kế hoạch hơn.
+        <BarSectionHeading eyebrow="Giải pháp dành cho Bar/Club" title="Từ line-up đến recap, mỗi điểm chạm đều phải có nhiệm vụ">
+          DST triển khai fanpage, nội dung sự kiện, poster, video intro/recap và ads theo mục tiêu để thương hiệu nightlife xuất hiện có kế hoạch hơn.
         </BarSectionHeading>
         <div className="barclub-service-grid">
           {barClubServiceCards.map((service, index) => {
@@ -316,7 +316,7 @@ function PortfolioSection() {
     <section id="bar-projects" className="bar-section bg-[#050707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <BarSectionHeading eyebrow="Portfolio Bar / Club" title="Dự án thật trong nhóm nightlife và F&B giải trí">
-          Những dự án này cho thấy cách DST xử lý visual, fanpage, media và nội dung sự kiện cho thương hiệu cần năng lượng cao.
+          Những dự án này cho thấy cách DST xử lý visual, fanpage, media và nội dung sự kiện bằng chất liệu thật.
         </BarSectionHeading>
         <div className="grid gap-5 lg:grid-cols-2">
           {barClubProjects.map((project) => (
@@ -351,8 +351,8 @@ function ProcessSection() {
   return (
     <section id="bar-process" className="bar-section bg-[#080707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <BarSectionHeading eyebrow="Quy trình triển khai" title="Từ lịch diễn đến nội dung có thể chạy ngay">
-          Quy trình được giữ ngắn để chủ thương hiệu dễ duyệt line-up, visual, recap và nhịp quảng cáo theo từng chương trình.
+        <BarSectionHeading eyebrow="Quy trình triển khai" title="Từ lịch diễn đến nhịp nội dung trước - trong - sau sự kiện">
+          Quy trình được giữ ngắn để chủ thương hiệu dễ duyệt line-up, visual, recap và nhịp ads theo từng chương trình.
         </BarSectionHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {barClubProcess.map((step) => (
@@ -373,7 +373,7 @@ function PackagesSection() {
     <section className="bar-section bg-[#050707] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <BarSectionHeading eyebrow="Gói dịch vụ" title="Chọn hạng mục theo lịch sự kiện và mục tiêu truyền thông">
-          Có chương trình cần poster và bài nhắc lịch, có chương trình cần recap, fanpage và ads. DST tư vấn theo nhu cầu thực tế.
+          Có chương trình cần poster và bài nhắc lịch, có chương trình cần recap, fanpage và ads. DST tư vấn theo lịch diễn và ngân sách thực tế.
         </BarSectionHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {barClubPackages.map((item) => (
@@ -398,14 +398,14 @@ function FinalContactSection() {
       <div className="barclub-cta-glow" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.5)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:p-12">
         <div>
-          <p className="section-eyebrow">Liên hệ tư vấn</p>
-          <h2 className="barclub-section-title mt-4 text-white">Bạn có một sự kiện cần truyền thông bài bản hơn?</h2>
+          <p className="section-eyebrow">Trao đổi dự án</p>
+          <h2 className="barclub-section-title mt-4 text-white">Bạn có một sự kiện cần được truyền thông bài bản hơn?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
-            Trao đổi với DST để lên hướng fanpage, poster, recap, video và ads phù hợp với lịch sự kiện của bạn.
+            Trao đổi với DST để lên hướng fanpage, poster, recap, video và ads phù hợp với lịch sự kiện, phong cách thương hiệu và ngân sách của bạn.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
-              Nhận đề xuất nightlife
+              Nhận đề xuất truyền thông
               <Phone className="h-4 w-4" aria-hidden="true" />
             </a>
             <Link to="/" className="ghost-button">

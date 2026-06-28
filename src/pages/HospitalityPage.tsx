@@ -254,7 +254,7 @@ function HospitalityHero() {
             </a>
           </div>
           <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
-            {["Website & SEO", "Social content", "Video / Reels"].map((item) => (
+            {["Website & SEO", "Social content", "Video ngắn"].map((item) => (
               <span key={item} className="rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-black text-white/78 backdrop-blur">
                 {item}
               </span>
@@ -270,8 +270,8 @@ function ProblemsSection() {
   return (
     <section id="hospitality-problems" className="hospitality-section bg-[#050707] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <HospitalityHeading eyebrow="Bài toán hospitality" title="Khách thường đánh giá trải nghiệm trước khi họ đặt bàn, đặt phòng hoặc ghé thăm">
-          Nếu hình ảnh rời rạc, fanpage thiếu nhịp và website chưa rõ thông tin, thương hiệu dễ mất cơ hội ngay từ điểm chạm đầu tiên.
+        <HospitalityHeading eyebrow="Bài toán hospitality" title="Khách thường cảm nhận thương hiệu trước khi họ bước vào cửa">
+          Nếu hình ảnh rời rạc, fanpage thiếu nhịp và website chưa rõ thông tin, thương hiệu dễ mất điểm ngay từ điểm chạm đầu tiên.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {hospitalityProblems.map((problem, index) => {
@@ -295,7 +295,7 @@ function ServicesSection() {
     <section id="hospitality-solutions" className="hospitality-section bg-[#080706] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <HospitalityHeading eyebrow="Dịch vụ dành cho Nhà hàng / Khách sạn" title="Hình ảnh, nội dung, website và ads cần kể cùng một câu chuyện">
-          DST triển khai fanpage, video ngắn, thiết kế, website và quảng cáo để khách thấy thương hiệu sạch, rõ và đáng tin hơn.
+          DST triển khai fanpage, video ngắn, thiết kế, website và ads để khách thấy thương hiệu sạch, rõ và đáng tin hơn.
         </HospitalityHeading>
         <div className="hospitality-card-grid">
           {hospitalityServiceCards.map((service, index) => {
@@ -328,7 +328,7 @@ function PortfolioSection() {
     <section id="hospitality-projects" className="hospitality-section bg-[#050707] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <HospitalityHeading eyebrow="Portfolio hospitality" title="Dự án thật từ nhà hàng, cafe, khách sạn đến trung tâm sự kiện">
-          Mỗi dự án thể hiện một nhu cầu khác nhau: hình ảnh không gian, visual món ăn, fanpage, media, quảng cáo hoặc truyền thông sự kiện.
+          Mỗi dự án thể hiện một nhu cầu khác nhau: hình ảnh không gian, visual món ăn, fanpage, media, ads hoặc truyền thông sự kiện.
         </HospitalityHeading>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {hospitalityProjects.map((project) => (
@@ -364,7 +364,7 @@ function GoalsSection() {
     <section id="hospitality-goals" className="hospitality-section bg-[#080706] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <HospitalityHeading eyebrow="Giải pháp theo mục tiêu" title="Không phải thương hiệu nào cũng cần cùng một gói truyền thông">
-          Có nơi cần ảnh không gian, có nơi cần video món ăn, có nơi cần website, fanpage và ads đi cùng nhau.
+          Có nơi cần ảnh không gian, có nơi cần video món ăn, có nơi cần website, fanpage và ads đi cùng nhau để tạo cảm giác tin cậy hơn.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {hospitalityGoals.map((goal, index) => {
@@ -387,7 +387,7 @@ function ProcessSection() {
   return (
     <section id="hospitality-process" className="hospitality-section bg-[#050707] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <HospitalityHeading eyebrow="Quy trình triển khai" title="Từ cảm giác thương hiệu đến nội dung có thể đăng, chạy và đo lường">
+        <HospitalityHeading eyebrow="Quy trình triển khai" title="Từ cảm giác thương hiệu đến nội dung có thể đăng và chạy">
           Quy trình ngắn, dễ duyệt và phù hợp với các mô hình dịch vụ cần triển khai đều theo tháng.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -434,14 +434,14 @@ function FinalContactSection() {
       <div className="hospitality-cta-glow" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:p-12">
         <div>
-          <p className="section-eyebrow">Liên hệ tư vấn</p>
-          <h2 className="hospitality-section-title mt-4 text-white">Bạn muốn hình ảnh hospitality của mình tạo cảm giác tin cậy hơn?</h2>
+          <p className="section-eyebrow">Trao đổi dự án</p>
+          <h2 className="hospitality-section-title mt-4 text-white">Bạn muốn hình ảnh hospitality của mình chỉn chu và đáng tin hơn?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
-            Trao đổi với DST để chọn hướng website, fanpage, video, hình ảnh và quảng cáo phù hợp với mô hình của bạn.
+            Trao đổi với DST để chọn hướng website, fanpage, video, hình ảnh và ads phù hợp với mô hình, tệp khách và ngân sách của bạn.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
-              Nhận tư vấn hình ảnh
+              Bắt đầu xây dựng hình ảnh thương hiệu
               <Phone className="h-4 w-4" aria-hidden="true" />
             </a>
             <Link to="/" className="ghost-button">
