@@ -1,0 +1,82 @@
+[
+  {
+    "file": "/assets/showcase/valley-beach-club-hero.webp",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 68,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-68.png",
+    "width": 1800,
+    "height": 1168,
+    "confidence": "high",
+    "note": "Nguồn PDF trang này rộng 1305px; crop chọn phần sân khấu ít chữ nhất và upscale cho hero."
+  },
+  {
+    "file": "/assets/showcase/cana-beer-showcase.webp",
+    "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    "page": 4,
+    "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-04.png",
+    "width": 1920,
+    "height": 984,
+    "confidence": "high",
+    "note": "WebP quality 96 từ PDF render scale cao."
+  },
+  {
+    "file": "/assets/showcase/ho-co-tien-showcase.webp",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 70,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
+    "width": 1400,
+    "height": 1150,
+    "confidence": "high",
+    "note": "Nguồn PDF trang này rộng 1305px nên ảnh card được giữ ở mức crop rõ nhất."
+  },
+  {
+    "file": "/assets/showcase/birds-nest-cafe-showcase.webp",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 70,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
+    "width": 1400,
+    "height": 1150,
+    "confidence": "high",
+    "note": "Nguồn PDF trang này rộng 1305px nên ảnh card được giữ ở mức crop rõ nhất."
+  },
+  {
+    "file": "/assets/showcase/cabi-beach-showcase.webp",
+    "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    "page": 17,
+    "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-17.png",
+    "width": 1920,
+    "height": 1010,
+    "confidence": "high",
+    "note": "WebP quality 96 từ PDF render scale cao."
+  },
+  {
+    "file": "/assets/showcase/grand-view-palace-showcase.webp",
+    "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    "page": 20,
+    "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-20.png",
+    "width": 1800,
+    "height": 1026,
+    "confidence": "high",
+    "note": "WebP quality 96 từ PDF render scale cao."
+  },
+  {
+    "file": "/assets/showcase/diamond-palace-showcase.webp",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 71,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-71.png",
+    "width": 1600,
+    "height": 898,
+    "confidence": "high",
+    "note": "Nguồn PDF trang này rộng 1305px nên có upscale nhẹ."
+  },
+  {
+    "file": "/assets/showcase/service-collage-showcase.webp",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 8,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-08.png",
+    "width": 1600,
+    "height": 1132,
+    "confidence": "high",
+    "note": "Nguồn PDF trang này rộng 1305px nên có upscale nhẹ."
+  }
+]

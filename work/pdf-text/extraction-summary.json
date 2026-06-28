@@ -1,0 +1,2154 @@
+{
+  "extraction": [
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "pageCount": 28,
+      "pages": [
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 1,
+          "textFile": "work/pdf-text/bao-gia-page-01.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-01.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 2,
+          "textFile": "work/pdf-text/bao-gia-page-02.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-02.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 3,
+          "textFile": "work/pdf-text/bao-gia-page-03.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-03.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 4,
+          "textFile": "work/pdf-text/bao-gia-page-04.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-04.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 5,
+          "textFile": "work/pdf-text/bao-gia-page-05.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-05.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 6,
+          "textFile": "work/pdf-text/bao-gia-page-06.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-06.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 7,
+          "textFile": "work/pdf-text/bao-gia-page-07.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-07.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 8,
+          "textFile": "work/pdf-text/bao-gia-page-08.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-08.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 9,
+          "textFile": "work/pdf-text/bao-gia-page-09.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-09.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 10,
+          "textFile": "work/pdf-text/bao-gia-page-10.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-10.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 11,
+          "textFile": "work/pdf-text/bao-gia-page-11.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-11.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 12,
+          "textFile": "work/pdf-text/bao-gia-page-12.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-12.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 13,
+          "textFile": "work/pdf-text/bao-gia-page-13.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-13.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 14,
+          "textFile": "work/pdf-text/bao-gia-page-14.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-14.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 15,
+          "textFile": "work/pdf-text/bao-gia-page-15.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-15.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 16,
+          "textFile": "work/pdf-text/bao-gia-page-16.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-16.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 17,
+          "textFile": "work/pdf-text/bao-gia-page-17.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-17.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 18,
+          "textFile": "work/pdf-text/bao-gia-page-18.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-18.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 19,
+          "textFile": "work/pdf-text/bao-gia-page-19.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-19.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 20,
+          "textFile": "work/pdf-text/bao-gia-page-20.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-20.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 21,
+          "textFile": "work/pdf-text/bao-gia-page-21.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-21.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 22,
+          "textFile": "work/pdf-text/bao-gia-page-22.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-22.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 23,
+          "textFile": "work/pdf-text/bao-gia-page-23.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-23.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 24,
+          "textFile": "work/pdf-text/bao-gia-page-24.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-24.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 25,
+          "textFile": "work/pdf-text/bao-gia-page-25.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-25.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 26,
+          "textFile": "work/pdf-text/bao-gia-page-26.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-26.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 27,
+          "textFile": "work/pdf-text/bao-gia-page-27.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-27.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "BAO GIA.pdf",
+          "page": 28,
+          "textFile": "work/pdf-text/bao-gia-page-28.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-page-28.png",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "pageCount": 38,
+      "pages": [
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 1,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-01.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-01.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 2,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-02.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-02.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 3,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-03.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-03.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 4,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-04.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-04.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 5,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-05.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-05.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 6,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-06.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-06.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 7,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-07.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-07.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 8,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-08.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-08.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 9,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-09.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-09.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 10,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-10.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-10.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 11,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-11.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-11.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 12,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-12.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-12.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 13,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-13.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-13.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 14,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-14.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-14.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 15,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-15.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-15.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 16,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-16.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-16.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 17,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-17.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-17.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 18,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-18.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-18.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 19,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-19.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-19.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 20,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-20.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-20.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 21,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-21.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-21.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 22,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-22.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-22.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 23,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-23.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-23.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 24,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-24.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-24.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 25,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-25.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-25.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 26,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-26.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-26.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 27,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-27.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-27.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 28,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-28.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-28.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 29,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-29.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-29.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 30,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-30.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-30.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 31,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-31.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-31.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 32,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-32.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-32.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 33,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-33.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-33.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 34,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-34.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-34.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 35,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-35.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-35.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 36,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-36.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-36.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 37,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-37.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-37.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+          "page": 38,
+          "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-38.txt",
+          "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-38.png",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "pageCount": 76,
+      "pages": [
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 1,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-01.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-01.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 2,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-02.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-02.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 3,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-03.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-03.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 4,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-04.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-04.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 5,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-05.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-05.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 6,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-06.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-06.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 7,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-07.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-07.png",
+          "confidence": "medium"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 8,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-08.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-08.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 9,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-09.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-09.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 10,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-10.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-10.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 11,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-11.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-11.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 12,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-12.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-12.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 13,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-13.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-13.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 14,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-14.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-14.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 15,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-15.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-15.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 16,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-16.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-16.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 17,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-17.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-17.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 18,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-18.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-18.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 19,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-19.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-19.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 20,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-20.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-20.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 21,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-21.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-21.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 22,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-22.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-22.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 23,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-23.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-23.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 24,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-24.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-24.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 25,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-25.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-25.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 26,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-26.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-26.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 27,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-27.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-27.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 28,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-28.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-28.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 29,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-29.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-29.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 30,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-30.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-30.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 31,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-31.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-31.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 32,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-32.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-32.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 33,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-33.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-33.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 34,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-34.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-34.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 35,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-35.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-35.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 36,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-36.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-36.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 37,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-37.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-37.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 38,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-38.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-38.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 39,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-39.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-39.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 40,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-40.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-40.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 41,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-41.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-41.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 42,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-42.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-42.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 43,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-43.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-43.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 44,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-44.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-44.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 45,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-45.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-45.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 46,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-46.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-46.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 47,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-47.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-47.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 48,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-48.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-48.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 49,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-49.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-49.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 50,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-50.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-50.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 51,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-51.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-51.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 52,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-52.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-52.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 53,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-53.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-53.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 54,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-54.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-54.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 55,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-55.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-55.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 56,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-56.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-56.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 57,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-57.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-57.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 58,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-58.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-58.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 59,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-59.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-59.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 60,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-60.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-60.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 61,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-61.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-61.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 62,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-62.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-62.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 63,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-63.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-63.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 64,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-64.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-64.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 65,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-65.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-65.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 66,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-66.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-66.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 67,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-67.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-67.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 68,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-68.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-68.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 69,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-69.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-69.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 70,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-70.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 71,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-71.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-71.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 72,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-72.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-72.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 73,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-73.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-73.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 74,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-74.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-74.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 75,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-75.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-75.png",
+          "confidence": "high"
+        },
+        {
+          "sourceFile": "HSNL CTY DST.pdf",
+          "page": 76,
+          "textFile": "work/pdf-text/hsnl-cty-dst-page-76.txt",
+          "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-76.png",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 1,
+      "textFile": "work/pdf-text/bao-gia-page-01.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-01.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 2,
+      "textFile": "work/pdf-text/bao-gia-page-02.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-02.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 3,
+      "textFile": "work/pdf-text/bao-gia-page-03.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-03.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 4,
+      "textFile": "work/pdf-text/bao-gia-page-04.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-04.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 5,
+      "textFile": "work/pdf-text/bao-gia-page-05.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-05.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 6,
+      "textFile": "work/pdf-text/bao-gia-page-06.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-06.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 7,
+      "textFile": "work/pdf-text/bao-gia-page-07.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-07.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 8,
+      "textFile": "work/pdf-text/bao-gia-page-08.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-08.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 9,
+      "textFile": "work/pdf-text/bao-gia-page-09.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-09.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 10,
+      "textFile": "work/pdf-text/bao-gia-page-10.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-10.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 11,
+      "textFile": "work/pdf-text/bao-gia-page-11.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-11.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 12,
+      "textFile": "work/pdf-text/bao-gia-page-12.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-12.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 13,
+      "textFile": "work/pdf-text/bao-gia-page-13.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-13.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 14,
+      "textFile": "work/pdf-text/bao-gia-page-14.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-14.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 15,
+      "textFile": "work/pdf-text/bao-gia-page-15.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-15.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 16,
+      "textFile": "work/pdf-text/bao-gia-page-16.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-16.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 17,
+      "textFile": "work/pdf-text/bao-gia-page-17.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-17.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 18,
+      "textFile": "work/pdf-text/bao-gia-page-18.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-18.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 19,
+      "textFile": "work/pdf-text/bao-gia-page-19.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-19.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 20,
+      "textFile": "work/pdf-text/bao-gia-page-20.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-20.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 21,
+      "textFile": "work/pdf-text/bao-gia-page-21.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-21.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 22,
+      "textFile": "work/pdf-text/bao-gia-page-22.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-22.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 23,
+      "textFile": "work/pdf-text/bao-gia-page-23.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-23.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 24,
+      "textFile": "work/pdf-text/bao-gia-page-24.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-24.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 25,
+      "textFile": "work/pdf-text/bao-gia-page-25.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-25.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 26,
+      "textFile": "work/pdf-text/bao-gia-page-26.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-26.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 27,
+      "textFile": "work/pdf-text/bao-gia-page-27.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-27.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "BAO GIA.pdf",
+      "page": 28,
+      "textFile": "work/pdf-text/bao-gia-page-28.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-page-28.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 1,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-01.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-01.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 2,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-02.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-02.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 3,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-03.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-03.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 4,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-04.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-04.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 5,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-05.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-05.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 6,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-06.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-06.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 7,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-07.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-07.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 8,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-08.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-08.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 9,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-09.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-09.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 10,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-10.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-10.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 11,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-11.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-11.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 12,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-12.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-12.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 13,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-13.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-13.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 14,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-14.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-14.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 15,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-15.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-15.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 16,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-16.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-16.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 17,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-17.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-17.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 18,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-18.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-18.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 19,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-19.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-19.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 20,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-20.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-20.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 21,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-21.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-21.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 22,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-22.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-22.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 23,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-23.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-23.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 24,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-24.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-24.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 25,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-25.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-25.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 26,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-26.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-26.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 27,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-27.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-27.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 28,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-28.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-28.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 29,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-29.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-29.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 30,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-30.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-30.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 31,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-31.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-31.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 32,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-32.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-32.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 33,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-33.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-33.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 34,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-34.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-34.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 35,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-35.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-35.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 36,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-36.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-36.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 37,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-37.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-37.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+      "page": 38,
+      "textFile": "work/pdf-text/bao-gia-tt-su-kien-nha-hang-khach-san-page-38.txt",
+      "imageFile": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-38.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 1,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-01.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-01.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 2,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-02.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-02.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 3,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-03.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-03.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 4,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-04.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-04.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 5,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-05.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-05.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 6,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-06.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-06.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 7,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-07.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-07.png",
+      "confidence": "medium",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 8,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-08.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-08.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 9,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-09.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-09.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 10,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-10.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-10.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 11,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-11.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-11.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 12,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-12.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-12.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 13,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-13.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-13.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 14,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-14.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-14.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 15,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-15.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-15.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 16,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-16.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-16.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 17,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-17.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-17.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 18,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-18.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-18.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 19,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-19.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-19.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 20,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-20.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-20.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 21,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-21.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-21.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 22,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-22.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-22.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 23,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-23.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-23.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 24,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-24.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-24.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 25,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-25.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-25.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 26,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-26.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-26.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 27,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-27.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-27.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 28,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-28.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-28.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 29,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-29.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-29.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 30,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-30.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-30.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 31,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-31.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-31.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 32,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-32.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-32.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 33,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-33.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-33.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 34,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-34.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-34.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 35,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-35.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-35.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 36,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-36.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-36.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 37,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-37.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-37.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 38,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-38.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-38.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 39,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-39.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-39.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 40,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-40.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-40.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 41,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-41.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-41.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 42,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-42.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-42.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 43,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-43.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-43.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 44,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-44.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-44.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 45,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-45.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-45.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 46,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-46.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-46.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 47,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-47.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-47.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 48,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-48.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-48.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 49,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-49.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-49.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 50,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-50.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-50.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 51,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-51.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-51.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 52,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-52.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-52.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 53,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-53.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-53.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 54,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-54.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-54.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 55,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-55.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-55.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 56,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-56.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-56.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 57,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-57.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-57.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 58,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-58.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-58.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 59,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-59.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-59.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 60,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-60.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-60.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 61,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-61.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-61.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 62,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-62.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-62.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 63,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-63.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-63.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 64,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-64.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-64.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 65,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-65.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-65.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 66,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-66.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-66.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 67,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-67.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-67.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 68,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-68.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-68.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 69,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-69.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-69.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 70,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-70.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 71,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-71.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-71.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 72,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-72.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-72.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 73,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-73.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-73.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 74,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-74.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-74.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 75,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-75.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-75.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    },
+    {
+      "sourceFile": "HSNL CTY DST.pdf",
+      "page": 76,
+      "textFile": "work/pdf-text/hsnl-cty-dst-page-76.txt",
+      "imageFile": "/assets/pdf-images/hsnl-cty-dst-page-76.png",
+      "confidence": "high",
+      "kind": "rendered-pdf-page"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "file": "/assets/case-studies/cana-beer-01.jpg",
+    "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    "page": 4,
+    "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-04.png",
+    "confidence": "high"
+  },
+  {
+    "file": "/assets/case-studies/ho-co-tien-01.jpg",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 70,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
+    "confidence": "high"
+  },
+  {
+    "file": "/assets/case-studies/birds-nest-cafe-01.jpg",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 70,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
+    "confidence": "high"
+  },
+  {
+    "file": "/assets/case-studies/cabi-beach-01.jpg",
+    "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    "page": 17,
+    "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-17.png",
+    "confidence": "high"
+  },
+  {
+    "file": "/assets/case-studies/grand-view-palace-01.jpg",
+    "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    "page": 20,
+    "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-20.png",
+    "confidence": "high"
+  },
+  {
+    "file": "/assets/case-studies/valley-beach-club-01.jpg",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 68,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-68.png",
+    "confidence": "high"
+  },
+  {
+    "file": "/assets/case-studies/valley-beach-club-02.jpg",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 68,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-68.png",
+    "confidence": "high"
+  },
+  {
+    "file": "/assets/case-studies/client-grid-01.jpg",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 72,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-72.png",
+    "confidence": "high"
+  },
+  {
+    "file": "/assets/case-studies/services-overview-01.jpg",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 8,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-08.png",
+    "confidence": "high"
+  }
+]
