@@ -22,6 +22,8 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionIcon } from "../components/MotionIcon";
+import type { MotionIconName } from "../components/MotionIcon";
 import {
   hospitalityContact,
   hospitalityGoals,
@@ -36,9 +38,11 @@ import { assetPath } from "../lib/assetPath";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const serviceIcons = [Megaphone, Clapperboard, Image, Laptop];
-const problemIcons = [Utensils, Coffee, Hotel, Zap];
-const goalIcons = [Sparkles, CalendarCheck, Megaphone, BadgeCheck, Search];
+const serviceIcons = ["content", "video", "design", "website"] satisfies MotionIconName[];
+const problemIcons = ["hospitality", "booking", "website", "analytics"] satisfies MotionIconName[];
+const goalIcons = ["branding", "booking", "ads", "hospitality", "analytics"] satisfies MotionIconName[];
+const processIcons = ["analytics", "booking", "design", "process-report"] satisfies MotionIconName[];
+const packageIcons = ["hospitality", "booking", "website"] satisfies MotionIconName[];
 
 function useHospitalityMotion() {
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -203,7 +207,7 @@ function HospitalityHeading({
   children?: ReactNode;
 }) {
   return (
-    <div className="hospitality-reveal mx-auto mb-12 max-w-3xl text-center" data-hospitality-reveal>
+    <div className="hospitality-reveal mx-auto mb-7 max-w-3xl text-center" data-hospitality-reveal>
       <p className="section-eyebrow">{eyebrow}</p>
       <h2 className="hospitality-section-title mt-3 text-white">{title}</h2>
       {children ? <p className="mt-4 text-base leading-8 text-white/68">{children}</p> : null}
@@ -216,7 +220,7 @@ function HospitalityHero() {
   const isUsingFallback = videoSrc === hospitalityHero.fallbackVideo;
 
   return (
-    <section className="hospitality-hero relative min-h-[100svh] overflow-hidden bg-[#060504] text-white">
+    <section className="hospitality-hero relative min-h-[78svh] overflow-hidden bg-[#060504] text-white">
       <video
         className="hospitality-video"
         src={assetPath(videoSrc)}
@@ -238,7 +242,7 @@ function HospitalityHero() {
       <div className="hospitality-warm-glow" aria-hidden="true" />
       <div className="hospitality-bottom-gradient" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center px-4 py-28 sm:px-6 lg:px-8">
+      <div className="subpage-hero-shell relative z-10 mx-auto flex min-h-[78svh] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-8">
         <div className="hospitality-hero-content max-w-4xl">
           <p className="section-eyebrow">{hospitalityHero.eyebrow}</p>
           <h1 className="hospitality-hero-title mt-5 font-black text-white">{hospitalityHero.title}</h1>
@@ -253,7 +257,7 @@ function HospitalityHero() {
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
-          <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
+          <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-3">
             {["Website & SEO", "Social content", "Video ngắn"].map((item) => (
               <span key={item} className="rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-black text-white/78 backdrop-blur">
                 {item}
@@ -275,11 +279,13 @@ function ProblemsSection() {
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {hospitalityProblems.map((problem, index) => {
-            const Icon = problemIcons[index] ?? Sparkles;
+            const iconName = problemIcons[index] ?? "hospitality";
             return (
               <article key={problem.title} className="hospitality-card hospitality-problem-card" data-hospitality-reveal>
-                <Icon className="h-6 w-6 text-dst-gold" aria-hidden="true" />
-                <h3 className="mt-8 text-xl font-black leading-tight text-white">{problem.title}</h3>
+                <span className="motion-icon-badge hospitality-motion-icon">
+                  <MotionIcon name={iconName} variant="warm" title={problem.title} />
+                </span>
+                <h3 className="mt-6 text-xl font-black leading-tight text-white">{problem.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-white/64">{problem.description}</p>
               </article>
             );
@@ -299,11 +305,11 @@ function ServicesSection() {
         </HospitalityHeading>
         <div className="hospitality-card-grid">
           {hospitalityServiceCards.map((service, index) => {
-            const Icon = serviceIcons[index] ?? Sparkles;
+            const iconName = serviceIcons[index] ?? "hospitality";
             return (
               <article key={service.title} className="hospitality-card hospitality-service-card group" data-hospitality-reveal>
                 <div className="hospitality-icon">
-                  <Icon className="h-6 w-6" aria-hidden="true" />
+                  <MotionIcon name={iconName} size="clamp(4.3rem, 5.4vw, 5.55rem)" variant="warm" title={service.title} />
                 </div>
                 <h3 className="mt-7 text-2xl font-black leading-tight text-white">{service.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-white/64">{service.summary}</p>
@@ -368,11 +374,13 @@ function GoalsSection() {
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {hospitalityGoals.map((goal, index) => {
-            const Icon = goalIcons[index] ?? BadgeCheck;
+            const iconName = goalIcons[index] ?? "hospitality";
             return (
               <article key={goal.title} className="hospitality-card hospitality-goal-card" data-hospitality-reveal>
-                <Icon className="h-5 w-5 text-dst-gold" aria-hidden="true" />
-                <h3 className="mt-8 text-lg font-black leading-tight text-white">{goal.title}</h3>
+                <span className="motion-icon-badge hospitality-motion-icon">
+                  <MotionIcon name={iconName} variant="warm" title={goal.title} />
+                </span>
+                <h3 className="mt-6 text-lg font-black leading-tight text-white">{goal.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-white/62">{goal.description}</p>
               </article>
             );
@@ -391,10 +399,16 @@ function ProcessSection() {
           Quy trình ngắn, dễ duyệt và phù hợp với các mô hình dịch vụ cần triển khai đều theo tháng.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {hospitalityProcess.map((step) => (
+          {hospitalityProcess.map((step, index) => (
             <article key={step.step} className="hospitality-card hospitality-process-card" data-hospitality-reveal>
-              <span className="text-sm font-black text-dst-gold">{step.step}</span>
-              <h3 className="mt-10 text-xl font-black leading-tight text-white">{step.title}</h3>
+              <span className="motion-icon-badge hospitality-motion-icon">
+                {(() => {
+                  const iconName = processIcons[index] ?? "process";
+                  return <MotionIcon name={iconName} variant="warm" title={step.title} />;
+                })()}
+              </span>
+              <span className="mt-5 block text-sm font-black text-dst-gold">{step.step}</span>
+              <h3 className="mt-4 text-xl font-black leading-tight text-white">{step.title}</h3>
               <p className="mt-4 text-sm leading-7 text-white/62">{step.description}</p>
             </article>
           ))}
@@ -412,8 +426,14 @@ function PackagesSection() {
           Một số hạng mục có giá trong tài liệu, các hạng mục còn lại sẽ tư vấn theo nhu cầu thực tế và quy mô triển khai.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {hospitalityPackages.map((item) => (
+          {hospitalityPackages.map((item, index) => (
             <article key={item.title} className="hospitality-card hospitality-package-card" data-hospitality-reveal>
+              <span className="motion-icon-badge hospitality-motion-icon">
+                {(() => {
+                  const iconName = packageIcons[index] ?? "hospitality";
+                  return <MotionIcon name={iconName} variant="warm" title={item.title} />;
+                })()}
+              </span>
               <p className="text-xs font-black uppercase text-dst-gold">Hospitality</p>
               <h3 className="mt-4 text-xl font-black leading-tight text-white">{item.title}</h3>
               <p className="mt-5 text-2xl font-black text-white">{item.price}</p>
@@ -432,7 +452,7 @@ function FinalContactSection() {
   return (
     <section id="hospitality-contact" className="hospitality-section relative overflow-hidden bg-[#050707] px-4 py-24 text-white sm:px-6 lg:px-8" data-hospitality-reveal>
       <div className="hospitality-cta-glow" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:p-12">
+      <div className="relative mx-auto grid max-w-7xl gap-6 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:gap-8 lg:p-10">
         <div>
           <p className="section-eyebrow">Trao đổi dự án</p>
           <h2 className="hospitality-section-title mt-4 text-white">Bạn muốn hình ảnh hospitality của mình chỉn chu và đáng tin hơn?</h2>
@@ -442,7 +462,7 @@ function FinalContactSection() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
               Bắt đầu xây dựng hình ảnh thương hiệu
-              <Phone className="h-4 w-4" aria-hidden="true" />
+              <MotionIcon name="contact" size="1.45rem" variant="warm" title="Liên hệ" />
             </a>
             <Link to="/" className="ghost-button">
               Quay về trang chủ
@@ -452,15 +472,15 @@ function FinalContactSection() {
         </div>
         <div className="grid gap-3">
           <a href={`tel:${phoneHref}`} className="hospitality-contact-tile">
-            <Phone className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="contact" size="1.65rem" variant="warm" title="Điện thoại" />
             <span>{hospitalityContact.phone}</span>
           </a>
           <a href={`mailto:${hospitalityContact.email}`} className="hospitality-contact-tile">
-            <Mail className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="social" size="1.65rem" variant="warm" title="Email" />
             <span>{hospitalityContact.email}</span>
           </a>
           <div className="hospitality-contact-tile">
-            <BadgeCheck className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="website" size="1.65rem" variant="warm" title="Website" />
             <span>{hospitalityContact.website}</span>
           </div>
         </div>

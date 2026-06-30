@@ -24,6 +24,8 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionIcon } from "../components/MotionIcon";
+import type { MotionIconName } from "../components/MotionIcon";
 import {
   featuredServiceProjects,
   industryLinks,
@@ -39,8 +41,12 @@ import { assetPath, hashRouteHref } from "../lib/assetPath";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const serviceIcons = [Laptop, Megaphone, Video, Palette, Zap, Layers3];
-const processIcons = [MessageCircle, Target, FileText, Clapperboard, ChartNoAxesCombined];
+const serviceIcons = ["website", "content", "video", "design", "ads", "process-launch"] satisfies MotionIconName[];
+const overviewIcons = ["branding", "target", "analytics"] satisfies MotionIconName[];
+const pricingIcons = ["ads", "video", "design", "analytics", "website", "branding", "process-launch"] satisfies MotionIconName[];
+const processIcons = ["process-consult", "target", "process-plan", "process-launch", "process-report"] satisfies MotionIconName[];
+const whyIcons = ["branding", "target", "website", "design", "analytics"] satisfies MotionIconName[];
+const serviceVariants = ["gold", "cyan", "warm"] as const;
 
 function useServicesMotion() {
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -206,7 +212,7 @@ function ServicesHeading({
   children?: ReactNode;
 }) {
   return (
-    <div className="services-reveal mx-auto mb-12 max-w-3xl text-center" data-services-reveal>
+    <div className="services-reveal mx-auto mb-7 max-w-3xl text-center" data-services-reveal>
       <p className="section-eyebrow">{eyebrow}</p>
       <h2 className="services-section-title mt-3 text-white">{title}</h2>
       {children ? <p className="mt-4 text-base leading-8 text-white/68">{children}</p> : null}
@@ -219,7 +225,7 @@ function ServicesHero() {
   const isUsingFallback = videoSrc === servicesHero.fallbackVideo;
 
   return (
-    <section className="services-hero relative min-h-[100svh] overflow-hidden bg-[#050707] text-white">
+    <section className="services-hero relative min-h-[78svh] overflow-hidden bg-[#050707] text-white">
       <video
         className="services-video"
         src={assetPath(videoSrc)}
@@ -241,7 +247,7 @@ function ServicesHero() {
       <div className="services-grid-overlay" aria-hidden="true" />
       <div className="services-bottom-gradient" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center px-4 py-28 sm:px-6 lg:px-8">
+      <div className="subpage-hero-shell relative z-10 mx-auto flex min-h-[78svh] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-8">
         <div className="services-hero-content max-w-5xl">
           <p className="section-eyebrow">{servicesHero.eyebrow}</p>
           <h1 className="services-hero-title mt-5 font-black text-white">{servicesHero.title}</h1>
@@ -256,7 +262,7 @@ function ServicesHero() {
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
-          <div className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-3">
+          <div className="mt-7 grid max-w-3xl gap-3 sm:grid-cols-3">
             {["Website", "Media", "Marketing"].map((item) => (
               <span key={item} className="rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-black text-white/78 backdrop-blur">
                 {item}
@@ -279,8 +285,14 @@ function OverviewSection() {
         <div className="grid gap-4 md:grid-cols-3">
           {servicesOverview.map((item, index) => (
             <article key={item.title} className="services-card services-info-card" data-services-reveal>
-              <span className="text-sm font-black text-dst-gold">0{index + 1}</span>
-              <h3 className="mt-8 text-xl font-black leading-tight text-white">{item.title}</h3>
+              <span className="motion-icon-badge services-motion-icon">
+                {(() => {
+                  const iconName = overviewIcons[index] ?? "branding";
+                  return <MotionIcon name={iconName} title={item.title} />;
+                })()}
+              </span>
+              <span className="mt-5 block text-sm font-black text-dst-gold">0{index + 1}</span>
+              <h3 className="mt-4 text-xl font-black leading-tight text-white">{item.title}</h3>
               <p className="mt-4 text-sm leading-7 text-white/64">{item.description}</p>
             </article>
           ))}
@@ -299,11 +311,16 @@ function ServiceGroupsSection() {
         </ServicesHeading>
         <div className="services-card-grid">
           {serviceGroups.map((group, index) => {
-            const Icon = serviceIcons[index] ?? Boxes;
+            const iconName = serviceIcons[index] ?? "branding";
             return (
               <article key={group.title} className="services-card services-service-card group" data-services-reveal>
                 <div className="services-icon">
-                  <Icon className="h-6 w-6" aria-hidden="true" />
+                  <MotionIcon
+                    name={iconName}
+                    size="clamp(4.3rem, 5.4vw, 5.55rem)"
+                    variant={serviceVariants[index % serviceVariants.length]}
+                    title={group.title}
+                  />
                 </div>
                 <h3 className="mt-7 text-2xl font-black leading-tight text-white">{group.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-white/64">{group.summary}</p>
@@ -335,8 +352,14 @@ function PricingSection() {
           Hạng mục có giá được giữ theo dữ liệu thật. Hạng mục cần tùy chỉnh sẽ được tư vấn theo mục tiêu, quy mô và kênh triển khai.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {servicePricing.map((item) => (
+          {servicePricing.map((item, index) => (
             <article key={`${item.category}-${item.item}`} className="services-card services-price-card" data-services-reveal>
+              <span className="motion-icon-badge services-motion-icon">
+                {(() => {
+                  const iconName = pricingIcons[index] ?? "branding";
+                  return <MotionIcon name={iconName} title={item.category} />;
+                })()}
+              </span>
               <p className="text-xs font-black uppercase text-dst-gold">{item.category}</p>
               <h3 className="mt-4 text-xl font-black leading-tight text-white">{item.item}</h3>
               <p className="mt-5 text-2xl font-black text-white">{item.price}</p>
@@ -395,11 +418,13 @@ function ProcessSection() {
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {serviceProcess.map((step, index) => {
-            const Icon = processIcons[index] ?? BadgeCheck;
+            const iconName = processIcons[index] ?? "process";
             return (
               <article key={step.step} className="services-card services-process-card" data-services-reveal>
-                <Icon className="h-5 w-5 text-dst-gold" aria-hidden="true" />
-                <span className="mt-8 block text-sm font-black text-dst-gold">{step.step}</span>
+                <span className="motion-icon-badge services-motion-icon">
+                  <MotionIcon name={iconName} title={step.title} />
+                </span>
+                <span className="mt-5 block text-sm font-black text-dst-gold">{step.step}</span>
                 <h3 className="mt-4 text-lg font-black leading-tight text-white">{step.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-white/62">{step.description}</p>
               </article>
@@ -450,7 +475,7 @@ function ProjectsSection() {
 function WhyChooseSection() {
   return (
     <section className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-8">
         <div className="services-reveal" data-services-reveal>
           <p className="section-eyebrow">Vì sao chọn DST Group</p>
           <h2 className="services-section-title mt-3 text-white">Một đầu mối giúp thương hiệu không phải chia nhỏ việc cho quá nhiều bên</h2>
@@ -459,10 +484,15 @@ function WhyChooseSection() {
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          {whyChooseServices.map((item) => (
+          {whyChooseServices.map((item, index) => (
             <article key={item} className="services-card services-why-card" data-services-reveal>
-              <BadgeCheck className="h-6 w-6 text-dst-gold" aria-hidden="true" />
-              <p className="mt-8 text-lg font-black leading-7 text-white">{item}</p>
+              <span className="motion-icon-badge services-motion-icon">
+                {(() => {
+                  const iconName = whyIcons[index] ?? "branding";
+                  return <MotionIcon name={iconName} title={item} />;
+                })()}
+              </span>
+              <p className="mt-5 text-lg font-black leading-7 text-white">{item}</p>
             </article>
           ))}
         </div>
@@ -477,7 +507,7 @@ function FinalCtaSection() {
   return (
     <section id="service-contact" className="services-section relative overflow-hidden bg-[#080b0b] px-4 py-24 text-white sm:px-6 lg:px-8" data-services-reveal>
       <div className="services-cta-glow" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:p-12">
+      <div className="relative mx-auto grid max-w-7xl gap-6 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:gap-8 lg:p-10">
         <div>
           <p className="section-eyebrow">Trao đổi với DST Group</p>
           <h2 className="services-section-title mt-4 text-white">Bạn cần biết nên bắt đầu từ website, fanpage, video hay ads?</h2>
@@ -487,7 +517,7 @@ function FinalCtaSection() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
               Nhận tư vấn gói phù hợp
-              <Phone className="h-4 w-4" aria-hidden="true" />
+              <MotionIcon name="contact" size="1.45rem" title="Liên hệ" />
             </a>
             <Link to="/" className="ghost-button">
               Quay về trang chủ
@@ -497,15 +527,15 @@ function FinalCtaSection() {
         </div>
         <div className="grid gap-3">
           <a href={`tel:${phoneHref}`} className="services-contact-tile">
-            <Phone className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="contact" size="1.65rem" title="Điện thoại" />
             <span>{servicesContact.phone}</span>
           </a>
           <a href={`mailto:${servicesContact.email}`} className="services-contact-tile">
-            <Mail className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="social" size="1.65rem" title="Email" />
             <span>{servicesContact.email}</span>
           </a>
           <div className="services-contact-tile">
-            <Search className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="website" size="1.65rem" title="Website" />
             <span>{servicesContact.website}</span>
           </div>
         </div>

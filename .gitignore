@@ -1,6 +1,7 @@
 node_modules/
 dist/
 outputs/
+wordpress-theme-backups/
 
 *.log
 .env

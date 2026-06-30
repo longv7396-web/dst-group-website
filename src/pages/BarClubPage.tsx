@@ -16,6 +16,8 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionIcon } from "../components/MotionIcon";
+import type { MotionIconName } from "../components/MotionIcon";
 import {
   barClubContact,
   barClubHero,
@@ -29,7 +31,10 @@ import { assetPath } from "../lib/assetPath";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const serviceIcons = [Megaphone, Clapperboard, Zap];
+const serviceIcons = ["ads", "video", "process-launch"] satisfies MotionIconName[];
+const problemIcons = ["target", "ads", "video", "analytics"] satisfies MotionIconName[];
+const processIcons = ["process-consult", "process-plan", "studio", "process-report"] satisfies MotionIconName[];
+const packageIcons = ["ads", "video", "analytics", "target"] satisfies MotionIconName[];
 
 function useBarClubMotion() {
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -194,7 +199,7 @@ function BarSectionHeading({
   children?: ReactNode;
 }) {
   return (
-    <div className="bar-reveal mx-auto mb-12 max-w-3xl text-center" data-bar-reveal>
+    <div className="bar-reveal mx-auto mb-7 max-w-3xl text-center" data-bar-reveal>
       <p className="section-eyebrow">{eyebrow}</p>
       <h2 className="barclub-section-title mt-3 text-white">{title}</h2>
       {children ? <p className="mt-4 text-base leading-8 text-white/68">{children}</p> : null}
@@ -207,7 +212,7 @@ function BarClubHero() {
   const isUsingFallback = videoSrc === barClubHero.fallbackVideo;
 
   return (
-    <section className="barclub-hero relative min-h-[100svh] overflow-hidden bg-[#040303] text-white">
+    <section className="barclub-hero relative min-h-[78svh] overflow-hidden bg-[#040303] text-white">
       <video
         className="barclub-video"
         src={assetPath(videoSrc)}
@@ -229,7 +234,7 @@ function BarClubHero() {
       <div className="barclub-stage-grid" aria-hidden="true" />
       <div className="barclub-bottom-gradient" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center px-4 py-28 sm:px-6 lg:px-8">
+      <div className="subpage-hero-shell relative z-10 mx-auto flex min-h-[78svh] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-8">
         <div className="barclub-hero-content max-w-4xl">
           <p className="section-eyebrow">{barClubHero.eyebrow}</p>
           <h1 className="barclub-hero-title mt-5 font-black text-white">{barClubHero.title}</h1>
@@ -244,7 +249,7 @@ function BarClubHero() {
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
-          <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
+          <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-3">
             {["Fanpage", "Line-up / Recap", "Ads theo mục tiêu"].map((item) => (
               <span key={item} className="rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-black text-white/78 backdrop-blur">
                 {item}
@@ -267,8 +272,14 @@ function ProblemsSection() {
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {barClubProblems.map((problem, index) => (
             <article key={problem.title} className="bar-card barclub-card" data-bar-reveal>
-              <span className="text-sm font-black text-dst-gold">0{index + 1}</span>
-              <h3 className="mt-8 text-xl font-black leading-tight text-white">{problem.title}</h3>
+              <span className="motion-icon-badge barclub-motion-icon">
+                {(() => {
+                  const iconName = problemIcons[index] ?? "ads";
+                  return <MotionIcon name={iconName} variant="gold" title={problem.title} />;
+                })()}
+              </span>
+              <span className="mt-5 block text-sm font-black text-dst-gold">0{index + 1}</span>
+              <h3 className="mt-4 text-xl font-black leading-tight text-white">{problem.title}</h3>
               <p className="mt-4 text-sm leading-7 text-white/62">{problem.description}</p>
             </article>
           ))}
@@ -287,11 +298,11 @@ function ServicesSection() {
         </BarSectionHeading>
         <div className="barclub-service-grid">
           {barClubServiceCards.map((service, index) => {
-            const Icon = serviceIcons[index] ?? Target;
+            const iconName = serviceIcons[index] ?? "ads";
             return (
               <article key={service.title} className="bar-card barclub-service-card group" data-bar-reveal>
                 <div className="barclub-icon">
-                  <Icon className="h-6 w-6" aria-hidden="true" />
+                  <MotionIcon name={iconName} size="clamp(4.3rem, 5.4vw, 5.55rem)" variant="gold" title={service.title} />
                 </div>
                 <h3 className="mt-7 text-2xl font-black leading-tight text-white">{service.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-white/64">{service.summary}</p>
@@ -355,10 +366,16 @@ function ProcessSection() {
           Quy trình được giữ ngắn để chủ thương hiệu dễ duyệt line-up, visual, recap và nhịp ads theo từng chương trình.
         </BarSectionHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {barClubProcess.map((step) => (
+          {barClubProcess.map((step, index) => (
             <article key={step.step} className="bar-card barclub-card" data-bar-reveal>
-              <span className="text-sm font-black text-dst-gold">{step.step}</span>
-              <h3 className="mt-10 text-xl font-black leading-tight text-white">{step.title}</h3>
+              <span className="motion-icon-badge barclub-motion-icon">
+                {(() => {
+                  const iconName = processIcons[index] ?? "process";
+                  return <MotionIcon name={iconName} variant="gold" title={step.title} />;
+                })()}
+              </span>
+              <span className="mt-5 block text-sm font-black text-dst-gold">{step.step}</span>
+              <h3 className="mt-4 text-xl font-black leading-tight text-white">{step.title}</h3>
               <p className="mt-4 text-sm leading-7 text-white/62">{step.description}</p>
             </article>
           ))}
@@ -376,8 +393,14 @@ function PackagesSection() {
           Có chương trình cần poster và bài nhắc lịch, có chương trình cần recap, fanpage và ads. DST tư vấn theo lịch diễn và ngân sách thực tế.
         </BarSectionHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {barClubPackages.map((item) => (
+          {barClubPackages.map((item, index) => (
             <article key={item.title} className="bar-card barclub-package-card" data-bar-reveal>
+              <span className="motion-icon-badge barclub-motion-icon">
+                {(() => {
+                  const iconName = packageIcons[index] ?? "ads";
+                  return <MotionIcon name={iconName} variant="gold" title={item.title} />;
+                })()}
+              </span>
               <p className="text-xs font-black uppercase text-dst-gold">Bar / Club</p>
               <h3 className="mt-4 text-xl font-black leading-tight text-white">{item.title}</h3>
               <p className="mt-5 text-2xl font-black text-white">{item.price}</p>
@@ -396,7 +419,7 @@ function FinalContactSection() {
   return (
     <section id="bar-contact" className="bar-section relative overflow-hidden bg-[#050707] px-4 py-24 text-white sm:px-6 lg:px-8" data-bar-reveal>
       <div className="barclub-cta-glow" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.5)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:p-12">
+      <div className="relative mx-auto grid max-w-7xl gap-6 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.5)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:gap-8 lg:p-10">
         <div>
           <p className="section-eyebrow">Trao đổi dự án</p>
           <h2 className="barclub-section-title mt-4 text-white">Bạn có một sự kiện cần được truyền thông bài bản hơn?</h2>
@@ -406,7 +429,7 @@ function FinalContactSection() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
               Nhận đề xuất truyền thông
-              <Phone className="h-4 w-4" aria-hidden="true" />
+              <MotionIcon name="contact" size="1.45rem" variant="gold" title="Liên hệ" />
             </a>
             <Link to="/" className="ghost-button">
               Quay về trang chủ
@@ -416,19 +439,19 @@ function FinalContactSection() {
         </div>
         <div className="grid gap-3">
           <a href={`tel:${phoneHref}`} className="barclub-contact-tile">
-            <Phone className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="contact" size="1.65rem" variant="gold" title="Điện thoại" />
             <span>{barClubContact.phone}</span>
           </a>
           <a href={`mailto:${barClubContact.email}`} className="barclub-contact-tile">
-            <Mail className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="social" size="1.65rem" variant="gold" title="Email" />
             <span>{barClubContact.email}</span>
           </a>
           <a href={barClubContact.facebook} target="_blank" rel="noreferrer" className="barclub-contact-tile">
-            <Facebook className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="social" size="1.65rem" variant="gold" title="Facebook" />
             <span>Facebook công ty</span>
           </a>
           <div className="barclub-contact-tile">
-            <BadgeCheck className="h-5 w-5 text-dst-gold" aria-hidden="true" />
+            <MotionIcon name="website" size="1.65rem" variant="gold" title="Website" />
             <span>{barClubContact.website}</span>
           </div>
         </div>
