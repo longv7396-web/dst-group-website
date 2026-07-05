@@ -1151,7 +1151,7 @@ section[id] {
 }
 
 .barclub-hero-title {
-  max-width: 13ch;
+  max-width: 16ch;
   font-size: var(--text-hero-deep);
   line-height: 0.96;
   text-wrap: balance;
@@ -1166,7 +1166,8 @@ section[id] {
 
 .barclub-card,
 .barclub-service-card,
-.barclub-package-card {
+.barclub-package-card,
+.barclub-timeline-card {
   min-height: 250px;
   border: 1px solid rgba(236, 177, 82, 0.22);
   border-radius: 1rem;
@@ -1205,7 +1206,8 @@ section[id] {
 .barclub-card:hover,
 .barclub-service-card:hover,
 .barclub-package-card:hover,
-.barclub-project-card:hover {
+.barclub-project-card:hover,
+.barclub-timeline-card:hover {
   transform: translateY(-0.25rem);
   border-color: rgba(231, 161, 58, 0.4);
   background: rgba(255, 255, 255, 0.075);
@@ -1220,6 +1222,62 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
   gap: clamp(0.95rem, 1.6vw, 1.45rem);
+}
+
+.barclub-timeline-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.95rem, 1.6vw, 1.45rem);
+}
+
+.barclub-timeline-grid::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 4.35rem;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(231, 161, 58, 0.38), rgba(34, 212, 212, 0.24), transparent);
+}
+
+.barclub-timeline-card {
+  position: relative;
+  min-height: 410px;
+}
+
+.barclub-timeline-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(34, 212, 212, 0.08), transparent 12rem);
+}
+
+.barclub-timeline-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.barclub-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.62rem;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.barclub-check-item span {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex: 0 0 auto;
+  margin-top: 0.46rem;
+  border-radius: 999px;
+  background: #e7a13a;
+  box-shadow: 0 0 18px rgba(231, 161, 58, 0.42);
 }
 
 .barclub-icon {
@@ -1277,7 +1335,18 @@ section[id] {
 }
 
 .barclub-package-card {
-  min-height: 280px;
+  min-height: 430px;
+}
+
+.barclub-package-card.is-featured {
+  border-color: rgba(231, 161, 58, 0.48);
+  background:
+    radial-gradient(circle at 82% 0%, rgba(34, 212, 212, 0.1), transparent 12rem),
+    linear-gradient(145deg, rgba(231, 161, 58, 0.14), rgba(255, 255, 255, 0.04)),
+    rgba(0, 0, 0, 0.18);
+  box-shadow:
+    0 34px 110px rgba(0, 0, 0, 0.48),
+    0 0 42px rgba(231, 161, 58, 0.1);
 }
 
 .barclub-cta-glow {
