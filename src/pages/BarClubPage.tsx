@@ -3,7 +3,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { useLayoutEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
+import type { FormEvent, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,11 +11,14 @@ import { MotionIcon } from "../components/MotionIcon";
 import type { MotionIconName } from "../components/MotionIcon";
 import {
   barClubContact,
+  barClubDeliverables,
   barClubEventJourney,
+  barClubFaqs,
   barClubHero,
   barClubPackages,
   barClubProblems,
   barClubProjects,
+  barClubSevenDayTimeline,
   barClubServiceCards,
 } from "../data/barClubData";
 import { assetPath } from "../lib/assetPath";
@@ -25,7 +28,12 @@ gsap.registerPlugin(ScrollTrigger);
 const serviceIcons = ["design", "content", "video", "booking", "social", "website"] satisfies MotionIconName[];
 const problemIcons = ["process-plan", "design", "media", "analytics"] satisfies MotionIconName[];
 const journeyIcons = ["process-plan", "studio", "process-report"] satisfies MotionIconName[];
+const sevenDayIcons = ["process-plan", "design", "video", "booking", "studio", "media", "analytics"] satisfies MotionIconName[];
+const deliverableIcons = ["design", "process-plan", "social", "video", "content", "ads", "media", "studio", "video", "booking"] satisfies MotionIconName[];
 const packageIcons = ["ads", "content", "media"] satisfies MotionIconName[];
+
+const venueTypes = ["Bar", "Club", "Lounge", "Beach club", "Karaoke", "Other"];
+const eventNeeds = ["Visual", "Content", "Recap", "Ads", "Booking", "Gói tháng"];
 
 function useBarClubMotion() {
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -320,6 +328,41 @@ function EventJourneySection() {
   );
 }
 
+function SevenDayTimelineSection() {
+  return (
+    <section id="event-timeline" className="bar-section bg-[#050707] py-20 text-white lg:py-28" data-bar-reveal>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <BarSectionHeading eyebrow="Timeline 7 ngày trước event" title="Truyền thông event nên bắt đầu trước khi đêm diễn diễn ra">
+          Một event nightlife cần nhịp nội dung đủ sớm để khách nhìn thấy, ghi nhớ và có lý do đặt lịch.
+        </BarSectionHeading>
+        <div className="barclub-seven-day-timeline">
+          {barClubSevenDayTimeline.map((item, index) => {
+            const iconName = sevenDayIcons[index] ?? "process-plan";
+            return (
+              <article key={item.marker} className="bar-card barclub-mini-timeline-card" data-bar-reveal>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="motion-icon-badge barclub-motion-icon barclub-compact-icon">
+                    <MotionIcon name={iconName} variant="gold" title={item.marker} />
+                  </span>
+                  <span className="barclub-marker-pill">{item.marker}</span>
+                </div>
+                <h3 className="mt-4 text-base font-black leading-tight text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/60">{item.description}</p>
+              </article>
+            );
+          })}
+        </div>
+        <div className="mt-9 text-center">
+          <a href="#event-brief" className="ghost-button">
+            Lên lịch truyền thông event
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ServicesSection() {
   return (
     <section id="solutions" className="bar-section bg-[#050707] py-24 text-white lg:py-32" data-bar-reveal>
@@ -356,6 +399,31 @@ function ServicesSection() {
             Nhận gói phù hợp
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DeliverablesSection() {
+  return (
+    <section id="deliverables" className="bar-section bg-[#080707] py-20 text-white lg:py-28" data-bar-reveal>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <BarSectionHeading eyebrow="Bạn sẽ nhận được gì?" title="Một gói truyền thông event có thể bao gồm">
+          DST giúp đóng gói đầu ra theo nhu cầu thực tế của từng event, từ visual đến nội dung social và recap.
+        </BarSectionHeading>
+        <div className="barclub-deliverable-grid">
+          {barClubDeliverables.map((item, index) => {
+            const iconName = deliverableIcons[index] ?? "content";
+            return (
+              <article key={item} className="bar-card barclub-deliverable-card" data-bar-reveal>
+                <span className="motion-icon-badge barclub-motion-icon barclub-compact-icon">
+                  <MotionIcon name={iconName} variant="gold" title={item} />
+                </span>
+                <h3 className="mt-4 text-base font-black leading-tight text-white">{item}</h3>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -468,6 +536,164 @@ function PackagesSection() {
   );
 }
 
+type EventBriefState = {
+  brand: string;
+  venueType: string;
+  eventDate: string;
+  needs: string[];
+  phone: string;
+  note: string;
+};
+
+const initialEventBrief: EventBriefState = {
+  brand: "",
+  venueType: "Bar",
+  eventDate: "",
+  needs: ["Visual"],
+  phone: "",
+  note: "",
+};
+
+function EventBriefSection() {
+  const [brief, setBrief] = useState<EventBriefState>(initialEventBrief);
+  const phoneHref = barClubContact.phone.replace(/\s/g, "");
+
+  function updateField(field: keyof Omit<EventBriefState, "needs">, value: string) {
+    setBrief((current) => ({ ...current, [field]: value }));
+  }
+
+  function toggleNeed(need: string) {
+    setBrief((current) => {
+      const hasNeed = current.needs.includes(need);
+      return {
+        ...current,
+        needs: hasNeed ? current.needs.filter((item) => item !== need) : [...current.needs, need],
+      };
+    });
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const subject = encodeURIComponent("Thông tin event Bar/Club cần DST tư vấn");
+    const body = encodeURIComponent(
+      [
+        `Tên quán / thương hiệu: ${brief.brand || "Chưa nhập"}`,
+        `Loại hình: ${brief.venueType}`,
+        `Ngày event dự kiến: ${brief.eventDate || "Chưa nhập"}`,
+        `Nhu cầu: ${brief.needs.length ? brief.needs.join(", ") : "Chưa chọn"}`,
+        `SĐT/Zalo: ${brief.phone || "Chưa nhập"}`,
+        `Ghi chú thêm: ${brief.note || "Không có"}`,
+      ].join("\n"),
+    );
+
+    window.location.href = `mailto:${barClubContact.email}?subject=${subject}&body=${body}`;
+  }
+
+  return (
+    <section id="event-brief" className="bar-section bg-[#050707] py-20 text-white lg:py-28" data-bar-reveal>
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:gap-8 lg:px-8">
+        <div className="bar-reveal" data-bar-reveal>
+          <p className="section-eyebrow">Gửi thông tin event</p>
+          <h2 className="barclub-section-title mt-3 text-white">Gửi thông tin event để DST gợi ý hướng triển khai</h2>
+          <p className="mt-5 text-base leading-8 text-white/68">
+            Chỉ cần gửi lịch event, mô hình quán và nhu cầu chính. DST sẽ có đủ ngữ cảnh để gợi ý hướng visual, content, recap hoặc ads phù hợp hơn.
+          </p>
+          <div className="mt-7 grid gap-3">
+            <a href={`tel:${phoneHref}`} className="barclub-contact-tile">
+              <MotionIcon name="contact" size="1.45rem" variant="gold" title="Hotline" />
+              <span>Hotline {barClubContact.phone}</span>
+            </a>
+            <a href={barClubContact.facebook} target="_blank" rel="noopener noreferrer" className="barclub-contact-tile">
+              <MotionIcon name="social" size="1.45rem" variant="gold" title="Fanpage" />
+              <span>Inbox Fanpage DST Group</span>
+            </a>
+            <a href={barClubContact.zalo} target="_blank" rel="noopener noreferrer" className="barclub-contact-tile">
+              <MotionIcon name="booking" size="1.45rem" variant="gold" title="Zalo/Hotline" />
+              <span>Chat Zalo/Hotline</span>
+            </a>
+          </div>
+        </div>
+
+        <form className="bar-card barclub-brief-form" onSubmit={handleSubmit} data-bar-reveal>
+          <div className="grid gap-4 md:grid-cols-2">
+            <label className="barclub-field">
+              <span>Tên quán / thương hiệu</span>
+              <input value={brief.brand} onChange={(event) => updateField("brand", event.target.value)} placeholder="VD: DST Lounge" />
+            </label>
+            <label className="barclub-field">
+              <span>Loại hình</span>
+              <select value={brief.venueType} onChange={(event) => updateField("venueType", event.target.value)}>
+                {venueTypes.map((type) => (
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="barclub-field">
+              <span>Ngày event dự kiến</span>
+              <input type="date" value={brief.eventDate} onChange={(event) => updateField("eventDate", event.target.value)} />
+            </label>
+            <label className="barclub-field">
+              <span>SĐT/Zalo</span>
+              <input value={brief.phone} onChange={(event) => updateField("phone", event.target.value)} inputMode="tel" placeholder="Số điện thoại hoặc Zalo" />
+            </label>
+          </div>
+
+          <div className="mt-5">
+            <p className="text-sm font-black text-white">Nhu cầu</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {eventNeeds.map((need) => (
+                <button
+                  key={need}
+                  type="button"
+                  className={["barclub-need-chip", brief.needs.includes(need) ? "is-active" : ""].filter(Boolean).join(" ")}
+                  onClick={() => toggleNeed(need)}
+                >
+                  {need}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <label className="barclub-field mt-5">
+            <span>Ghi chú thêm</span>
+            <textarea value={brief.note} onChange={(event) => updateField("note", event.target.value)} rows={4} placeholder="Line-up, phong cách nhạc, quy mô dự kiến hoặc deadline cần có visual..." />
+          </label>
+
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs leading-6 text-white/50">
+              Form đang dùng mailto. DST sẽ phản hồi qua email, hotline hoặc Zalo theo thông tin bạn cung cấp.
+            </p>
+            <button type="submit" className="premium-button">
+              Gửi thông tin event
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function FaqSection() {
+  return (
+    <section id="bar-faq" className="bar-section bg-[#080707] py-20 text-white lg:py-28" data-bar-reveal>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <BarSectionHeading eyebrow="FAQ" title="Câu hỏi thường gặp khi làm truyền thông event nightlife" />
+        <div className="barclub-faq-grid">
+          {barClubFaqs.map((item) => (
+            <article key={item.question} className="bar-card barclub-faq-card" data-bar-reveal>
+              <h3 className="text-base font-black leading-tight text-white">{item.question}</h3>
+              <p className="mt-3 text-sm leading-7 text-white/62">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FinalContactSection() {
   const phoneHref = barClubContact.phone.replace(/\s/g, "");
 
@@ -482,30 +708,30 @@ function FinalContactSection() {
             Gửi lịch event, line-up hoặc mô hình quán. DST sẽ gợi ý hướng nội dung, visual và kênh triển khai phù hợp.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a href={`tel:${phoneHref}`} className="premium-button">
-              Nhận đề xuất truyền thông event
-              <MotionIcon name="contact" size="1.45rem" variant="gold" title="Liên hệ" />
-            </a>
-            <a href={barClubContact.facebook} target="_blank" rel="noreferrer" className="ghost-button">
-              Liên hệ DST Group
+            <a href={barClubContact.facebook} target="_blank" rel="noopener noreferrer" className="premium-button">
+              Inbox Fanpage DST Group
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <a href={`tel:${phoneHref}`} className="ghost-button">
+              Gọi {barClubContact.phone}
+              <MotionIcon name="contact" size="1.35rem" variant="gold" title="Hotline" />
             </a>
           </div>
         </div>
         <div className="grid gap-3">
-          <a href={barClubContact.facebook} target="_blank" rel="noreferrer" className="barclub-contact-tile">
+          <a href={barClubContact.facebook} target="_blank" rel="noopener noreferrer" className="barclub-contact-tile">
             <MotionIcon name="social" size="1.65rem" variant="gold" title="Facebook" />
-            <span>Fanpage</span>
+            <span>Inbox Fanpage DST Group</span>
           </a>
-          <div className="barclub-contact-tile">
-            <MotionIcon name="booking" size="1.65rem" variant="gold" title="Zalo" />
-            <span>Zalo - {barClubContact.zaloPlaceholder}</span>
-          </div>
+          <a href={barClubContact.zalo} target="_blank" rel="noopener noreferrer" className="barclub-contact-tile">
+            <MotionIcon name="booking" size="1.65rem" variant="gold" title="Zalo/Hotline" />
+            <span>Chat Zalo/Hotline</span>
+          </a>
           <a href={`tel:${phoneHref}`} className="barclub-contact-tile">
             <MotionIcon name="contact" size="1.65rem" variant="gold" title="Hotline" />
-            <span>Hotline {barClubContact.phone}</span>
+            <span>Gọi {barClubContact.phone}</span>
           </a>
-          <a href={`https://${barClubContact.website}`} target="_blank" rel="noreferrer" className="barclub-contact-tile">
+          <a href={barClubContact.websiteUrl} target="_blank" rel="noopener noreferrer" className="barclub-contact-tile">
             <MotionIcon name="website" size="1.65rem" variant="gold" title="Website" />
             <span>Website {barClubContact.website}</span>
           </a>
@@ -525,9 +751,13 @@ export default function BarClubPage() {
         <BarClubHero />
         <ProblemsSection />
         <EventJourneySection />
+        <SevenDayTimelineSection />
         <ServicesSection />
+        <DeliverablesSection />
         <PortfolioSection />
         <PackagesSection />
+        <EventBriefSection />
+        <FaqSection />
         <FinalContactSection />
       </main>
       <footer className="border-t border-white/10 bg-[#050707] px-4 py-10 text-white sm:px-6 lg:px-8">
@@ -539,7 +769,7 @@ export default function BarClubPage() {
           <div className="flex flex-wrap gap-4">
             <a href="#solutions" className="hover:text-dst-gold">Dịch vụ</a>
             <a href="#bar-projects" className="hover:text-dst-gold">Dự án</a>
-            <a href={barClubContact.facebook} target="_blank" rel="noreferrer" className="hover:text-dst-gold">Facebook</a>
+            <a href={barClubContact.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-dst-gold">Fanpage</a>
           </div>
         </div>
       </footer>

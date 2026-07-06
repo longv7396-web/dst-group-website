@@ -1069,8 +1069,23 @@ function Contact() {
     {
       label: "Website",
       value: company.website.value,
-      href: `https://${company.website.value}`,
+      href: company.websiteUrl.value,
       icon: Globe2,
+      external: true,
+    },
+    {
+      label: "Fanpage",
+      value: "DST Group",
+      href: company.fanpage.value,
+      icon: MessageCircle,
+      external: true,
+    },
+    {
+      label: "Zalo/Hotline",
+      value: company.phone.value,
+      href: company.zalo.value,
+      icon: MessageCircle,
+      external: true,
     },
   ];
 
@@ -1112,6 +1127,8 @@ function Contact() {
               <a
                 key={label}
                 href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
                 className="rounded-xl border border-white/10 bg-black/25 p-4 transition hover:-translate-y-1 hover:border-dst-gold/40 hover:bg-dst-gold/10"
               >
                 <Icon className="h-5 w-5 text-dst-gold" aria-hidden="true" />
@@ -1188,7 +1205,9 @@ function App() {
             <div className="mt-4 grid gap-2 text-sm text-white/58">
               <a href="tel:0328247888" className="hover:text-dst-gold">{company.phone.value}</a>
               <a href={`mailto:${company.email.value}`} className="hover:text-dst-gold">{company.email.value}</a>
-              <span>{company.website.value}</span>
+              <a href={company.fanpage.value} target="_blank" rel="noopener noreferrer" className="hover:text-dst-gold">Fanpage DST Group</a>
+              <a href={company.zalo.value} target="_blank" rel="noopener noreferrer" className="hover:text-dst-gold">Zalo/Hotline</a>
+              <a href={company.websiteUrl.value} target="_blank" rel="noopener noreferrer" className="hover:text-dst-gold">{company.website.value}</a>
             </div>
           </div>
         </div>

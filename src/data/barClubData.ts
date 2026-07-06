@@ -2,7 +2,7 @@ import { company } from "./company";
 import { projects } from "./projects";
 import type { SourceMeta } from "./sources";
 
-export const barClubFacebookUrl = "https://www.facebook.com/share/1EvWCZnNBi/?mibextid=wwXIfr";
+export const barClubFacebookUrl = company.fanpage.value;
 
 export const barClubHero = {
   eyebrow: "DST Group for Bar / Club / Nightlife",
@@ -58,6 +58,57 @@ export const barClubEventJourney = [
     title: "Biến cảm xúc thành chất liệu social mới",
     deliverables: ["Recap video", "Photo album", "Reels/TikTok cutdown", "Thank-you post", "Next event teaser", "Retargeting content"],
   },
+];
+
+export const barClubSevenDayTimeline = [
+  {
+    marker: "T-7",
+    title: "Chốt line-up, concept và thông điệp chính",
+    description: "Xác định mood đêm diễn, nhóm khách cần chạm tới và điểm nhấn cần xuất hiện trên social.",
+  },
+  {
+    marker: "T-5",
+    title: "Hoàn thiện key visual/poster và bài công bố event",
+    description: "Có visual đủ rõ để fanpage, story và kênh booking bắt đầu nhắc lịch.",
+  },
+  {
+    marker: "T-3",
+    title: "Đẩy teaser reel, story countdown và nội dung nhắc lịch",
+    description: "Tạo thêm lý do để khách nhớ event và cân nhắc đi cùng nhóm bạn.",
+  },
+  {
+    marker: "T-1",
+    title: "Tăng CTA booking/inbox/Zalo",
+    description: "Đưa lời kêu gọi hành động rõ hơn về inbox, Zalo hoặc điểm nhận booking.",
+  },
+  {
+    marker: "Event night",
+    title: "Ghi hình story, crowd moment, artist/DJ highlight",
+    description: "Thu chất liệu thật trong đêm diễn để social có cảm xúc và bằng chứng không khí.",
+  },
+  {
+    marker: "T+1",
+    title: "Ra recap nhanh, album hoặc short video",
+    description: "Giữ nhịp sau event bằng nội dung dễ chia sẻ và dễ gợi nhớ.",
+  },
+  {
+    marker: "T+3",
+    title: "Cắt nội dung hậu event để kéo sự kiện tiếp theo",
+    description: "Biến recap thành chất liệu social, retargeting và teaser cho line-up mới.",
+  },
+];
+
+export const barClubDeliverables = [
+  "Key visual / poster",
+  "Line-up post",
+  "Story countdown",
+  "Teaser reel",
+  "Fanpage content",
+  "Ads content",
+  "Recap video",
+  "Photo album",
+  "Short video cutdown",
+  "Booking/Zalo CTA",
 ];
 
 export const barClubServiceCards = [
@@ -177,13 +228,41 @@ export const barClubPackages = [
   },
 ];
 
+export const barClubFaqs = [
+  {
+    question: "DST có nhận truyền thông cho một event riêng lẻ không?",
+    answer: "Có. DST có thể tư vấn gói theo từng event nếu quán cần poster, nội dung nhắc lịch, teaser, ads hoặc recap cho một đêm diễn cụ thể.",
+  },
+  {
+    question: "Nên bắt đầu truyền thông trước event bao lâu?",
+    answer: "Nên bắt đầu càng sớm càng tốt, thường tối thiểu khoảng một tuần để có thời gian chốt visual, công bố line-up, nhắc lịch và đẩy CTA booking.",
+  },
+  {
+    question: "DST có hỗ trợ quay/chụp recap không?",
+    answer: "Có thể hỗ trợ theo nhu cầu từng event, từ ghi lại crowd moment, artist/DJ highlight đến tạo recap video hoặc album sau sự kiện.",
+  },
+  {
+    question: "Có hỗ trợ ads kéo inbox/booking không?",
+    answer: "Có. Nội dung ads có thể được xây theo thông điệp event và điều hướng về inbox, Zalo hoặc điểm booking mà quán đang dùng.",
+  },
+  {
+    question: "Có gói nội dung theo tháng cho bar/club không?",
+    answer: "Có. Với venue có lịch diễn đều, DST có thể đề xuất gói nội dung tháng để duy trì fanpage, story, visual và nhịp social ổn định hơn.",
+  },
+  {
+    question: "Nếu quán chưa có hình ảnh tốt thì DST có hỗ trợ concept không?",
+    answer: "Có. DST có thể hỗ trợ định hướng concept visual, mood nội dung và cách khai thác chất liệu hiện có trước khi sản xuất thêm.",
+  },
+];
+
 export const barClubContact = {
   phone: company.phone.value,
   email: company.email.value,
   website: company.website.value,
+  websiteUrl: company.websiteUrl.value,
   address: company.headquarters.value,
   facebook: barClubFacebookUrl,
-  zaloPlaceholder: "Cần bổ sung link Zalo",
+  zalo: company.zalo.value,
 };
 
 export const barClubAssetAudit = [

@@ -162,6 +162,9 @@ export const servicesContact = {
   phone: company.phone.value,
   email: company.email.value,
   website: company.website.value,
+  websiteUrl: company.websiteUrl.value,
+  facebook: company.fanpage.value,
+  zalo: company.zalo.value,
   address: company.headquarters.value,
 };
 

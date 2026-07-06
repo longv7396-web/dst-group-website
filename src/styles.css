@@ -1167,7 +1167,11 @@ section[id] {
 .barclub-card,
 .barclub-service-card,
 .barclub-package-card,
-.barclub-timeline-card {
+.barclub-timeline-card,
+.barclub-mini-timeline-card,
+.barclub-deliverable-card,
+.barclub-brief-form,
+.barclub-faq-card {
   min-height: 250px;
   border: 1px solid rgba(236, 177, 82, 0.22);
   border-radius: 1rem;
@@ -1207,7 +1211,11 @@ section[id] {
 .barclub-service-card:hover,
 .barclub-package-card:hover,
 .barclub-project-card:hover,
-.barclub-timeline-card:hover {
+.barclub-timeline-card:hover,
+.barclub-mini-timeline-card:hover,
+.barclub-deliverable-card:hover,
+.barclub-brief-form:hover,
+.barclub-faq-card:hover {
   transform: translateY(-0.25rem);
   border-color: rgba(231, 161, 58, 0.4);
   background: rgba(255, 255, 255, 0.075);
@@ -1259,6 +1267,139 @@ section[id] {
 .barclub-timeline-card > * {
   position: relative;
   z-index: 1;
+}
+
+.barclub-seven-day-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.barclub-seven-day-timeline::before {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 2.55rem;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(231, 161, 58, 0.42), rgba(34, 212, 212, 0.26), transparent);
+}
+
+.barclub-mini-timeline-card {
+  position: relative;
+  min-height: 245px;
+  padding: 1rem;
+}
+
+.barclub-marker-pill {
+  display: inline-flex;
+  min-width: 3rem;
+  justify-content: center;
+  border: 1px solid rgba(231, 161, 58, 0.34);
+  border-radius: 999px;
+  background: rgba(231, 161, 58, 0.1);
+  padding: 0.35rem 0.58rem;
+  color: #f4c876;
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.barclub-compact-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.85rem;
+}
+
+.barclub-deliverable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+  gap: 0.9rem;
+}
+
+.barclub-deliverable-card {
+  min-height: 150px;
+  padding: 1rem;
+}
+
+.barclub-brief-form {
+  min-height: auto;
+}
+
+.barclub-field {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.barclub-field span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.barclub-field input,
+.barclub-field select,
+.barclub-field textarea {
+  width: 100%;
+  border: 1px solid rgba(231, 161, 58, 0.18);
+  border-radius: 0.85rem;
+  background: rgba(0, 0, 0, 0.26);
+  padding: 0.9rem 1rem;
+  color: #ffffff;
+  font: inherit;
+  outline: none;
+  transition: border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.barclub-field select,
+.barclub-field input[type="date"] {
+  color-scheme: dark;
+}
+
+.barclub-field textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.barclub-field input:focus,
+.barclub-field select:focus,
+.barclub-field textarea:focus {
+  border-color: rgba(231, 161, 58, 0.52);
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: 0 0 0 3px rgba(231, 161, 58, 0.1);
+}
+
+.barclub-need-chip {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.065);
+  padding: 0.72rem 0.95rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, color 220ms ease;
+}
+
+.barclub-need-chip:hover,
+.barclub-need-chip.is-active {
+  transform: translateY(-0.1rem);
+  border-color: rgba(231, 161, 58, 0.45);
+  background: rgba(231, 161, 58, 0.14);
+  color: #f4c876;
+}
+
+.barclub-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.barclub-faq-card {
+  min-height: 175px;
 }
 
 .barclub-check-item {
@@ -2164,6 +2305,16 @@ header nav a {
   letter-spacing: 0;
 }
 
+@media (max-width: 1100px) {
+  .barclub-seven-day-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .barclub-seven-day-timeline::before {
+    display: none;
+  }
+}
+
 @keyframes luxuryGlow {
   from {
     transform: translate3d(-2%, -1%, 0) scale(1);
@@ -2455,6 +2606,32 @@ header nav a {
 
   .barclub-project-media {
     aspect-ratio: 4 / 3;
+  }
+
+  .barclub-seven-day-timeline,
+  .barclub-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .barclub-seven-day-timeline::before {
+    left: 2.35rem;
+    right: auto;
+    top: 1.25rem;
+    bottom: 1.25rem;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, transparent, rgba(231, 161, 58, 0.42), rgba(34, 212, 212, 0.26), transparent);
+  }
+
+  .barclub-mini-timeline-card,
+  .barclub-deliverable-card,
+  .barclub-faq-card {
+    min-height: auto;
+  }
+
+  .barclub-need-chip {
+    min-height: 2.55rem;
+    padding: 0.72rem 0.9rem;
   }
 
   .hospitality-hero-title {

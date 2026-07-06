@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build",
+    "build:hosting": "tsc --noEmit && vite build --base=/dst-group/",
     "lint": "tsc --noEmit",
     "preview": "vite preview --host 127.0.0.1",
     "extract:pdf": "node scripts/extract-pdf-content.mjs",

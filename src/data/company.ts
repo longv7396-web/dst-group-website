@@ -61,6 +61,18 @@ export const company = {
     value: "dstgroup.vn",
     source: profileSource,
   } satisfies SourcedText,
+  websiteUrl: {
+    value: "https://dstgroup.vn",
+    source: profileSource,
+  } satisfies SourcedText,
+  fanpage: {
+    value: "https://www.facebook.com/DSTGroup.vn/",
+    source: profileSource,
+  } satisfies SourcedText,
+  zalo: {
+    value: "https://zalo.me/0328247888",
+    source: profileSource,
+  } satisfies SourcedText,
   headquarters: {
     value:
       "7-9/1 Nguyễn An Ninh, Phường Yết Kiêu, Thành phố Hạ Long, Tỉnh Quảng Ninh, Việt Nam",

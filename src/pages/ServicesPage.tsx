@@ -534,10 +534,18 @@ function FinalCtaSection() {
             <MotionIcon name="social" size="1.65rem" title="Email" />
             <span>{servicesContact.email}</span>
           </a>
-          <div className="services-contact-tile">
+          <a href={servicesContact.facebook} target="_blank" rel="noopener noreferrer" className="services-contact-tile">
+            <MotionIcon name="social" size="1.65rem" title="Fanpage" />
+            <span>Fanpage DST Group</span>
+          </a>
+          <a href={servicesContact.zalo} target="_blank" rel="noopener noreferrer" className="services-contact-tile">
+            <MotionIcon name="booking" size="1.65rem" title="Zalo/Hotline" />
+            <span>Zalo/Hotline</span>
+          </a>
+          <a href={servicesContact.websiteUrl} target="_blank" rel="noopener noreferrer" className="services-contact-tile">
             <MotionIcon name="website" size="1.65rem" title="Website" />
             <span>{servicesContact.website}</span>
-          </div>
+          </a>
         </div>
       </div>
     </section>

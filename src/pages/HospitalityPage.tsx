@@ -479,10 +479,18 @@ function FinalContactSection() {
             <MotionIcon name="social" size="1.65rem" variant="warm" title="Email" />
             <span>{hospitalityContact.email}</span>
           </a>
-          <div className="hospitality-contact-tile">
+          <a href={hospitalityContact.facebook} target="_blank" rel="noopener noreferrer" className="hospitality-contact-tile">
+            <MotionIcon name="social" size="1.65rem" variant="warm" title="Fanpage" />
+            <span>Fanpage DST Group</span>
+          </a>
+          <a href={hospitalityContact.zalo} target="_blank" rel="noopener noreferrer" className="hospitality-contact-tile">
+            <MotionIcon name="booking" size="1.65rem" variant="warm" title="Zalo/Hotline" />
+            <span>Zalo/Hotline</span>
+          </a>
+          <a href={hospitalityContact.websiteUrl} target="_blank" rel="noopener noreferrer" className="hospitality-contact-tile">
             <MotionIcon name="website" size="1.65rem" variant="warm" title="Website" />
             <span>{hospitalityContact.website}</span>
-          </div>
+          </a>
         </div>
       </div>
     </section>
