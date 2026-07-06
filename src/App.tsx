@@ -695,29 +695,91 @@ function Stats() {
 }
 
 function About() {
-  const strengths = ["Chiến lược bài bản", "Sáng tạo khác biệt", "Triển khai hiệu quả", "Đo lường minh bạch"];
+  const proofStats = [
+    { value: "2020", label: "Thành lập", detail: company.established.value },
+    { value: "10 tỷ VNĐ", label: "Vốn điều lệ", detail: company.capital.value },
+    { value: "10+", label: "Nhóm dịch vụ", detail: "Website, media, content, design, ads" },
+    { value: "03", label: "Nhóm ngành trọng tâm", detail: "Nightlife, hospitality, dịch vụ" },
+  ];
+  const featuredProjects = ["Valley Beach Club", "Cana Beer", "Bird's Nest Cafe", "Grand View Palace Ha Long Hotel", "Diamond Palace - Hạ Long"];
+  const strengths = [
+    {
+      title: "Tư vấn đúng nhu cầu",
+      description: "Xác định ngành, mục tiêu, kênh triển khai và mức độ ưu tiên trước khi bắt đầu.",
+      motionIcon: "target",
+    },
+    {
+      title: "Triển khai đồng bộ",
+      description: "Kết nối website, content, media, thiết kế và ads trong cùng một nhịp vận hành.",
+      motionIcon: "process-plan",
+    },
+    {
+      title: "Có dự án thực tế",
+      description: "Đã triển khai cho nhiều nhóm ngành dịch vụ như nightlife, F&B, hospitality và sự kiện.",
+      motionIcon: "media",
+    },
+    {
+      title: "Dễ phối hợp và theo dõi",
+      description: "Quy trình rõ ràng, dễ duyệt nội dung, dễ theo dõi tiến độ và đầu ra.",
+      motionIcon: "analytics",
+    },
+  ] satisfies Array<{ title: string; description: string; motionIcon: MotionIconName }>;
 
   return (
-    <section id="about" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-        <Reveal>
+    <section id="about" className="section-reveal bg-[#050707] py-20 text-white lg:py-28" data-reveal>
+      <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8 lg:px-8">
+        <Reveal className="about-panel about-story-panel">
           <p className="section-eyebrow">Về DST Group</p>
-          <h2 className="section-title mt-3 text-white">Một đội ngũ - Một quy trình - Một mục tiêu: Tăng trưởng thương hiệu</h2>
+          <h2 className="section-title mt-3 text-white">Một đội ngũ triển khai hình ảnh số cho thương hiệu dịch vụ</h2>
+          <p className="mt-5 text-base leading-8 text-white/70">
+            DST Group là công ty truyền thông, media và giải pháp hiện diện số tại Quảng Ninh, đồng hành cùng nhà hàng, cafe, khách sạn, bar/club, trung tâm sự kiện và doanh nghiệp dịch vụ.
+          </p>
+          <p className="mt-4 text-base leading-8 text-white/70">
+            Thay vì triển khai rời rạc từng hạng mục, DST kết nối website, fanpage, content, video, thiết kế và quảng cáo trong cùng một kế hoạch để thương hiệu xuất hiện rõ ràng, chỉn chu và dễ được khách hàng liên hệ hơn.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-2">
+            {["Nhà hàng", "Cafe", "Khách sạn", "Bar/Club", "Trung tâm sự kiện", "Doanh nghiệp dịch vụ"].map((item) => (
+              <span key={item} className="rounded-full border border-white/10 bg-white/8 px-3 py-1 text-xs font-bold text-white/68">
+                {item}
+              </span>
+            ))}
+          </div>
         </Reveal>
+
         <div className="grid gap-5">
-          <Reveal className="about-panel">
-            <p className="text-xl font-black leading-tight text-white sm:text-2xl">
-              DST Group là đầu mối triển khai website, media, branding và vận hành truyền thông cho thương hiệu dịch vụ.
-            </p>
-            <p className="mt-5 text-base leading-8 text-white/68">
-              Thay vì tách lẻ từng hạng mục, DST kết nối chiến lược, nội dung, hình ảnh, video và quảng cáo trong cùng một nhịp triển khai để thương hiệu xuất hiện rõ ràng hơn.
-            </p>
+          <Reveal className="about-panel about-proof-panel">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {proofStats.map((item, index) => (
+                <div key={item.label} className="about-proof-stat">
+                  <p className="text-2xl font-black text-white">{item.value}</p>
+                  <p className="mt-1 text-xs font-black uppercase text-dst-gold">{item.label}</p>
+                  <p className="mt-2 text-xs leading-5 text-white/48">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 border-t border-white/10 pt-5">
+              <p className="text-xs font-black uppercase text-dst-gold">Dự án tiêu biểu</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {featuredProjects.map((name) => {
+                  const project = projects.find((item) => item.name === name);
+                  return (
+                    <span key={name} className="about-project-chip">
+                      {project?.name ?? name}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
           </Reveal>
-          <div className="grid gap-4 md:grid-cols-4">
+
+          <div className="grid gap-4 md:grid-cols-2">
             {strengths.map((item, index) => (
-              <Reveal key={item} delay={index * 0.04} className="about-mini-card">
-                <BadgeCheck className="h-5 w-5 text-dst-gold" aria-hidden="true" />
-                <p className="mt-5 text-lg font-black text-white">{item}</p>
+              <Reveal key={item.title} delay={index * 0.04} className="about-mini-card about-strength-card">
+                <span className="motion-icon-badge">
+                  <MotionIcon name={item.motionIcon} variant={index % 2 === 0 ? "gold" : "cyan"} title={item.title} />
+                </span>
+                <h3 className="mt-5 text-lg font-black leading-tight text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">{item.description}</p>
               </Reveal>
             ))}
           </div>
