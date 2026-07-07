@@ -36,6 +36,8 @@ function usePrefersReducedMotion() {
   return reduced;
 }
 
+const RENDER_TIMEOUT_MS = 4000;
+
 export function AnimatedLottie({
   src,
   className,
@@ -50,6 +52,7 @@ export function AnimatedLottie({
   const dotLottieRef = useRef<DotLottie | null>(null);
   const [isVisible, setIsVisible] = useState(!playWhenVisible);
   const [hasError, setHasError] = useState(false);
+  const [hasRendered, setHasRendered] = useState(false);
   const reducedMotion = usePrefersReducedMotion();
   const isBlocked = isBrokenAnimation(src);
   const resolvedSrc = assetPath(src);
@@ -75,6 +78,18 @@ export function AnimatedLottie({
     observer.observe(element);
     return () => observer.disconnect();
   }, [isVisible, playWhenVisible]);
+
+  useEffect(() => {
+    if (!shouldRender || hasError || hasRendered) return;
+
+    const timer = setTimeout(() => {
+      const canvas = containerRef.current?.querySelector("canvas");
+      const isEmpty = !canvas || canvas.width === 0 || (canvas.width === 300 && canvas.height === 150);
+      if (isEmpty) setHasError(true);
+    }, RENDER_TIMEOUT_MS);
+
+    return () => clearTimeout(timer);
+  }, [shouldRender, hasError, hasRendered]);
 
   useEffect(() => {
     const player = dotLottieRef.current;
@@ -119,6 +134,7 @@ export function AnimatedLottie({
             dotLottieRefCallback={(instance) => {
               dotLottieRef.current = instance;
             }}
+            onPlay={() => setHasRendered(true)}
             onError={() => setHasError(true)}
           />
         </Suspense>
