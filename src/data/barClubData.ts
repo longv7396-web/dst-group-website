@@ -319,10 +319,16 @@ const barClubPricingNoAmountNote =
 export const barClubPricing: PricingItem[] = [
   {
     category: "Quản trị truyền thông",
-    item: "Quản trị Facebook (gói fanpage)",
+    item: "Quản trị Facebook / Fanpage",
     unit: "Tháng",
-    price: "Liên hệ tư vấn",
+    price: "Báo giá theo phạm vi",
     note: "Gói quản trị nội dung fanpage theo tháng; số lượng bài viết và thiết kế tùy gói khách chọn.",
+    displayDetails: [
+      "Lên kế hoạch nội dung theo tháng",
+      "Viết bài, thiết kế poster và hình ảnh chủ đề",
+      "Đăng bài, reel và nội dung khuyến mãi",
+      "Recap sự kiện theo tư liệu khách cung cấp",
+    ],
     details: [
       "Kế hoạch bài viết theo từng tháng (combo 3 tháng: kế hoạch marketing xuyên suốt 3 tháng)",
       "Bài viết và thiết kế",
@@ -339,38 +345,58 @@ export const barClubPricing: PricingItem[] = [
   },
   {
     category: "Thiết kế & nội dung",
-    item: "Chi phí quay, dựng kênh TikTok",
+    item: "Quay dựng TikTok / Reel",
     unit: "Tháng",
-    price: "Liên hệ tư vấn",
+    price: "Báo giá theo phạm vi",
     note: "Chi phí xây dựng kênh TikTok theo tháng.",
     quantity: "Quay full sự kiện trong tháng (4 buổi); 20 video xây kênh TikTok/Reel",
+    displayDetails: [
+      "Quay tư liệu sự kiện theo lịch triển khai",
+      "Dựng video ngắn phục vụ TikTok/Reel",
+      "Hỗ trợ nội dung cho kênh theo tháng",
+    ],
     source: { sourceFile: barClubQuoteSource, page: 26, confidence: "high" },
     confidenceNote: barClubPricingNoAmountNote,
   },
   {
     category: "Thiết kế & nội dung",
-    item: "Chi phí kịch bản, nội dung TikTok",
+    item: "Kịch bản và nội dung TikTok",
     unit: "Tháng",
-    price: "Liên hệ tư vấn",
+    price: "Báo giá theo phạm vi",
     note: "Kịch bản và nội dung cho kênh TikTok theo hạng mục trong báo giá.",
+    displayDetails: [
+      "Xây ý tưởng video theo từng chương trình",
+      "Viết nội dung ngắn, dễ triển khai",
+      "Phù hợp lịch truyền thông của bar/club",
+    ],
     source: { sourceFile: barClubQuoteSource, page: 26, confidence: "high" },
     confidenceNote: barClubPricingNoAmountNote,
   },
   {
     category: "Thiết kế & nội dung",
-    item: "Chi phí thuê flycamera FPV",
+    item: "Flycamera / FPV",
     unit: "Tháng",
-    price: "Liên hệ tư vấn",
+    price: "Báo giá theo phạm vi",
     note: "Quay đèn ngoài trời theo hạng mục trong báo giá.",
+    displayDetails: [
+      "Quay tư liệu không gian hoặc sự kiện",
+      "Phù hợp các chương trình cần góc quay nổi bật",
+      "Triển khai theo lịch và phạm vi thực tế",
+    ],
     source: { sourceFile: barClubQuoteSource, page: 26, confidence: "high" },
     confidenceNote: barClubPricingNoAmountNote,
   },
   {
     category: "Thiết kế đồ họa",
-    item: "Poster chương trình lẻ / tổng theo tháng",
+    item: "Poster chương trình",
     unit: "Poster",
-    price: "Liên hệ tư vấn",
+    price: "Báo giá theo phạm vi",
     note: "Thiết kế poster chương trình lẻ hoặc poster tổng theo tháng.",
+    displayDetails: [
+      "Poster chương trình lẻ",
+      "Poster tổng theo tháng",
+      "Ảnh bìa và avatar chủ đề",
+    ],
     details: [
       "Thiết kế poster chương trình lẻ",
       "Thiết kế poster chương trình tổng theo tháng",
@@ -381,10 +407,15 @@ export const barClubPricing: PricingItem[] = [
   },
   {
     category: "Thiết kế đồ họa",
-    item: "Video intro line-up, menu, recap, nhắc chương trình",
+    item: "Video intro, menu, recap",
     unit: "Hạng mục",
-    price: "Liên hệ tư vấn",
+    price: "Báo giá theo phạm vi",
     note: "Video và ấn phẩm theo tư liệu có sẵn của khách hàng.",
+    displayDetails: [
+      "Video intro line-up / nhắc chương trình",
+      "Video recap từ tư liệu có sẵn",
+      "Thiết kế menu hoặc ấn phẩm truyền thông",
+    ],
     details: [
       "Video intro line-up: 30s quảng cáo sự kiện, video 4K",
       "Thiết kế menu (ấn phẩm)",
@@ -400,11 +431,18 @@ export const barClubPricing: PricingItem[] = [
     unit: "Chiến dịch",
     price: "Phí dịch vụ 15%",
     note: "Quảng cáo online trên Facebook các sự kiện; quảng cáo TikTok hỗ trợ xây kênh.",
+    displayDetails: [
+      "Quảng cáo tương tác, tin nhắn, view hoặc lead",
+      "Hỗ trợ truyền thông sự kiện và xây kênh",
+      "Ngân sách quảng cáo trao đổi theo từng chiến dịch",
+    ],
     details: [
       "Facebook: tương tác, tin nhắn, view, lead, remarketing",
       "TikTok: hỗ trợ xây kênh",
     ],
     fee: "15% (đã bao gồm 5% VAT FB/GG/TikTok, 1% thanh toán thẻ quốc tế, còn lại 4% tiền công)",
+    noteInternal:
+      "15% đã bao gồm 5% VAT FB/GG/TikTok, 1% thanh toán thẻ quốc tế, còn lại 4% tiền công (theo tài liệu).",
     source: { sourceFile: barClubQuoteSource, page: 27, confidence: "high" },
   },
   {
@@ -413,8 +451,11 @@ export const barClubPricing: PricingItem[] = [
     unit: "Chiến dịch",
     price: "Phí dịch vụ 15%",
     note: "Quảng cáo Google theo chiến dịch.",
+    displayDetails: ["Tìm kiếm", "YouTube / GDN", "Shopping nếu phù hợp mục tiêu chiến dịch"],
     details: ["Tìm kiếm", "YouTube", "GDN", "Shopping"],
     fee: "15% (đã bao gồm 5% VAT FB/GG/TikTok, 1% thanh toán thẻ quốc tế, còn lại 4% tiền công)",
+    noteInternal:
+      "15% đã bao gồm 5% VAT FB/GG/TikTok, 1% thanh toán thẻ quốc tế, còn lại 4% tiền công (theo tài liệu).",
     source: { sourceFile: barClubQuoteSource, page: 27, confidence: "high" },
   },
   {
@@ -424,15 +465,27 @@ export const barClubPricing: PricingItem[] = [
     price: "Phí dịch vụ 15%",
     note:
       "Bị TikTok hạn chế quảng cáo dịch vụ bar, cần đổi kênh để chạy quảng cáo (theo ghi chú trong tài liệu).",
+    displayDetails: [
+      "Kênh quảng cáo bổ sung ngoài Facebook/TikTok",
+      "Phù hợp khi cần mở rộng điểm chạm khách hàng",
+      "Tư vấn theo nội dung và chính sách kênh",
+    ],
     fee: "15% (đã bao gồm 5% VAT FB/GG/TikTok, 1% thanh toán thẻ quốc tế, còn lại 4% tiền công)",
+    noteInternal:
+      "Bị TikTok hạn chế quảng cáo dịch vụ bar, cần đổi kênh để chạy quảng cáo (theo ghi chú trong tài liệu).",
     source: { sourceFile: barClubQuoteSource, page: 27, confidence: "high" },
   },
   {
     category: "Website / SEO",
     item: "Website cơ bản",
     unit: "Gói",
-    price: "Liên hệ tư vấn",
+    price: "Báo giá theo phạm vi",
     note: "Gói website cơ bản theo hạng mục trong báo giá.",
+    displayDetails: [
+      "Trang giới thiệu thông tin sự kiện/dịch vụ",
+      "Hiển thị hình ảnh, nội dung và CTA liên hệ",
+      "Phù hợp khi cần điểm đến riêng cho chiến dịch",
+    ],
     source: { sourceFile: barClubQuoteSource, page: 27, confidence: "high" },
     confidenceNote: barClubPricingNoAmountNote,
   },
@@ -440,8 +493,13 @@ export const barClubPricing: PricingItem[] = [
     category: "Website / SEO",
     item: "Bài viết chuẩn SEO web",
     unit: "Bài",
-    price: "Liên hệ tư vấn",
+    price: "Báo giá theo phạm vi",
     note: "Bài viết chuẩn SEO web theo hạng mục trong báo giá.",
+    displayDetails: [
+      "Bài viết hỗ trợ tìm kiếm Google",
+      "Nội dung theo nhóm dịch vụ hoặc chương trình",
+      "Triển khai theo kế hoạch website",
+    ],
     source: { sourceFile: barClubQuoteSource, page: 27, confidence: "high" },
     confidenceNote: barClubPricingNoAmountNote,
   },

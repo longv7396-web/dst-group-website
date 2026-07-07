@@ -1931,6 +1931,15 @@ section[id] {
   min-height: 430px;
 }
 
+.barclub-pricing-card {
+  min-height: 0;
+  padding-bottom: 1.35rem;
+}
+
+.barclub-pricing-list .barclub-check-item {
+  line-height: 1.55;
+}
+
 .barclub-package-card.is-featured {
   border-color: rgba(231, 161, 58, 0.48);
   background:

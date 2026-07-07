@@ -8,9 +8,11 @@ export type PricingItem = {
   note: string;
   source: SourceMeta;
   details?: string[];
+  displayDetails?: string[];
   quantity?: string;
   fee?: string;
   confidenceNote?: string;
+  noteInternal?: string;
 };
 
 const hospitalityQuoteSource = "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf" as const;

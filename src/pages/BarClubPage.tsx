@@ -620,48 +620,57 @@ function PackagesSection() {
   );
 }
 
+function getPricingDisplayDetails(item: (typeof barClubPricing)[number]) {
+  if (item.displayDetails?.length) return item.displayDetails;
+  if (item.details?.length) return item.details.slice(0, 4);
+  return [];
+}
+
 function PricingSection() {
   return (
     <section id="bar-pricing" className="bar-section bg-[#080706] py-24 text-white lg:py-32" data-bar-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <BarSectionHeading eyebrow="Chi phí và hạng mục" title="Báo giá theo phạm vi triển khai">
-          Hạng mục trích từ BAO GIA.pdf (trang 26–27). Phí quảng cáo ghi rõ 15%; các gói còn lại tư vấn theo phạm vi khách chọn.
+        <BarSectionHeading eyebrow="CHI PHÍ VÀ HẠNG MỤC" title="Báo giá theo phạm vi triển khai">
+          Các hạng mục được tổng hợp từ BAO GIA.pdf trang 26–27. Một số chi phí phụ thuộc vào phạm vi triển khai, số
+          lượng nội dung và kênh quảng cáo khách chọn.
         </BarSectionHeading>
         <div className="grid items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {barClubPricing.map((item, index) => (
-            <article
-              key={`${item.category}-${item.item}`}
-              className="bar-card barclub-package-card flex h-full flex-col"
-              data-bar-reveal
-            >
-              <span className="motion-icon-badge barclub-motion-icon">
-                {(() => {
-                  const iconName = getPricingCategoryIcon(item.category, index);
-                  return <MotionIcon name={iconName} variant="gold" title={item.item} />;
-                })()}
-              </span>
-              <p className="text-xs font-black uppercase text-dst-gold">{item.category}</p>
-              <h3 className="mt-4 text-xl font-black leading-tight text-white">{item.item}</h3>
-              <p className="mt-5 text-2xl font-black text-white">{item.price}</p>
-              {item.quantity ? (
-                <p className="mt-3 text-sm font-semibold leading-6 text-dst-gold">{item.quantity}</p>
-              ) : null}
-              {item.fee ? <p className="mt-3 text-sm leading-6 text-white/72">{item.fee}</p> : null}
-              {item.details && item.details.length > 0 ? (
-                <ul className="mt-4 grid gap-2">
-                  {item.details.map((detail) => (
-                    <li key={detail} className="barclub-check-item">
-                      <span aria-hidden="true" />
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-              <p className="mt-auto pt-4 text-sm leading-7 text-white/62">{item.note}</p>
-            </article>
-          ))}
+          {barClubPricing.map((item, index) => {
+            const displayDetails = getPricingDisplayDetails(item);
+
+            return (
+              <article
+                key={`${item.category}-${item.item}`}
+                className="bar-card barclub-package-card barclub-pricing-card flex h-full flex-col"
+                data-bar-reveal
+              >
+                <span className="motion-icon-badge barclub-motion-icon">
+                  {(() => {
+                    const iconName = getPricingCategoryIcon(item.category, index);
+                    return <MotionIcon name={iconName} variant="gold" title={item.item} />;
+                  })()}
+                </span>
+                <p className="text-xs font-black uppercase text-dst-gold">{item.category}</p>
+                <h3 className="mt-4 text-xl font-black leading-tight text-white">{item.item}</h3>
+                <p className="mt-5 text-lg font-black text-dst-gold">{item.price}</p>
+                {displayDetails.length > 0 ? (
+                  <ul className="barclub-pricing-list mt-4 grid gap-2.5">
+                    {displayDetails.map((detail) => (
+                      <li key={detail} className="barclub-check-item">
+                        <span aria-hidden="true" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </article>
+            );
+          })}
         </div>
-        <div className="mt-10 text-center">
+        <p className="mt-8 text-center text-sm leading-7 text-white/58">
+          Chi phí thực tế được tư vấn theo phạm vi, số lượng nội dung và kênh triển khai.
+        </p>
+        <div className="mt-8 text-center">
           <a href="#bar-contact" className="premium-button">
             Tư vấn gói triển khai
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
