@@ -2,6 +2,7 @@ import type { DotLottie } from "@lottiefiles/dotlottie-react";
 import type { ReactNode } from "react";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { isBrokenAnimation } from "../data/brokenAnimations";
+import { assetPath } from "../lib/assetPath";
 
 const DotLottieReact = lazy(() =>
   import("@lottiefiles/dotlottie-react").then((module) => ({
@@ -51,6 +52,7 @@ export function AnimatedLottie({
   const [hasError, setHasError] = useState(false);
   const reducedMotion = usePrefersReducedMotion();
   const isBlocked = isBrokenAnimation(src);
+  const resolvedSrc = assetPath(src);
   const shouldAutoplay = !reducedMotion && autoplay && isVisible;
   const shouldRender = isVisible && !isBlocked;
 
@@ -111,7 +113,7 @@ export function AnimatedLottie({
       {shouldRender && !hasError ? (
         <Suspense fallback={fallback}>
           <DotLottieReact
-            src={src}
+            src={resolvedSrc}
             loop={loop}
             autoplay={shouldAutoplay}
             dotLottieRefCallback={(instance) => {
