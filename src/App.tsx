@@ -26,11 +26,21 @@ import { useLayoutEffect } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnimatedLottie } from "./components/AnimatedLottie";
 import { MotionIcon } from "./components/MotionIcon";
 import type { MotionIconName } from "./components/MotionIcon";
+import { ProjectMedia } from "./components/ProjectMedia";
+import { animations } from "./data/animationMap";
+import {
+  getPricingCategoryIcon,
+  homeFeaturedServiceVisuals,
+  homeProcessVisuals,
+  homeWhyVisuals,
+  pickVisual,
+} from "./data/visualMap";
 import { company } from "./data/company";
 import { pricing } from "./data/pricing";
-import { projects, type Project } from "./data/projects";
+import { projects, type Project, type ProjectImageDisplay } from "./data/projects";
 import { assetPath, hashRouteHref } from "./lib/assetPath";
 
 const navItems = [
@@ -79,7 +89,7 @@ const industryIcons = [
 
 const commandCenterModules = [
   {
-    title: "Content Calendar",
+    title: "Kế hoạch nội dung",
     eyebrow: "Kế hoạch đăng tải",
     icon: CalendarDays,
     motionIcon: "process-plan",
@@ -93,14 +103,14 @@ const commandCenterModules = [
     className: "command-ads",
   },
   {
-    title: "Media Assets",
+    title: "Tư liệu hình ảnh",
     eyebrow: "Ảnh, video, visual chiến dịch",
     icon: Camera,
     motionIcon: "studio",
     className: "command-media",
   },
   {
-    title: "Booking Plan",
+    title: "Lịch sự kiện / booking",
     eyebrow: "Lịch sự kiện & đặt chỗ",
     icon: CalendarDays,
     motionIcon: "booking",
@@ -129,33 +139,33 @@ const commandCenterModules = [
   },
 ] satisfies Array<{ title: string; eyebrow: string; icon: typeof CalendarDays; motionIcon: MotionIconName; className: string }>;
 
-const gallery = [
-  { title: "Valley Beach Club", image: "/assets/showcase/valley-beach-club-hero.webp" },
-  { title: "Cana Beer", image: "/assets/showcase/cana-beer-showcase.webp" },
-  { title: "Hồ Cô Tiên", image: "/assets/showcase/ho-co-tien-showcase.webp" },
-  { title: "Bird's Nest Cafe", image: "/assets/showcase/birds-nest-cafe-showcase.webp" },
-  { title: "Cabi Beach", image: "/assets/showcase/cabi-beach-showcase.webp" },
-  { title: "Grand View Palace", image: "/assets/showcase/grand-view-palace-showcase.webp" },
+const gallery: Array<{ title: string; image: string; display: ProjectImageDisplay }> = [
+  { title: "Valley Beach Club", image: "/assets/showcase/valley-beach-club-hero.webp", display: "hero" },
+  { title: "Cana Beer", image: "/assets/showcase/cana-beer-showcase.webp", display: "showcase" },
+  { title: "Hồ Cô Tiên", image: "/assets/showcase/ho-co-tien-showcase.webp", display: "compact" },
+  { title: "Bird's Nest Cafe", image: "/assets/showcase/birds-nest-cafe-showcase.webp", display: "compact" },
+  { title: "Cabi Beach", image: "/assets/showcase/cabi-beach-showcase.webp", display: "showcase" },
+  { title: "Grand View Palace", image: "/assets/showcase/grand-view-palace-showcase.webp", display: "showcase" },
 ];
 
 const industryCards = [
   {
     title: "Bar / Club / Nightlife",
-    description: "Line-up, poster, recap, fanpage và quảng cáo theo mục tiêu để mỗi sự kiện có nhịp truyền thông trước, trong và sau đêm diễn.",
+    description: "Poster, line-up, recap và fanpage đúng nhịp — khách biết event sắp diễn ra trước khi đêm tới.",
     image: "/assets/showcase/valley-beach-club-hero.webp",
     services: ["Fanpage", "Poster line-up", "Video recap", "Ads theo mục tiêu"],
     href: hashRouteHref("/bar-club"),
   },
   {
     title: "Nhà hàng / Cafe / Khách sạn",
-    description: "Hình ảnh món ăn, không gian, website và social content giúp khách cảm nhận sự chỉn chu trước khi đặt bàn, đặt phòng hoặc liên hệ.",
+    description: "Hình ảnh món ăn, không gian và social content — khách cảm nhận sự chỉn chu trước khi đặt bàn, đặt phòng hoặc nhắn tin.",
     image: "/assets/showcase/birds-nest-cafe-showcase.webp",
     services: ["Social content", "Menu / poster", "TikTok / Reels", "Website SEO"],
     href: hashRouteHref("/nha-hang-khach-san"),
   },
   {
     title: "Doanh nghiệp / Dịch vụ tổng thể",
-    description: "Một đầu mối cho website, fanpage, content, media và ads khi thương hiệu muốn triển khai rõ ràng hơn mà không chia nhỏ cho nhiều bên.",
+    description: "Một đầu mối cho website, fanpage, content, media và ads — trao đổi theo nhu cầu hiện tại, không ép gói.",
     image: "/assets/showcase/grand-view-palace-showcase.webp",
     services: ["Website", "Branding", "Media", "Marketing tháng"],
     href: hashRouteHref("/dich-vu"),
@@ -165,53 +175,53 @@ const industryCards = [
 const featuredServices = [
   {
     title: "Website / Landing page có điểm đến rõ",
-    summary: "Xây nơi khách có thể xem dịch vụ, hiểu điểm mạnh và liên hệ dễ hơn thay vì chỉ phụ thuộc vào fanpage.",
+    summary: "Nơi khách xem dịch vụ, hình ảnh và liên hệ — thay vì chỉ dựa vào fanpage.",
     motionIcon: "website",
     items: ["Website", "Landing page", "SEO content"],
   },
   {
     title: "Fanpage & social content đều nhịp",
-    summary: "Xây lịch đăng, bài viết và visual nhất quán để fanpage không bị bỏ trống và giữ nhịp xuất hiện với khách hàng.",
+    summary: "Lịch đăng, bài viết và visual nhất quán — fanpage không bị bỏ trống, khách vẫn thấy bạn xuất hiện.",
     motionIcon: "social",
     items: ["Fanpage", "Content plan", "Bài viết"],
   },
   {
     title: "Video ngắn cho nhiều nền tảng",
-    summary: "Sản xuất video ngắn theo kịch bản để món ăn, không gian, dịch vụ hoặc sự kiện có thêm chất liệu dùng cho social và ads.",
+    summary: "Món ăn, không gian, dịch vụ hoặc sự kiện — video ngắn giúp dễ gây chú ý hơn ảnh tĩnh trên social và ads.",
     motionIcon: "video",
     items: ["TikTok", "Reels", "Kịch bản"],
   },
   {
     title: "Poster / menu / intro / recap",
-    summary: "Thiết kế ấn phẩm, menu, poster và video chiến dịch để hình ảnh thương hiệu đồng bộ hơn trên từng điểm chạm.",
+    summary: "Ấn phẩm, menu, poster và video theo từng hạng mục — thông tin rõ, dễ nhìn.",
     motionIcon: "design",
     items: ["Poster", "Menu", "Intro / recap"],
   },
   {
     title: "Ads theo mục tiêu từng kênh",
-    summary: "Triển khai quảng cáo dựa trên thông điệp, hình ảnh và mục tiêu rõ: nhận diện, tương tác, giới thiệu event hoặc dịch vụ.",
+    summary: "Facebook, TikTok, Google, Zalo — triển khai theo thông điệp và mục tiêu đã trao đổi, không chạy mù.",
     motionIcon: "ads",
     items: ["Facebook", "TikTok", "Google", "Zalo"],
   },
   {
     title: "Gói marketing theo tháng",
-    summary: "Kết hợp content, thiết kế, media và ads để thương hiệu có đội triển khai đều nhịp, dễ phối hợp và dễ theo dõi.",
+    summary: "Content, thiết kế, media và ads kết hợp theo tháng — khi bạn cần duy trì đều, không chỉ làm một lần.",
     motionIcon: "process-launch",
     items: ["Kế hoạch", "Triển khai", "Báo cáo"],
   },
 ] satisfies Array<{ title: string; summary: string; motionIcon: MotionIconName; items: string[] }>;
 
 const whyChooseItems = [
-  "Một đầu mối cho website, media, content, thiết kế và ads, giúp khách dễ phối hợp hơn.",
-  "Hiểu nhịp vận hành của nhà hàng, cafe, khách sạn, nightlife và doanh nghiệp dịch vụ địa phương.",
-  "Hình ảnh chỉn chu nhưng vẫn dễ ứng dụng vào chiến dịch, fanpage và vận hành hằng tháng.",
-  "Tập trung vào mục tiêu kinh doanh của thương hiệu, không chỉ làm đẹp từng ấn phẩm riêng lẻ.",
+  "Một đầu mối cho website, media, content, thiết kế và ads — không cần tự phối hợp nhiều bên.",
+  "Hiểu nhịp vận hành nhà hàng, cafe, khách sạn, bar/club và doanh nghiệp dịch vụ địa phương.",
+  "Hình ảnh chỉn chu, dễ dùng lại cho fanpage, chiến dịch và vận hành hằng tháng.",
+  "Nghe nhu cầu trước, rồi mới tư vấn hạng mục — không ép gói.",
 ];
 
-const pricingIcons = ["ads", "video", "design", "analytics", "website", "branding", "process-launch"] satisfies MotionIconName[];
-const processIcons = ["process-consult", "process-plan", "process-launch", "process-report"] satisfies MotionIconName[];
-const whyIconsHome = ["branding", "hospitality", "website", "target"] satisfies MotionIconName[];
+const whyIconsHome = homeWhyVisuals;
 const serviceVariants = ["gold", "cyan", "warm"] as const;
+const statAnimations = [animations.stats.established, animations.stats.capital, animations.stats.services, animations.stats.industries] as const;
+const industryAnimations = [animations.industries.barclub, animations.industries.hotel, animations.industries.services] as const;
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -495,16 +505,14 @@ function Header() {
 
 function ProjectArt({
   image,
+  display = "showcase",
   className = "",
 }: {
   image: string;
+  display?: ProjectImageDisplay;
   className?: string;
 }) {
-  return (
-    <div className={`project-art ${className}`} aria-hidden="true">
-      <img src={assetPath(image)} alt="" className="project-art-photo" loading="lazy" />
-    </div>
-  );
+  return <ProjectMedia image={image} alt="" display={display} className={className} />;
 }
 
 function HeroCommandCenter() {
@@ -519,11 +527,20 @@ function HeroCommandCenter() {
     >
       <div className="command-center-header">
         <div>
-          <p className="text-[0.65rem] font-black uppercase text-dst-gold">Live operation map</p>
-          <h2>DST Command Center</h2>
+          <p className="text-[0.65rem] font-black uppercase text-dst-gold">Các hạng mục triển khai</p>
+          <h2>Kế hoạch đang làm</h2>
         </div>
-        <span className="command-live-dot">Live</span>
+        <span className="command-live-dot">Đang triển khai</span>
       </div>
+      <AnimatedLottie
+        src={animations.hero.home}
+        className="hero-lottie-panel"
+        ariaLabel="Dashboard marketing DST"
+        autoplay
+        loop
+        playWhenVisible={false}
+        fallback={<MotionIcon name="analytics" size="6rem" title="Dashboard marketing" />}
+      />
 
       <div className="command-center-grid">
         {commandCenterModules.map(({ title, eyebrow, motionIcon, className }) => (
@@ -615,7 +632,7 @@ function Hero() {
             animate={fadeIn}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            {company.tagline.value}
+            Truyền thông, media và hiện diện số cho thương hiệu dịch vụ
           </motion.p>
           <motion.h1
             className="hero-headline mt-5 font-black text-white"
@@ -623,7 +640,7 @@ function Hero() {
             animate={fadeIn}
             transition={{ duration: 0.85, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           >
-            Một đội ngũ cho <span className="hero-gold-text">toàn bộ hình ảnh số</span> của thương hiệu
+            Giúp nhà hàng, cafe và khách sạn <span className="hero-gold-text">xuất hiện chuyên nghiệp hơn</span> trên nền tảng số
           </motion.h1>
           <motion.p
             className="hero-subtitle mx-auto mt-7 max-w-3xl text-white/76 lg:mx-0"
@@ -631,7 +648,7 @@ function Hero() {
             animate={fadeIn}
             transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
           >
-            DST Group kết hợp website, nội dung, video, thiết kế và quảng cáo để thương hiệu dịch vụ xuất hiện chỉn chu, dễ nhớ và dễ được khách hàng liên hệ hơn.
+            Từ hình ảnh, nội dung đến quảng cáo — DST giúp thương hiệu dịch vụ của bạn dễ được khách hàng chú ý và liên hệ hơn.
           </motion.p>
           <motion.div
             className="hero-actions mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap lg:justify-start"
@@ -640,11 +657,11 @@ function Hero() {
             transition={{ duration: 0.85, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
             <a href="#contact" className="premium-button hero-primary-button">
-              Nhận tư vấn gói phù hợp
+              Nhận tư vấn phù hợp
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a href="#industries" className="ghost-button hero-secondary-button">
-              Xem giải pháp cho ngành của bạn
+              Xem hạng mục dịch vụ
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </motion.div>
@@ -680,9 +697,15 @@ function Stats() {
       <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map(({ value, label, motionIcon }, index) => (
           <Reveal key={label} delay={index * 0.04} className="stat-card">
-            <span className="stat-icon">
-              <MotionIcon name={motionIcon} title={label} />
-            </span>
+            <AnimatedLottie
+              src={statAnimations[index] ?? animations.stats.services}
+              className="stat-icon stat-lottie"
+              ariaLabel={label}
+              autoplay
+              loop={false}
+              playOnHover
+              fallback={<MotionIcon name={motionIcon} title={label} />}
+            />
             <div className="stat-value mt-5 text-4xl font-black text-white" data-count-value={value}>
               {value}
             </div>
@@ -704,23 +727,23 @@ function About() {
   const featuredProjects = ["Valley Beach Club", "Cana Beer", "Bird's Nest Cafe", "Grand View Palace Ha Long Hotel", "Diamond Palace - Hạ Long"];
   const strengths = [
     {
-      title: "Tư vấn đúng nhu cầu",
-      description: "Xác định ngành, mục tiêu, kênh triển khai và mức độ ưu tiên trước khi bắt đầu.",
+      title: "Nghe nhu cầu trước",
+      description: "Xác định ngành, mục tiêu, kênh triển khai và phần nào cần ưu tiên — trước khi bàn làm gì.",
       motionIcon: "target",
     },
     {
-      title: "Triển khai đồng bộ",
-      description: "Kết nối website, content, media, thiết kế và ads trong cùng một nhịp vận hành.",
+      title: "Triển khai theo kế hoạch",
+      description: "Website, content, media, thiết kế và ads kết nối trong cùng phạm vi đã chốt.",
       motionIcon: "process-plan",
     },
     {
-      title: "Có dự án thực tế",
-      description: "Đã triển khai cho nhiều nhóm ngành dịch vụ như nightlife, F&B, hospitality và sự kiện.",
+      title: "Có dự án thật để xem",
+      description: "Một số hình ảnh và dự án DST đã triển khai — bạn có thể xem trước khi trao đổi thêm.",
       motionIcon: "media",
     },
     {
-      title: "Dễ phối hợp và theo dõi",
-      description: "Quy trình rõ ràng, dễ duyệt nội dung, dễ theo dõi tiến độ và đầu ra.",
+      title: "Đầu việc rõ, dễ theo dõi",
+      description: "Hai bên chốt việc cần làm, nội dung cần duyệt và đầu ra cần bàn giao — không mơ hồ.",
       motionIcon: "analytics",
     },
   ] satisfies Array<{ title: string; description: string; motionIcon: MotionIconName }>;
@@ -730,12 +753,12 @@ function About() {
       <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8 lg:px-8">
         <Reveal className="about-panel about-story-panel">
           <p className="section-eyebrow">Về DST Group</p>
-          <h2 className="section-title mt-3 text-white">Một đội ngũ triển khai hình ảnh số cho thương hiệu dịch vụ</h2>
+          <h2 className="section-title mt-3 text-white">Một đội ngũ giúp thương hiệu dịch vụ trông chuyên nghiệp hơn trên mạng</h2>
           <p className="mt-5 text-base leading-8 text-white/70">
-            DST Group là công ty truyền thông, media và giải pháp hiện diện số tại Quảng Ninh, đồng hành cùng nhà hàng, cafe, khách sạn, bar/club, trung tâm sự kiện và doanh nghiệp dịch vụ.
+            DST Group là công ty truyền thông, media và giải pháp hiện diện số tại Quảng Ninh — đồng hành cùng nhà hàng, cafe, khách sạn, bar/club và doanh nghiệp dịch vụ.
           </p>
           <p className="mt-4 text-base leading-8 text-white/70">
-            Thay vì triển khai rời rạc từng hạng mục, DST kết nối website, fanpage, content, video, thiết kế và quảng cáo trong cùng một kế hoạch để thương hiệu xuất hiện rõ ràng, chỉn chu và dễ được khách hàng liên hệ hơn.
+            Khách có thể lướt qua rất nhanh nếu hình ảnh chưa đủ rõ, bài viết chưa hấp dẫn hoặc thông tin liên hệ khó tìm. DST nghe nhu cầu trước, rồi tư vấn website, fanpage, content, video, thiết kế hoặc quảng cáo phù hợp.
           </p>
           <div className="mt-7 flex flex-wrap gap-2">
             {["Nhà hàng", "Cafe", "Khách sạn", "Bar/Club", "Trung tâm sự kiện", "Doanh nghiệp dịch vụ"].map((item) => (
@@ -793,13 +816,13 @@ function Industries() {
   return (
     <section id="industries" className="section-reveal bg-[#080b0b] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Lĩnh vực phục vụ" title="Mỗi ngành có nhịp truyền thông riêng. DST triển khai theo đúng ngữ cảnh đó.">
-          Nightlife cần nhịp sự kiện, hospitality cần cảm giác tin cậy, doanh nghiệp dịch vụ cần một hệ thống nội dung rõ ràng và dễ quản lý.
+        <SectionHeading eyebrow="Lĩnh vực phục vụ" title="Mỗi ngành có bài toán riêng — DST tư vấn theo đó">
+          Nhà hàng cần hình ảnh món ăn. Bar/club cần truyền thông event. Khách sạn cần phòng nghỉ thuyết phục. DST tư vấn theo ngành, ngân sách và nhu cầu hiện tại.
         </SectionHeading>
         <div className="grid gap-5 lg:grid-cols-3">
           {industryCards.map((industry, index) => (
             <Reveal key={industry.title} delay={index * 0.06} className="industry-card group">
-              <a href={industry.href ?? "#contact"} className="block h-full" aria-label={`Xem giải pháp ${industry.title}`}>
+              <a href={industry.href ?? "#contact"} className="block h-full" aria-label={`Xem dịch vụ ${industry.title}`}>
                 <div className="industry-media">
                   <img src={assetPath(industry.image)} alt={industry.title} loading="lazy" />
                 </div>
@@ -807,10 +830,20 @@ function Industries() {
                   <div className="flex items-center justify-between gap-4">
                     <p className="industry-number">{String(index + 1).padStart(2, "0")}</p>
                     <span className="motion-icon-badge industry-motion-icon">
-                      <MotionIcon
-                        name={industryIcons[index]?.name ?? "branding"}
-                        variant={industryIcons[index]?.variant ?? "warm"}
-                        title={industry.title}
+                      <AnimatedLottie
+                        src={industryAnimations[index] ?? animations.services.business}
+                        className="card-lottie-icon"
+                        ariaLabel={industry.title}
+                        autoplay={false}
+                        loop={false}
+                        playOnHover
+                        fallback={
+                          <MotionIcon
+                            name={industryIcons[index]?.name ?? "branding"}
+                            variant={industryIcons[index]?.variant ?? "warm"}
+                            title={industry.title}
+                          />
+                        }
                       />
                     </span>
                   </div>
@@ -825,7 +858,7 @@ function Industries() {
                   </div>
                   {industry.href ? (
                     <span className="mt-6 inline-flex items-center gap-2 text-sm font-black uppercase text-dst-gold">
-                      Xem giải pháp ngành này
+                      Xem dịch vụ phù hợp
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   ) : null}
@@ -843,23 +876,26 @@ function Gallery() {
   return (
     <section className="section-reveal bg-[#070909] py-24 text-white lg:py-28" data-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Dự án thật" title="Không chỉ nói về năng lực. Hãy nhìn cách DST đã triển khai hình ảnh.">
-          Ảnh và dự án được lấy từ tài liệu thật, giúp khách xem nhanh chất liệu thương hiệu DST từng xử lý.
+        <SectionHeading eyebrow="Dự án đã thực hiện" title="Một số hình ảnh/dự án DST đã triển khai">
         </SectionHeading>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-          {gallery.map((item, index) => (
+          {gallery.map((item, index) => {
+            const isLargeTile = item.display === "hero" || item.display === "showcase";
+            return (
             <Reveal
               key={item.title}
               delay={index * 0.04}
-              className={`showcase-card group relative min-h-[280px] overflow-hidden rounded-xl border border-white/10 bg-white/5 ${
-                index === 0 || index === 1 ? "lg:col-span-3" : "lg:col-span-2"
-              }`}
+              className={[
+                "showcase-card group relative overflow-hidden rounded-xl border border-white/10 bg-white/5",
+                isLargeTile ? "min-h-[280px] lg:col-span-3" : "min-h-[220px] lg:col-span-2 showcase-card--compact",
+              ].join(" ")}
             >
-              <ProjectArt image={item.image} className="absolute inset-0" />
+              <ProjectArt image={item.image} display={item.display} className="absolute inset-0" />
               <div className="project-image-shade" />
               <h3 className="absolute bottom-5 left-5 z-10 text-xl font-black text-white">{item.title}</h3>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -878,7 +914,7 @@ function HighlightServiceCard({
       <div className="flex items-start justify-between gap-5">
         <div className="service-highlight-icon">
           <MotionIcon
-            name={service.motionIcon}
+            name={pickVisual(homeFeaturedServiceVisuals, index, service.motionIcon)}
             size="clamp(4.3rem, 5.4vw, 5.55rem)"
             variant={serviceVariants[index % serviceVariants.length]}
             title={service.title}
@@ -903,8 +939,8 @@ function Services() {
   return (
     <section id="services" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Dịch vụ nổi bật" title="Từ một bài đăng đến cả hệ thống truyền thông, mọi điểm chạm cần đi cùng nhau">
-          DST gom website, fanpage, content, media, thiết kế và ads thành các hạng mục dễ chọn theo mục tiêu thật của từng thương hiệu.
+        <SectionHeading eyebrow="Dịch vụ nổi bật" title="Chọn hạng mục theo nhu cầu hiện tại">
+          Không cần làm hết mọi thứ cùng lúc. DST tư vấn website, fanpage, content, media, thiết kế hoặc ads — bắt đầu từ phần cần nhất.
         </SectionHeading>
         <div className="responsive-card-grid">
           {featuredServices.map((service, index) => (
@@ -913,7 +949,7 @@ function Services() {
         </div>
         <Reveal className="cta-inline-panel mt-6 flex justify-center">
           <a href="#contact" className="premium-button">
-            Nhận đề xuất truyền thông
+            Nhận tư vấn phù hợp
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </Reveal>
@@ -925,7 +961,7 @@ function Services() {
 function FeaturedProject({ project }: { project: Project }) {
   return (
     <Reveal className="featured-project group">
-      <ProjectArt image={project.image} className="absolute inset-0" />
+      <ProjectArt image={project.image} display={project.imageDisplay} className="absolute inset-0" />
       <div className="project-image-shade project-image-shade-featured" />
       <div className="relative z-10 max-w-2xl p-6 sm:p-10 lg:p-14">
         <p className="section-eyebrow">{project.sector}</p>
@@ -941,7 +977,7 @@ function FeaturedProject({ project }: { project: Project }) {
           ))}
         </div>
         <a href="#contact" className="premium-button mt-8">
-          Trao đổi về dự án tương tự
+          Trao đổi nhu cầu tương tự
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </a>
       </div>
@@ -950,9 +986,40 @@ function FeaturedProject({ project }: { project: Project }) {
 }
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const stacked = project.imageDisplay === "pdf-slide" || project.imageDisplay === "compact";
+
+  if (stacked) {
+    return (
+      <Reveal delay={index * 0.04} className={`project-card project-card--${project.imageDisplay} group`}>
+        <ProjectMedia
+          image={project.image}
+          alt={`Ảnh dự án ${project.name}`}
+          display={project.imageDisplay}
+          variant="stacked"
+        />
+        <div className="project-card-body">
+          <p className="text-xs font-bold uppercase text-dst-gold">{project.sector}</p>
+          <h3 className="mt-2 text-2xl font-black text-white">{project.name}</h3>
+          <p className="mt-3 line-clamp-2 text-sm leading-6 text-white/70">{project.summary}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {project.services.slice(0, 3).map((service) => (
+              <span key={service} className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-white/70">
+                {service}
+              </span>
+            ))}
+          </div>
+          <a href="#contact" className="mt-5 inline-flex items-center gap-2 text-sm font-black text-dst-gold transition hover:text-dst-cyan">
+            Xem hướng triển khai
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </div>
+      </Reveal>
+    );
+  }
+
   return (
-    <Reveal delay={index * 0.04} className="project-card group">
-      <ProjectArt image={project.image} className="absolute inset-0" />
+    <Reveal delay={index * 0.04} className={`project-card project-card--${project.imageDisplay} group`}>
+      <ProjectArt image={project.image} display={project.imageDisplay} className="absolute inset-0" />
       <div className="project-image-shade" />
       <div className="absolute inset-x-0 bottom-0 z-10 p-5">
         <p className="text-xs font-bold uppercase text-dst-gold">{project.sector}</p>
@@ -965,10 +1032,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </span>
           ))}
         </div>
-        <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-dst-gold">
+        <a href="#contact" className="mt-5 inline-flex items-center gap-2 text-sm font-black text-dst-gold transition hover:text-dst-cyan">
           Xem hướng triển khai
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
-        </span>
+        </a>
       </div>
     </Reveal>
   );
@@ -980,8 +1047,8 @@ function Projects() {
   return (
     <section id="projects" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Dự án đã triển khai" title="Dự án thật cho thấy DST xử lý nhiều kiểu bài toán truyền thông">
-          Mỗi dự án cho thấy một nhu cầu khác nhau: sự kiện, fanpage, visual, media, quảng cáo hoặc hình ảnh hospitality.
+        <SectionHeading eyebrow="Dự án đã triển khai" title="Một số dự án DST từng triển khai cho khách hàng">
+          Mỗi khách hàng có nhu cầu khác nhau. DST tư vấn hạng mục theo từng trường hợp.
         </SectionHeading>
         <FeaturedProject project={featured} />
         <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -998,15 +1065,15 @@ function Pricing() {
   return (
     <section id="pricing" className="section-reveal bg-[#080b0b] py-24 text-white lg:py-32" data-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Gói dịch vụ" title="Bắt đầu từ mục tiêu, rồi chọn đúng hạng mục cần triển khai">
-          Có thương hiệu chỉ cần website, có thương hiệu cần fanpage đều nhịp, có thương hiệu cần combo media, content và ads theo tháng.
+        <SectionHeading eyebrow="Gói dịch vụ" title="Bắt đầu từ mục tiêu, rồi chọn đúng hạng mục">
+          Có khách chỉ cần website. Có khách cần fanpage, media hoặc ads theo tháng. DST tư vấn theo nhu cầu thực tế.
         </SectionHeading>
         <div className="responsive-card-grid">
           {pricing.map((item, index) => (
             <Reveal key={`${item.category}-${item.item}`} delay={index * 0.04} className="pricing-card">
               <span className="motion-icon-badge">
                 {(() => {
-                  const iconName = pricingIcons[index] ?? "branding";
+                  const iconName = getPricingCategoryIcon(item.category, index);
                   return <MotionIcon name={iconName} title={item.category} />;
                 })()}
               </span>
@@ -1015,7 +1082,7 @@ function Pricing() {
               <p className="mt-4 text-3xl font-black text-white">{item.price}</p>
               <p className="mt-4 text-sm leading-6 text-white/60">{item.note}</p>
               <a href="#contact" className="mt-7 inline-flex items-center gap-2 text-sm font-black uppercase text-dst-gold">
-                Nhận gói phù hợp
+                Tư vấn gói triển khai
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </Reveal>
@@ -1028,28 +1095,29 @@ function Pricing() {
 
 function Process() {
   const steps = [
-    ["01", "Tư vấn & phân tích", "Xác định bối cảnh thương hiệu, kênh hiện tại và mục tiêu truyền thông cần ưu tiên."],
-    ["02", "Lên chiến lược", "Chốt thông điệp, hướng hình ảnh, kênh triển khai và lịch sản xuất phù hợp."],
-    ["03", "Triển khai & sản xuất", "Thực hiện website, bài viết, visual, video ngắn và chiến dịch quảng cáo."],
-    ["04", "Đo lường & tối ưu", "Theo dõi phản hồi, tối ưu nội dung và điều chỉnh theo mục tiêu kinh doanh."],
+    ["01", "Nghe và phân tích", "Làm rõ bối cảnh thương hiệu, kênh hiện tại và mục tiêu truyền thông cần ưu tiên."],
+    ["02", "Chọn hướng triển khai", "Chốt thông điệp, hướng hình ảnh, kênh và lịch sản xuất phù hợp với ngân sách."],
+    ["03", "Triển khai & sản xuất", "Website, bài viết, visual, video ngắn và chiến dịch quảng cáo theo phạm vi đã chốt."],
+    ["04", "Trao đổi & điều chỉnh", "Cập nhật theo phản hồi thực tế — giữ đúng nhịp với vận hành của bạn."],
   ];
 
   return (
-    <section id="process" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
+    <section id="process" className="section-reveal process-section bg-[#050707] py-24 text-white lg:py-32" data-reveal>
+      <div className="process-section-glow" aria-hidden="true" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Quy trình làm việc" title="Không bắt đầu bằng thiết kế. Bắt đầu bằng mục tiêu của thương hiệu.">
-          Quy trình được giữ gọn để chủ thương hiệu dễ nắm việc, dễ duyệt nội dung và dễ theo dõi tiến độ.
+        <SectionHeading eyebrow="Quy trình làm việc" title="Bắt đầu từ nhu cầu cần giải quyết">
+          Quy trình gọn — bạn dễ nắm việc, dễ duyệt nội dung và dễ theo dõi tiến độ.
         </SectionHeading>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="process-grid grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {steps.map(([number, title, desc], index) => (
-            <Reveal key={number} delay={index * 0.05} className="process-card">
+            <Reveal key={number} delay={index * 0.05} className="process-card process-card-premium">
               <span className="motion-icon-badge">
                 {(() => {
-                  const iconName = processIcons[index] ?? "process";
+                  const iconName = pickVisual(homeProcessVisuals, index, "process");
                   return <MotionIcon name={iconName} title={title} />;
                 })()}
               </span>
-              <span className="mt-5 block text-sm font-black text-dst-gold">{number}</span>
+              <span className="process-step-number mt-5 block text-sm font-black text-dst-gold">{number}</span>
               <h3 className="mt-4 text-xl font-black text-white">{title}</h3>
               <p className="mt-4 text-sm leading-6 text-white/60">{desc}</p>
             </Reveal>
@@ -1068,7 +1136,7 @@ function WhyChoose() {
           <p className="section-eyebrow">Vì sao chọn DST Group</p>
           <h2 className="section-title mt-3 text-white">Một đầu mối cho website, nội dung, media và quảng cáo</h2>
           <p className="mt-5 text-base leading-8 text-white/68">
-            DST Group phù hợp với thương hiệu dịch vụ muốn triển khai thực tế: có người tư vấn, có người làm hình ảnh, có người sản xuất nội dung và có người chạy quảng cáo trong cùng một kế hoạch.
+            DST Group phù hợp khi bạn cần một đầu mối tư vấn hình ảnh, sản xuất nội dung hoặc chạy quảng cáo — trong cùng một kế hoạch, không rời rạc.
           </p>
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -1094,18 +1162,27 @@ function FinalCTA() {
     <section className="section-reveal relative overflow-hidden bg-[#050707] px-4 py-16 text-white sm:px-6 lg:px-8" data-reveal>
       <div className="cta-glow" aria-hidden="true" />
       <Reveal className="final-cta-panel mx-auto max-w-7xl text-center">
-        <p className="section-eyebrow">Sẵn sàng tăng trưởng cùng DST Group?</p>
-          <h2 className="section-title mx-auto mt-4 max-w-4xl text-white">Hãy biến kênh truyền thông thành một hệ thống vận hành rõ ràng hơn</h2>
+        <AnimatedLottie
+          src={animations.contact.message}
+          className="cta-lottie"
+          ariaLabel="Liên hệ tư vấn DST"
+          autoplay={false}
+          loop={false}
+          playOnHover
+          fallback={<MotionIcon name="contact" size="4.5rem" title="Liên hệ tư vấn" />}
+        />
+        <p className="section-eyebrow">Cần tư vấn website, content hoặc quảng cáo?</p>
+        <h2 className="section-title mx-auto mt-4 max-w-4xl text-white">Hãy nói rõ bạn đang cần gì — DST sẽ đề xuất cách triển khai phù hợp</h2>
         <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-white/70">
-          Hãy bắt đầu bằng mục tiêu cụ thể. DST sẽ đề xuất tổ hợp website, content, media và ads phù hợp với ngành, ngân sách và nhịp vận hành của bạn.
+          Bắt đầu bằng mục tiêu cụ thể. DST sẽ gợi ý tổ hợp website, content, media và ads vừa đủ với ngành, ngân sách và nhịp vận hành của bạn.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <a href="#contact" className="premium-button">
-            Nhận tư vấn gói phù hợp
+            Nhận tư vấn phù hợp
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
           <a href="#services" className="ghost-button">
-            Xem giải pháp cho ngành của bạn
+            Xem hạng mục dịch vụ
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
@@ -1157,9 +1234,9 @@ function Contact() {
       <div className="relative mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-8">
         <Reveal>
           <p className="section-eyebrow">Liên hệ</p>
-          <h2 className="section-title mt-3 text-white">Trao đổi với DST Group về hướng triển khai phù hợp</h2>
+          <h2 className="section-title mt-3 text-white">Gửi nhu cầu — DST tư vấn hướng triển khai</h2>
           <p className="mt-5 text-base leading-8 text-white/70">
-            Chia sẻ ngành, tình trạng kênh hiện tại và mục tiêu truyền thông. DST sẽ gợi ý hướng triển khai vừa đủ, dễ quản lý và có thể bắt đầu nhanh.
+            Chia sẻ ngành, tình trạng kênh hiện tại và mục tiêu truyền thông. DST sẽ gợi ý hướng vừa đủ, dễ quản lý và có thể bắt đầu nhanh.
           </p>
           <div className="mt-8 space-y-4">
             <div className="flex gap-3 rounded-xl border border-white/10 bg-white/5 p-4">
@@ -1185,7 +1262,7 @@ function Contact() {
             <BadgeCheck className="h-8 w-8 text-dst-gold" aria-hidden="true" />
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
-            {contactItems.map(({ label, value, href, icon: Icon }) => (
+            {contactItems.map(({ label, value, href, icon: Icon, external }) => (
               <a
                 key={label}
                 href={href}
@@ -1241,7 +1318,7 @@ function App() {
           <div>
             <img src={assetPath("/assets/brand/dst-logo-marketing-media.png")} alt="DST Marketing Media" className="h-10 w-auto" />
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              {company.tagline.value}. Website, media, nội dung số và marketing cho thương hiệu dịch vụ hiện đại.
+              Website, media, nội dung số và marketing cho thương hiệu dịch vụ.
             </p>
           </div>
           <div>
@@ -1275,7 +1352,6 @@ function App() {
         </div>
         <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/42 sm:flex-row sm:items-center sm:justify-between">
           <p>© DST Group. All rights reserved.</p>
-          <p>Nội dung được xây dựng từ hồ sơ năng lực và bảng báo giá nội bộ DST Group.</p>
         </div>
       </footer>
     </>

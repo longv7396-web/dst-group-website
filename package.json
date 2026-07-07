@@ -13,6 +13,7 @@
     "extract:showcase": "node scripts/extract-high-quality-assets.js"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.19.7",
     "@vitejs/plugin-react": "^5.0.0",
     "framer-motion": "^12.23.0",
     "gsap": "^3.15.0",

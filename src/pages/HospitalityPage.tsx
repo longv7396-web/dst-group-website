@@ -22,8 +22,18 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnimatedLottie } from "../components/AnimatedLottie";
 import { MotionIcon } from "../components/MotionIcon";
-import type { MotionIconName } from "../components/MotionIcon";
+import { ProjectMedia } from "../components/ProjectMedia";
+import { animations } from "../data/animationMap";
+import {
+  hospitalityGoalVisuals,
+  hospitalityPackageVisuals,
+  hospitalityProblemVisuals,
+  hospitalityProcessVisuals,
+  hospitalityServiceVisuals,
+  pickVisual,
+} from "../data/visualMap";
 import {
   hospitalityContact,
   hospitalityGoals,
@@ -37,12 +47,6 @@ import {
 import { assetPath } from "../lib/assetPath";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const serviceIcons = ["content", "video", "design", "website"] satisfies MotionIconName[];
-const problemIcons = ["hospitality", "booking", "website", "analytics"] satisfies MotionIconName[];
-const goalIcons = ["branding", "booking", "ads", "hospitality", "analytics"] satisfies MotionIconName[];
-const processIcons = ["analytics", "booking", "design", "process-report"] satisfies MotionIconName[];
-const packageIcons = ["hospitality", "booking", "website"] satisfies MotionIconName[];
 
 function useHospitalityMotion() {
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -242,29 +246,38 @@ function HospitalityHero() {
       <div className="hospitality-warm-glow" aria-hidden="true" />
       <div className="hospitality-bottom-gradient" aria-hidden="true" />
 
-      <div className="subpage-hero-shell relative z-10 mx-auto flex min-h-[78svh] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-8">
+      <div className="subpage-hero-shell relative z-10 mx-auto grid min-h-[78svh] max-w-7xl items-center gap-8 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_0.55fr] lg:px-8">
         <div className="hospitality-hero-content max-w-4xl">
           <p className="section-eyebrow">{hospitalityHero.eyebrow}</p>
           <h1 className="hospitality-hero-title mt-5 font-black text-white">{hospitalityHero.title}</h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-white/76">{hospitalityHero.subtitle}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href="#hospitality-solutions" className="premium-button">
-              Xem giải pháp Hospitality
+              Xem hạng mục dịch vụ
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a href="#hospitality-contact" className="ghost-button">
-              Tư vấn hình ảnh thương hiệu
+              Trao đổi nhu cầu
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
           <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-3">
-            {["Website & SEO", "Social content", "Video ngắn"].map((item) => (
+            {["Website / SEO", "Nội dung fanpage", "Video ngắn"].map((item) => (
               <span key={item} className="rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-black text-white/78 backdrop-blur">
                 {item}
               </span>
             ))}
           </div>
         </div>
+        <AnimatedLottie
+          src={animations.hero.hotel}
+          className="subpage-hero-lottie hidden lg:block"
+          ariaLabel="Đặt lịch nhà hàng khách sạn"
+          autoplay
+          loop
+          playWhenVisible={false}
+          fallback={<MotionIcon name="hospitality" size="8rem" title="Nhà hàng khách sạn" />}
+        />
       </div>
     </section>
   );
@@ -274,12 +287,12 @@ function ProblemsSection() {
   return (
     <section id="hospitality-problems" className="hospitality-section bg-[#050707] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <HospitalityHeading eyebrow="Bài toán hospitality" title="Khách thường cảm nhận thương hiệu trước khi họ bước vào cửa">
-          Nếu hình ảnh rời rạc, fanpage thiếu nhịp và website chưa rõ thông tin, thương hiệu dễ mất điểm ngay từ điểm chạm đầu tiên.
+        <HospitalityHeading eyebrow="Bài toán thường gặp" title="Khách thường xem hình ảnh trước khi liên hệ">
+          Khách có thể lướt qua rất nhanh nếu hình ảnh chưa đủ rõ, bài viết chưa hấp dẫn hoặc thông tin liên hệ khó tìm.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {hospitalityProblems.map((problem, index) => {
-            const iconName = problemIcons[index] ?? "hospitality";
+            const iconName = pickVisual(hospitalityProblemVisuals, index, "hospitality");
             return (
               <article key={problem.title} className="hospitality-card hospitality-problem-card" data-hospitality-reveal>
                 <span className="motion-icon-badge hospitality-motion-icon">
@@ -300,16 +313,21 @@ function ServicesSection() {
   return (
     <section id="hospitality-solutions" className="hospitality-section bg-[#080706] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <HospitalityHeading eyebrow="Dịch vụ dành cho Nhà hàng / Khách sạn" title="Hình ảnh, nội dung, website và ads cần kể cùng một câu chuyện">
-          DST triển khai fanpage, video ngắn, thiết kế, website và ads để khách thấy thương hiệu sạch, rõ và đáng tin hơn.
+        <HospitalityHeading eyebrow="Dịch vụ dành cho Nhà hàng / Khách sạn" title="Hạng mục DST có thể triển khai">
+          Fanpage, video ngắn, thiết kế, website và quảng cáo — tư vấn theo từng mô hình nhà hàng, cafe, khách sạn hoặc homestay.
         </HospitalityHeading>
         <div className="hospitality-card-grid">
           {hospitalityServiceCards.map((service, index) => {
-            const iconName = serviceIcons[index] ?? "hospitality";
+            const iconName = pickVisual(hospitalityServiceVisuals, index, "hospitality");
             return (
               <article key={service.title} className="hospitality-card hospitality-service-card group" data-hospitality-reveal>
                 <div className="hospitality-icon">
-                  <MotionIcon name={iconName} size="clamp(4.3rem, 5.4vw, 5.55rem)" variant="warm" title={service.title} />
+                  <MotionIcon
+                    name={iconName}
+                    size="clamp(4.3rem, 5.4vw, 5.55rem)"
+                    variant="warm"
+                    title={service.title}
+                  />
                 </div>
                 <h3 className="mt-7 text-2xl font-black leading-tight text-white">{service.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-white/64">{service.summary}</p>
@@ -333,20 +351,36 @@ function PortfolioSection() {
   return (
     <section id="hospitality-projects" className="hospitality-section bg-[#050707] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <HospitalityHeading eyebrow="Portfolio hospitality" title="Dự án thật từ nhà hàng, cafe, khách sạn đến trung tâm sự kiện">
-          Mỗi dự án thể hiện một nhu cầu khác nhau: hình ảnh không gian, visual món ăn, fanpage, media, ads hoặc truyền thông sự kiện.
+        <HospitalityHeading eyebrow="Dự án đã thực hiện" title="Một số hình ảnh/dự án DST đã triển khai">
+          Dự án nào có hạng mục rõ sẽ ghi đúng theo tài liệu. Dự án thiếu chi tiết sẽ ghi trung tính.
         </HospitalityHeading>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {hospitalityProjects.map((project) => (
-            <article key={project.name} className="hospitality-card hospitality-project-card group" data-hospitality-reveal>
+            <article key={project.name} className={`hospitality-card hospitality-project-card group hospitality-project-card--${project.imageDisplay}`} data-hospitality-reveal>
               <div className="hospitality-project-media">
-                <img src={assetPath(project.image)} alt={`${project.name} - ${project.sector}`} loading="lazy" />
-                <div className="hospitality-project-shade" aria-hidden="true" />
-                <div className="absolute inset-x-0 bottom-0 z-10 p-5">
+                <ProjectMedia
+                  image={project.image}
+                  alt={`Ảnh dự án ${project.name}`}
+                  display={project.imageDisplay}
+                  variant={project.imageDisplay === "pdf-slide" || project.imageDisplay === "compact" ? "stacked" : "overlay"}
+                  className={project.imageDisplay === "pdf-slide" || project.imageDisplay === "compact" ? "" : "absolute inset-0"}
+                />
+                {project.imageDisplay !== "pdf-slide" && project.imageDisplay !== "compact" ? (
+                  <>
+                    <div className="hospitality-project-shade" aria-hidden="true" />
+                    <div className="absolute inset-x-0 bottom-0 z-10 p-5">
+                      <p className="text-xs font-black uppercase text-dst-gold">{project.sector}</p>
+                      <h3 className="mt-2 text-2xl font-black leading-tight text-white">{project.name}</h3>
+                    </div>
+                  </>
+                ) : null}
+              </div>
+              {project.imageDisplay === "pdf-slide" || project.imageDisplay === "compact" ? (
+                <div className="border-b border-white/10 px-5 py-4">
                   <p className="text-xs font-black uppercase text-dst-gold">{project.sector}</p>
                   <h3 className="mt-2 text-2xl font-black leading-tight text-white">{project.name}</h3>
                 </div>
-              </div>
+              ) : null}
               <div className="p-5">
                 <p className="text-sm leading-7 text-white/66">{project.summary}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -356,6 +390,10 @@ function PortfolioSection() {
                     </span>
                   ))}
                 </div>
+                <a href="#hospitality-contact" className="mt-6 inline-flex items-center gap-2 text-sm font-black text-dst-gold transition hover:text-dst-cyan">
+                  Xem hướng triển khai
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
               </div>
             </article>
           ))}
@@ -369,12 +407,12 @@ function GoalsSection() {
   return (
     <section id="hospitality-goals" className="hospitality-section bg-[#080706] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <HospitalityHeading eyebrow="Giải pháp theo mục tiêu" title="Không phải thương hiệu nào cũng cần cùng một gói truyền thông">
-          Có nơi cần ảnh không gian, có nơi cần video món ăn, có nơi cần website, fanpage và ads đi cùng nhau để tạo cảm giác tin cậy hơn.
+        <HospitalityHeading eyebrow="Tư vấn theo nhu cầu" title="Mỗi mô hình cần hạng mục khác nhau">
+          Nhà hàng cần ảnh món. Khách sạn cần phòng nghỉ thuyết phục. Homestay cần không gian ấm. DST tư vấn theo tình trạng thực tế.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {hospitalityGoals.map((goal, index) => {
-            const iconName = goalIcons[index] ?? "hospitality";
+            const iconName = pickVisual(hospitalityGoalVisuals, index, "hospitality");
             return (
               <article key={goal.title} className="hospitality-card hospitality-goal-card" data-hospitality-reveal>
                 <span className="motion-icon-badge hospitality-motion-icon">
@@ -395,15 +433,15 @@ function ProcessSection() {
   return (
     <section id="hospitality-process" className="hospitality-section bg-[#050707] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <HospitalityHeading eyebrow="Quy trình triển khai" title="Từ cảm giác thương hiệu đến nội dung có thể đăng và chạy">
-          Quy trình ngắn, dễ duyệt và phù hợp với các mô hình dịch vụ cần triển khai đều theo tháng.
+        <HospitalityHeading eyebrow="Quy trình triển khai" title="Trao đổi rõ trước khi làm">
+          DST xem nhu cầu, chốt phạm vi, triển khai nội dung rồi trao đổi lại theo phản hồi thực tế.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {hospitalityProcess.map((step, index) => (
             <article key={step.step} className="hospitality-card hospitality-process-card" data-hospitality-reveal>
               <span className="motion-icon-badge hospitality-motion-icon">
                 {(() => {
-                  const iconName = processIcons[index] ?? "process";
+                  const iconName = pickVisual(hospitalityProcessVisuals, index, "process");
                   return <MotionIcon name={iconName} variant="warm" title={step.title} />;
                 })()}
               </span>
@@ -422,19 +460,19 @@ function PackagesSection() {
   return (
     <section className="hospitality-section bg-[#080706] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <HospitalityHeading eyebrow="Gói dịch vụ" title="Chọn gói theo mục tiêu: nhận diện, đặt bàn, đặt phòng hoặc chiến dịch">
-          Một số hạng mục có giá trong tài liệu, các hạng mục còn lại sẽ tư vấn theo nhu cầu thực tế và quy mô triển khai.
+        <HospitalityHeading eyebrow="Chi phí và hạng mục" title="Báo giá theo phạm vi triển khai">
+          Một số hạng mục có giá trong tài liệu. Phần còn lại sẽ được tư vấn theo nhu cầu thực tế.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {hospitalityPackages.map((item, index) => (
             <article key={item.title} className="hospitality-card hospitality-package-card" data-hospitality-reveal>
               <span className="motion-icon-badge hospitality-motion-icon">
                 {(() => {
-                  const iconName = packageIcons[index] ?? "hospitality";
+                  const iconName = pickVisual(hospitalityPackageVisuals, index, "hospitality");
                   return <MotionIcon name={iconName} variant="warm" title={item.title} />;
                 })()}
               </span>
-              <p className="text-xs font-black uppercase text-dst-gold">Hospitality</p>
+              <p className="text-xs font-black uppercase text-dst-gold">Nhà hàng / Cafe / Khách sạn</p>
               <h3 className="mt-4 text-xl font-black leading-tight text-white">{item.title}</h3>
               <p className="mt-5 text-2xl font-black text-white">{item.price}</p>
               <p className="mt-4 text-sm leading-7 text-white/62">{item.description}</p>
@@ -455,13 +493,13 @@ function FinalContactSection() {
       <div className="relative mx-auto grid max-w-7xl gap-6 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:gap-8 lg:p-10">
         <div>
           <p className="section-eyebrow">Trao đổi dự án</p>
-          <h2 className="hospitality-section-title mt-4 text-white">Bạn muốn hình ảnh hospitality của mình chỉn chu và đáng tin hơn?</h2>
+          <h2 className="hospitality-section-title mt-4 text-white">Bạn cần tư vấn cho nhà hàng, cafe, khách sạn hoặc homestay?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
-            Trao đổi với DST để chọn hướng website, fanpage, video, hình ảnh và ads phù hợp với mô hình, tệp khách và ngân sách của bạn.
+            Gửi nhu cầu hiện tại — DST xem mô hình, kênh đang có và ngân sách dự kiến trước khi đề xuất hạng mục.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
-              Bắt đầu xây dựng hình ảnh thương hiệu
+              Nhận tư vấn phù hợp
               <MotionIcon name="contact" size="1.45rem" variant="warm" title="Liên hệ" />
             </a>
             <Link to="/" className="ghost-button">

@@ -7,6 +7,25 @@ import "./styles.css";
 const BarClubPage = React.lazy(() => import("./pages/BarClubPage"));
 const HospitalityPage = React.lazy(() => import("./pages/HospitalityPage"));
 const ServicesPage = React.lazy(() => import("./pages/ServicesPage"));
+const AnimationLabPage = React.lazy(() => import("./pages/AnimationLabPage"));
+const isDev = import.meta.env.DEV;
+
+const standaloneRoutes: Record<string, string> = {
+  "/dstbarclub": "/bar-club",
+  "/dsthotel": "/nha-hang-khach-san",
+  "/dstservice": "/dich-vu",
+};
+
+if (isDev) {
+  standaloneRoutes["/animation-lab"] = "/animation-lab";
+}
+
+const pathname = window.location.pathname.replace(/\/$/, "");
+const standaloneHash = standaloneRoutes[pathname];
+
+if (standaloneHash && (!window.location.hash || window.location.hash === "#/")) {
+  window.history.replaceState(null, "", `${window.location.pathname}#${standaloneHash}`);
+}
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -17,6 +36,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/bar-club" element={<BarClubPage />} />
           <Route path="/nha-hang-khach-san" element={<HospitalityPage />} />
           <Route path="/dich-vu" element={<ServicesPage />} />
+          {isDev ? <Route path="/animation-lab" element={<AnimationLabPage />} /> : null}
           <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>

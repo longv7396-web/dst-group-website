@@ -4,36 +4,45 @@ import { projects } from "./projects";
 import { hospitalityServices } from "./services";
 import type { SourceMeta } from "./sources";
 
+const hospitalityQuoteSource = "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf" as const;
+const hospitalityWorkflowNote =
+  "Nội dung diễn giải quy trình từ hạng mục PDF, không phải trích nguyên văn.";
+const hospitalityWorkflowSource = {
+  sourceFile: hospitalityQuoteSource,
+  page: 36,
+  confidence: "low",
+} satisfies SourceMeta;
+
 export const hospitalityHero = {
-  eyebrow: "DST Group for Hospitality",
-  title: "Đưa trải nghiệm nhà hàng, cafe và khách sạn lên một hình ảnh xứng tầm hơn",
+  eyebrow: "Truyền thông cho Nhà hàng / Cafe / Khách sạn",
+  title: "Khi không gian đẹp mà khách chưa thấy đủ rõ",
   subtitle:
-    "DST Group xây dựng website, hình ảnh, video, social content và quảng cáo để thương hiệu hospitality trở nên chỉn chu, dễ nhớ và tạo cảm giác tin cậy hơn trước khi khách liên hệ.",
+    "Không gian tốt, món ngon hay phòng nghỉ chỉ phát huy giá trị khi khách nhìn thấy chúng rõ ràng và đủ thuyết phục. DST hỗ trợ fanpage, video, thiết kế, website và quảng cáo theo từng mô hình.",
   video: "/assets/videos/hospitality-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
-  poster: "/assets/hospitality/birds-nest-cafe.webp",
+  poster: "/assets/showcase/birds-nest-cafe-showcase.webp",
   source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
 };
 
 export const hospitalityProblems = [
   {
-    title: "Khách cảm nhận thương hiệu trước khi bước vào cửa",
-    description: "Ảnh món ăn, không gian, phòng nghỉ và dịch vụ trên fanpage/website tạo cảm giác tin cậy đầu tiên.",
+    title: "Khách quyết định bằng mắt trước",
+    description: "Họ lướt qua rất nhanh. Ảnh món, không gian hoặc phòng nghỉ chưa đủ rõ — họ chuyển sang chỗ khác mà chưa nhắn tin.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Fanpage thiếu kế hoạch khiến thương hiệu dễ bị quên",
-    description: "Bài viết, poster, ảnh bìa và avatar theo concept giúp thương hiệu xuất hiện đều và nhất quán hơn.",
+    title: "Fanpage im lìm quá lâu",
+    description: "Không có lịch đăng, bài viết hay visual nhất quán — khách khó cảm nhận quán còn hoạt động và đáng tin.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Video ngắn giúp khách thấy trải nghiệm thật hơn",
-    description: "Kịch bản và video ngắn giúp món ăn, không gian, sự kiện và dịch vụ được cảm nhận nhanh hơn trên nhiều nền tảng.",
+    title: "Thiếu video ngắn để gây chú ý",
+    description: "Một đoạn Reels hoặc TikTok ngắn có thể giúp món ăn, không gian hoặc sự kiện dễ được chia sẻ hơn ảnh tĩnh.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Website và ads cần cùng một thông điệp",
-    description: "Website, bài SEO và ads nên cùng dẫn khách đến một hình ảnh thương hiệu rõ ràng, sạch và dễ tin.",
+    title: "Website và ads nói hai ngôn ngữ khác nhau",
+    description: "Thông tin lệch nhau giữa fanpage, website và quảng cáo — khách khó tin và chần chừ liên hệ.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" } satisfies SourceMeta,
   },
 ];
@@ -43,23 +52,12 @@ export const hospitalityServiceCards = hospitalityServices.map((service) => ({
   note: `${service.source.sourceFile}, trang ${service.source.page}`,
 }));
 
-const hospitalityImageMap: Record<string, string> = {
-  "Nhà hàng Hồ Cô Tiên": "/assets/hospitality/nha-hang-ho-co-tien.webp",
-  "Bird's Nest Cafe": "/assets/hospitality/birds-nest-cafe.webp",
-  "Cabi Beach": "/assets/hospitality/cabi-beach.webp",
-  "Grand View Palace Ha Long Hotel": "/assets/hospitality/grand-view-palace.webp",
-  "Diamond Palace - Hạ Long": "/assets/hospitality/diamond-palace.webp",
-  "Nhà hàng Thiên Anh": "/assets/hospitality/nha-hang-thien-anh.png",
-  "Nhà hàng Thanh Thư": "/assets/hospitality/nha-hang-thanh-thu.png",
-};
-
 export const hospitalityProjects = projects
   .filter((project) => project.category === "hospitality" || project.category === "event")
   .map((project) => ({
     ...project,
-    image: hospitalityImageMap[project.name] ?? project.image,
     tags: [
-      project.sector.includes("Coffee") ? "Cafe" : project.sector.includes("Khách sạn") ? "Khách sạn" : "Hospitality",
+      project.sector.includes("Coffee") ? "Cafe" : project.sector.includes("Khách sạn") ? "Khách sạn" : "Dịch vụ",
       project.category === "event" ? "Sự kiện" : "Nhà hàng",
       "Media",
     ],
@@ -67,60 +65,78 @@ export const hospitalityProjects = projects
 
 export const hospitalityGoals = [
   {
-    title: "Khách nhớ thương hiệu rõ hơn",
-    description: "Đồng bộ hình ảnh, nội dung và visual để khách dễ nhận ra thương hiệu giữa nhiều lựa chọn cùng ngành.",
+    title: "Hình ảnh dễ nhận ra hơn",
+    description: "Ảnh món, không gian và visual thiết kế theo cùng một hướng — khách nhìn là biết đây là thương hiệu của bạn.",
+    source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "low" } satisfies SourceMeta,
+    confidenceNote: hospitalityWorkflowNote,
   },
   {
-    title: "Hỗ trợ hành trình đặt bàn / đặt phòng",
-    description: "Kết hợp website, social content và quảng cáo để khách có đủ thông tin trước khi liên hệ.",
+    title: "Khách hiểu dịch vụ trước khi gọi",
+    description: "Website, fanpage và quảng cáo cung cấp đủ thông tin — khách tự tin hơn khi đặt bàn, đặt phòng hoặc nhắn tin.",
+    source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "low" } satisfies SourceMeta,
+    confidenceNote: hospitalityWorkflowNote,
   },
   {
-    title: "Fanpage có nhịp nội dung ổn định",
-    description: "Duy trì bài viết, thiết kế và video ngắn để kênh social không bị bỏ trống hoặc rời rạc.",
+    title: "Fanpage có nhịp, không bị bỏ trống",
+    description: "Bài viết, thiết kế và video ngắn theo lịch đăng đã trao đổi — quán vẫn xuất hiện đều với khách.",
+    source: { sourceFile: hospitalityQuoteSource, page: 36, confidence: "medium" } satisfies SourceMeta,
+    confidenceNote: hospitalityWorkflowNote,
   },
   {
-    title: "Ra mắt món mới, ưu đãi hoặc sự kiện rõ ràng hơn",
-    description: "Tạo poster, video intro, nội dung nhắc lịch và visual theo từng giai đoạn truyền thông.",
+    title: "Món mới, ưu đãi và sự kiện được nhìn thấy",
+    description: "Poster, video giới thiệu và nội dung nhắc lịch theo từng chương trình — khách biết có gì mới.",
+    source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "medium" } satisfies SourceMeta,
+    confidenceNote: hospitalityWorkflowNote,
   },
   {
-    title: "Hình ảnh thương hiệu sạch và tin cậy hơn",
-    description: "Đồng bộ ảnh không gian, ảnh dịch vụ, banner, menu và nội dung quảng cáo theo cùng một tinh thần.",
+    title: "Menu, banner và ads nói cùng một giọng",
+    description: "Ảnh không gian, dịch vụ, menu và ads được chuẩn bị cùng hướng — thông tin nhất quán, dễ hiểu.",
+    source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "low" } satisfies SourceMeta,
+    confidenceNote: hospitalityWorkflowNote,
   },
 ];
 
 export const hospitalityProcess = [
   {
     step: "01",
-    title: "Khảo sát mô hình và mục tiêu ưu tiên",
-    description: "Xác định nhóm khách, dịch vụ chủ lực, điểm mạnh không gian và mục tiêu truyền thông cần tập trung.",
+    title: "Nghe bạn nói về mô hình",
+    description: "DST xem nhóm khách, dịch vụ chủ lực, kênh đang dùng và phần nào cần ưu tiên trước.",
+    source: hospitalityWorkflowSource,
+    confidenceNote: hospitalityWorkflowNote,
   },
   {
     step: "02",
-    title: "Chốt concept hình ảnh và lịch nội dung",
-    description: "Xác định mood ảnh, thông điệp, lịch bài, hạng mục media và kênh quảng cáo phù hợp.",
+    title: "Chọn hạng mục phù hợp",
+    description: "Hai bên trao đổi ảnh, bài viết, video, website hoặc ads — theo tình trạng và ngân sách thực tế.",
+    source: hospitalityWorkflowSource,
+    confidenceNote: hospitalityWorkflowNote,
   },
   {
     step: "03",
-    title: "Sản xuất nội dung, media, website và ads",
-    description: "Triển khai bài viết, poster, video ngắn, website và quảng cáo theo kế hoạch đã duyệt.",
+    title: "Triển khai nội dung đã duyệt",
+    description: "DST làm bài viết, poster, video ngắn, website hoặc quảng cáo theo phạm vi đã thống nhất.",
+    source: hospitalityWorkflowSource,
+    confidenceNote: hospitalityWorkflowNote,
   },
   {
     step: "04",
-    title: "Theo dõi phản hồi và tối ưu",
-    description: "Điều chỉnh nội dung, visual và kênh triển khai theo phản hồi thực tế của từng giai đoạn.",
+    title: "Trao đổi và điều chỉnh",
+    description: "DST cập nhật theo phản hồi trong quá trình triển khai — giữ đúng nhịp với vận hành quán.",
+    source: hospitalityWorkflowSource,
+    confidenceNote: hospitalityWorkflowNote,
   },
 ];
 
 const hospitalityPricingSources = pricing.filter((item) =>
-  ["Quản trị truyền thông", "Thiết kế & nội dung", "Thiết kế đồ họa", "Quảng cáo online", "Website & SEO"].includes(item.category),
+  ["Quản trị truyền thông", "Thiết kế & nội dung", "Thiết kế đồ họa", "Quảng cáo online", "Website / SEO"].includes(item.category),
 );
 
 export const hospitalityPackages = [
   {
-    title: "Gói tư vấn theo nhu cầu",
+    title: "Tư vấn theo nhu cầu",
     price: "Liên hệ tư vấn",
     description:
-      "Đề xuất tổ hợp website, fanpage, hình ảnh, video và quảng cáo theo quy mô, mục tiêu và khả năng vận hành của từng thương hiệu.",
+      "Chi phí được tư vấn theo quy mô, số lượng hạng mục và thời điểm triển khai.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   ...hospitalityPricingSources.map((item) => ({
@@ -138,7 +154,8 @@ export const hospitalityContact = {
   websiteUrl: company.websiteUrl.value,
   facebook: company.fanpage.value,
   zalo: company.zalo.value,
-  address: company.headquarters.value,
+  address: company.quotationAddress.value,
+  headquarters: company.headquarters.value,
 };
 
 export const hospitalityAssetAudit = [

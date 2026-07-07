@@ -24,8 +24,18 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnimatedLottie } from "../components/AnimatedLottie";
 import { MotionIcon } from "../components/MotionIcon";
-import type { MotionIconName } from "../components/MotionIcon";
+import { ProjectMedia } from "../components/ProjectMedia";
+import { animations } from "../data/animationMap";
+import {
+  getPricingCategoryIcon,
+  pickVisual,
+  serviceGroupVisuals,
+  servicesOverviewVisuals,
+  servicesProcessVisuals,
+  servicesWhyVisuals,
+} from "../data/visualMap";
 import {
   featuredServiceProjects,
   industryLinks,
@@ -41,11 +51,6 @@ import { assetPath, hashRouteHref } from "../lib/assetPath";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const serviceIcons = ["website", "content", "video", "design", "ads", "process-launch"] satisfies MotionIconName[];
-const overviewIcons = ["branding", "target", "analytics"] satisfies MotionIconName[];
-const pricingIcons = ["ads", "video", "design", "analytics", "website", "branding", "process-launch"] satisfies MotionIconName[];
-const processIcons = ["process-consult", "target", "process-plan", "process-launch", "process-report"] satisfies MotionIconName[];
-const whyIcons = ["branding", "target", "website", "design", "analytics"] satisfies MotionIconName[];
 const serviceVariants = ["gold", "cyan", "warm"] as const;
 
 function useServicesMotion() {
@@ -247,18 +252,18 @@ function ServicesHero() {
       <div className="services-grid-overlay" aria-hidden="true" />
       <div className="services-bottom-gradient" aria-hidden="true" />
 
-      <div className="subpage-hero-shell relative z-10 mx-auto flex min-h-[78svh] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-8">
+      <div className="subpage-hero-shell relative z-10 mx-auto grid min-h-[78svh] max-w-7xl items-center gap-8 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_0.55fr] lg:px-8">
         <div className="services-hero-content max-w-5xl">
           <p className="section-eyebrow">{servicesHero.eyebrow}</p>
           <h1 className="services-hero-title mt-5 font-black text-white">{servicesHero.title}</h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-white/76">{servicesHero.subtitle}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href="#service-groups" className="premium-button">
-              Khám phá toàn bộ dịch vụ
+              Xem nhóm dịch vụ
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a href="#service-contact" className="ghost-button">
-              Nhận tư vấn gói phù hợp
+              Nhận tư vấn phù hợp
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
@@ -270,6 +275,15 @@ function ServicesHero() {
             ))}
           </div>
         </div>
+        <AnimatedLottie
+          src={animations.hero.services}
+          className="subpage-hero-lottie hidden lg:block"
+          ariaLabel="Dashboard dịch vụ marketing"
+          autoplay
+          loop
+          playWhenVisible={false}
+          fallback={<MotionIcon name="analytics" size="8rem" title="Dịch vụ marketing" />}
+        />
       </div>
     </section>
   );
@@ -279,15 +293,15 @@ function OverviewSection() {
   return (
     <section id="services-overview" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Tổng quan dịch vụ" title="Khách không cần từng hạng mục rời rạc. Họ cần một hệ thống chạy cùng nhau.">
-          DST Group gom website, fanpage, content, media, thiết kế và ads thành các nhóm dịch vụ dễ chọn, dễ phối hợp và dễ quản lý.
+        <ServicesHeading eyebrow="Tổng quan dịch vụ" title="DST tư vấn theo nhu cầu thực tế">
+          Bạn gửi tình trạng hiện tại — DST sẽ xem nên bắt đầu từ website, fanpage, media, thiết kế hay ads.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-3">
           {servicesOverview.map((item, index) => (
             <article key={item.title} className="services-card services-info-card" data-services-reveal>
               <span className="motion-icon-badge services-motion-icon">
                 {(() => {
-                  const iconName = overviewIcons[index] ?? "branding";
+                  const iconName = pickVisual(servicesOverviewVisuals, index, "branding");
                   return <MotionIcon name={iconName} title={item.title} />;
                 })()}
               </span>
@@ -306,12 +320,12 @@ function ServiceGroupsSection() {
   return (
     <section id="service-groups" className="services-section bg-[#080b0b] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Nhóm dịch vụ chính" title="Sáu nhóm dịch vụ cho toàn bộ điểm chạm số của thương hiệu">
-          Từ website đến fanpage, media, design, ads và gói marketing theo tháng, mỗi nhóm đều giải quyết một phần trong hành trình khách hàng.
+        <ServicesHeading eyebrow="Nhóm dịch vụ chính" title="Dịch vụ dễ hiểu — không cần rành kỹ thuật">
+          Mỗi nhóm giải thích bằng lợi ích thực tế. Chọn phần phù hợp với nhu cầu hiện tại của bạn.
         </ServicesHeading>
         <div className="services-card-grid">
           {serviceGroups.map((group, index) => {
-            const iconName = serviceIcons[index] ?? "branding";
+            const iconName = pickVisual(serviceGroupVisuals, index, "branding");
             return (
               <article key={group.title} className="services-card services-service-card group" data-services-reveal>
                 <div className="services-icon">
@@ -332,7 +346,7 @@ function ServiceGroupsSection() {
                   ))}
                 </div>
                 <a href="#service-contact" className="mt-7 inline-flex items-center gap-2 text-sm font-black uppercase text-dst-gold">
-                  Nhận tư vấn gói phù hợp
+                  Trao đổi nhu cầu
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
               </article>
@@ -348,15 +362,15 @@ function PricingSection() {
   return (
     <section id="service-pricing" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Gói dịch vụ / bảng giá" title="Có thể bắt đầu nhỏ, hoặc triển khai theo combo trọn gói">
-          Hạng mục có giá được giữ theo dữ liệu thật. Hạng mục cần tùy chỉnh sẽ được tư vấn theo mục tiêu, quy mô và kênh triển khai.
+        <ServicesHeading eyebrow="Bảng giá / hạng mục" title="Chi phí theo tài liệu và phạm vi tư vấn">
+          Hạng mục có giá được giữ đúng theo tài liệu. Hạng mục chưa có giá sẽ tư vấn theo quy mô triển khai.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {servicePricing.map((item, index) => (
             <article key={`${item.category}-${item.item}`} className="services-card services-price-card" data-services-reveal>
               <span className="motion-icon-badge services-motion-icon">
                 {(() => {
-                  const iconName = pricingIcons[index] ?? "branding";
+                  const iconName = getPricingCategoryIcon(item.category, index);
                   return <MotionIcon name={iconName} title={item.category} />;
                 })()}
               </span>
@@ -376,8 +390,8 @@ function IndustryLinksSection() {
   return (
     <section id="service-industries" className="services-section bg-[#080b0b] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Dịch vụ theo ngành" title="Mỗi ngành cần cách kể chuyện và kênh triển khai khác nhau">
-          Chọn đúng nhóm ngành để xem cách DST tiếp cận nightlife, hospitality hoặc thương hiệu cần hệ sinh thái dịch vụ tổng thể.
+        <ServicesHeading eyebrow="Dịch vụ theo ngành" title="Chọn nhóm phù hợp với mô hình của bạn">
+          Mỗi mô hình có nhu cầu khác nhau. DST sẽ trao đổi thêm trước khi chốt hạng mục.
         </ServicesHeading>
         <div className="grid gap-5 lg:grid-cols-3">
           {industryLinks.map((item) => (
@@ -397,7 +411,7 @@ function IndustryLinksSection() {
                   ))}
                 </div>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-black uppercase text-dst-gold">
-                  Xem giải pháp ngành này
+                  Xem hướng triển khai
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </span>
               </div>
@@ -413,12 +427,12 @@ function ProcessSection() {
   return (
     <section id="service-process" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Quy trình triển khai" title="Từ vấn đề truyền thông đến kế hoạch có thể bắt đầu ngay">
-          Quy trình 5 bước giúp khách hàng dễ nắm phạm vi, dễ duyệt hạng mục và dễ theo dõi tiến độ.
+        <ServicesHeading eyebrow="Quy trình triển khai" title="Làm rõ nhu cầu trước khi báo giá">
+          DST nghe bạn nói trước — rồi mới đề xuất hạng mục, lịch và phạm vi công việc cần bàn giao.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {serviceProcess.map((step, index) => {
-            const iconName = processIcons[index] ?? "process";
+            const iconName = pickVisual(servicesProcessVisuals, index, "process");
             return (
               <article key={step.step} className="services-card services-process-card" data-services-reveal>
                 <span className="motion-icon-badge services-motion-icon">
@@ -440,20 +454,35 @@ function ProjectsSection() {
   return (
     <section id="service-projects" className="services-section bg-[#080b0b] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Dự án tiêu biểu" title="Bằng chứng tốt nhất là những thương hiệu đã có chất liệu thật">
-          Ảnh và dự án được lấy từ asset thật trong project để khách thấy rõ DST đã từng xử lý các nhóm ngành nào.
+        <ServicesHeading eyebrow="Dự án tiêu biểu" title="Một số hình ảnh/dự án DST đã triển khai">
         </ServicesHeading>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {featuredServiceProjects.map((project) => (
-            <article key={project.name} className="services-card services-project-card group" data-services-reveal>
+            <article key={project.name} className={`services-card services-project-card group services-project-card--${project.imageDisplay}`} data-services-reveal>
               <div className="services-project-media">
-                <img src={assetPath(project.image)} alt={`${project.name} - ${project.sector}`} loading="lazy" />
-                <div className="services-project-shade" aria-hidden="true" />
-                <div className="absolute inset-x-0 bottom-0 z-10 p-5">
+                <ProjectMedia
+                  image={project.image}
+                  alt={`Ảnh dự án ${project.name}`}
+                  display={project.imageDisplay}
+                  variant={project.imageDisplay === "pdf-slide" || project.imageDisplay === "compact" ? "stacked" : "overlay"}
+                  className={project.imageDisplay === "pdf-slide" || project.imageDisplay === "compact" ? "" : "absolute inset-0"}
+                />
+                {project.imageDisplay !== "pdf-slide" && project.imageDisplay !== "compact" ? (
+                  <>
+                    <div className="services-project-shade" aria-hidden="true" />
+                    <div className="absolute inset-x-0 bottom-0 z-10 p-5">
+                      <p className="text-xs font-black uppercase text-dst-gold">{project.sector}</p>
+                      <h3 className="mt-2 text-2xl font-black leading-tight text-white">{project.name}</h3>
+                    </div>
+                  </>
+                ) : null}
+              </div>
+              {project.imageDisplay === "pdf-slide" || project.imageDisplay === "compact" ? (
+                <div className="border-b border-white/10 px-5 py-4">
                   <p className="text-xs font-black uppercase text-dst-gold">{project.sector}</p>
                   <h3 className="mt-2 text-2xl font-black leading-tight text-white">{project.name}</h3>
                 </div>
-              </div>
+              ) : null}
               <div className="p-5">
                 <p className="text-sm leading-7 text-white/66">{project.summary}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -463,6 +492,10 @@ function ProjectsSection() {
                     </span>
                   ))}
                 </div>
+                <a href="#service-contact" className="mt-6 inline-flex items-center gap-2 text-sm font-black text-dst-gold transition hover:text-dst-cyan">
+                  Xem hướng triển khai
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
               </div>
             </article>
           ))}
@@ -478,9 +511,9 @@ function WhyChooseSection() {
       <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-8">
         <div className="services-reveal" data-services-reveal>
           <p className="section-eyebrow">Vì sao chọn DST Group</p>
-          <h2 className="services-section-title mt-3 text-white">Một đầu mối giúp thương hiệu không phải chia nhỏ việc cho quá nhiều bên</h2>
+          <h2 className="services-section-title mt-3 text-white">Một đầu mối để trao đổi hạng mục cần làm</h2>
           <p className="mt-5 text-base leading-8 text-white/68">
-            Các hạng mục được tổ chức để khách dễ chọn gói phù hợp: từ một landing page nhỏ đến một hệ thống marketing theo tháng, không cần tách rời website, content, media và ads.
+            DST xem nhu cầu trước, sau đó tư vấn hạng mục phù hợp. Bạn có thể bắt đầu từ việc nhỏ trước.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -488,7 +521,7 @@ function WhyChooseSection() {
             <article key={item} className="services-card services-why-card" data-services-reveal>
               <span className="motion-icon-badge services-motion-icon">
                 {(() => {
-                  const iconName = whyIcons[index] ?? "branding";
+                  const iconName = pickVisual(servicesWhyVisuals, index, "branding");
                   return <MotionIcon name={iconName} title={item} />;
                 })()}
               </span>
@@ -510,13 +543,13 @@ function FinalCtaSection() {
       <div className="relative mx-auto grid max-w-7xl gap-6 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:gap-8 lg:p-10">
         <div>
           <p className="section-eyebrow">Trao đổi với DST Group</p>
-          <h2 className="services-section-title mt-4 text-white">Bạn cần biết nên bắt đầu từ website, fanpage, video hay ads?</h2>
+          <h2 className="services-section-title mt-4 text-white">Bạn chưa rõ nên bắt đầu từ đâu?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
-            Chia sẻ tình trạng hiện tại của thương hiệu. DST sẽ đề xuất tổ hợp dịch vụ vừa đủ để triển khai rõ ràng hơn, không phải mua quá nhiều hạng mục cùng lúc.
+            Chia sẻ tình trạng hiện tại. DST sẽ xem website, fanpage, video hay ads nên làm trước.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
-              Nhận tư vấn gói phù hợp
+              Nhận tư vấn phù hợp
               <MotionIcon name="contact" size="1.45rem" title="Liên hệ" />
             </a>
             <Link to="/" className="ghost-button">

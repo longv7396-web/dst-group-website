@@ -7,55 +7,96 @@ export type PricingItem = {
   price: string;
   note: string;
   source: SourceMeta;
+  details?: string[];
+  quantity?: string;
+  fee?: string;
+  confidenceNote?: string;
 };
+
+const hospitalityQuoteSource = "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf" as const;
 
 export const pricing: PricingItem[] = [
   {
     category: "Quản trị truyền thông",
-    item: "Fanpage & social content",
+    item: "Quản trị Facebook (gói fanpage)",
     unit: "Tháng",
     price: "Liên hệ tư vấn",
-    note: "Lịch nội dung, bài viết, thiết kế, poster, ảnh chủ đề và video/reel theo nhu cầu vận hành.",
-    source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" },
+    note:
+      "Kế hoạch bài viết theo tháng; bài viết, thiết kế, poster concept tháng, ảnh bài + avatar chủ đề, thiết kế in ấn, đăng ảnh/reel hằng ngày, video khuyến mãi và recap (theo tư liệu khách cung cấp). Số lượng tùy gói khách chọn.",
+    source: { sourceFile: hospitalityQuoteSource, page: 36, confidence: "high" },
   },
   {
     category: "Thiết kế & nội dung",
-    item: "Video ngắn / TikTok / Reels",
+    item: "Chi phí quay, dựng kênh TikTok",
     unit: "Tháng",
     price: "Liên hệ tư vấn",
-    note: "Quay dựng, kịch bản, nội dung và video ngắn để phát triển kênh social.",
-    source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" },
+    note: "Quay full sự kiện trong tháng (4 buổi); 20 video xây kênh TikTok/Reel.",
+    source: { sourceFile: hospitalityQuoteSource, page: 36, confidence: "high" },
+  },
+  {
+    category: "Thiết kế & nội dung",
+    item: "Chi phí kịch bản, nội dung TikTok",
+    unit: "Tháng",
+    price: "Liên hệ tư vấn",
+    note: "Kịch bản và nội dung cho kênh TikTok theo hạng mục trong báo giá.",
+    source: { sourceFile: hospitalityQuoteSource, page: 36, confidence: "high" },
+  },
+  {
+    category: "Thiết kế & nội dung",
+    item: "Chi phí thuê flycamera FPV",
+    unit: "Tháng",
+    price: "Liên hệ tư vấn",
+    note: "Quay đèn ngoài trời theo hạng mục trong báo giá.",
+    source: { sourceFile: hospitalityQuoteSource, page: 36, confidence: "high" },
   },
   {
     category: "Thiết kế đồ họa",
-    item: "Poster, menu, video intro, recap",
+    item: "Poster chương trình lẻ / tổng theo tháng",
+    unit: "Poster",
+    price: "Liên hệ tư vấn",
+    note: "Poster chương trình lẻ hoặc poster tổng theo tháng; concept 1 ảnh bìa + 1 avatar chủ đề theo tháng.",
+    source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "high" },
+  },
+  {
+    category: "Thiết kế đồ họa",
+    item: "Video intro line-up, menu, recap, nhắc chương trình",
     unit: "Hạng mục",
     price: "Liên hệ tư vấn",
-    note: "Các hạng mục thiết kế được thiết kế linh hoạt theo nhu cầu triển khai thực tế.",
-    source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" },
+    note: "Video intro line-up 30s/4K, thiết kế menu, video recap và video nhắc chương trình (theo tư liệu có sẵn).",
+    source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "high" },
   },
   {
     category: "Quảng cáo online",
     item: "Facebook / TikTok / Google / Zalo",
     unit: "Chiến dịch",
     price: "Phí dịch vụ 15%",
-    note: "Phí dịch vụ quảng cáo được tính theo tỷ lệ triển khai chiến dịch.",
-    source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" },
+    note:
+      "Facebook: tương tác, tin nhắn, view, lead, remarketing. Google: tìm kiếm, YouTube, GDN, Shopping. TikTok hỗ trợ xây kênh. Phí 15% đã bao gồm VAT và phí thanh toán theo tài liệu.",
+    source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "high" },
   },
   {
-    category: "Website & SEO",
-    item: "Website cơ bản, bài viết chuẩn SEO web",
-    unit: "Gói / bài",
+    category: "Website / SEO",
+    item: "Website cơ bản",
+    unit: "Gói",
     price: "Liên hệ tư vấn",
-    note: "Website cơ bản và nội dung chuẩn SEO được tư vấn theo mục tiêu hiện diện số.",
-    source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" },
+    note: "Gói website cơ bản theo hạng mục trong báo giá.",
+    source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "high" },
+  },
+  {
+    category: "Website / SEO",
+    item: "Bài viết chuẩn SEO web",
+    unit: "Bài",
+    price: "Liên hệ tư vấn",
+    note: "Bài viết chuẩn SEO web theo hạng mục trong báo giá.",
+    source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "high" },
   },
   {
     category: "Đội marketing thuê ngoài",
     item: "Gói 10.000.000 VNĐ",
     unit: "Gói",
     price: "10.000.000 VNĐ",
-    note: "Gói triển khai các hạng mục marketing nền tảng cho doanh nghiệp.",
+    note:
+      "Gồm thiết kế logo, ấn phẩm in ấn, hồ sơ năng lực, edit/quay video, content + thiết kế quảng cáo, TVC giới thiệu doanh nghiệp, chụp ảnh sản phẩm/dịch vụ cơ bản.",
     source: { sourceFile: "HSNL CTY DST.pdf", page: 10, confidence: "high" },
   },
   {
@@ -63,7 +104,8 @@ export const pricing: PricingItem[] = [
     item: "Gói 20.000.000 VNĐ",
     unit: "Gói",
     price: "20.000.000 VNĐ",
-    note: "Gói triển khai mở rộng với thêm hạng mục media, quảng cáo và tối ưu vận hành.",
+    note:
+      "Gồm tư vấn triển khai marketing bổ sung, TVC nâng cao (có kịch bản, MC), quảng cáo Facebook/Google/Zalo, chụp ảnh sự kiện thường niên, tối ưu quảng cáo, quản trị 15 bài/tháng và tư vấn thay đổi chương trình.",
     source: { sourceFile: "HSNL CTY DST.pdf", page: 10, confidence: "high" },
   },
 ];

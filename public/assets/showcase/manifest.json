@@ -24,20 +24,20 @@
     "sourceFile": "HSNL CTY DST.pdf",
     "page": 70,
     "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
-    "width": 1400,
-    "height": 1150,
+    "width": 1000,
+    "height": 822,
     "confidence": "high",
-    "note": "Nguồn PDF trang này rộng 1305px nên ảnh card được giữ ở mức crop rõ nhất."
+    "note": "Nguồn PDF ~1305px; giữ output vừa card, không upscale mạnh."
   },
   {
     "file": "/assets/showcase/birds-nest-cafe-showcase.webp",
     "sourceFile": "HSNL CTY DST.pdf",
     "page": 70,
     "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
-    "width": 1400,
-    "height": 1150,
+    "width": 1000,
+    "height": 822,
     "confidence": "high",
-    "note": "Nguồn PDF trang này rộng 1305px nên ảnh card được giữ ở mức crop rõ nhất."
+    "note": "Nguồn PDF ~1305px; giữ output vừa card, không upscale mạnh."
   },
   {
     "file": "/assets/showcase/cabi-beach-showcase.webp",
@@ -64,10 +64,40 @@
     "sourceFile": "HSNL CTY DST.pdf",
     "page": 71,
     "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-71.png",
-    "width": 1600,
-    "height": 898,
+    "width": 1100,
+    "height": 617,
     "confidence": "high",
-    "note": "Nguồn PDF trang này rộng 1305px nên có upscale nhẹ."
+    "note": "Nguồn PDF ~1305px; giữ output vừa card, không upscale mạnh."
+  },
+  {
+    "file": "/assets/showcase/nha-hang-thien-anh-showcase.webp",
+    "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    "page": 25,
+    "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-25.png",
+    "width": 960,
+    "height": 516,
+    "confidence": "high",
+    "note": "Crop vùng hình ảnh chính từ slide PDF; TODO: thay bằng ảnh gốc độ phân giải cao từ DST nếu có."
+  },
+  {
+    "file": "/assets/showcase/nha-hang-thanh-thu-showcase.webp",
+    "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    "page": 31,
+    "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-31.png",
+    "width": 960,
+    "height": 516,
+    "confidence": "high",
+    "note": "Crop vùng hình ảnh chính từ slide PDF; TODO: thay bằng ảnh gốc độ phân giải cao từ DST nếu có."
+  },
+  {
+    "file": "/assets/showcase/02-homestay-showcase.webp",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 71,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-71.png",
+    "width": 900,
+    "height": 737,
+    "confidence": "high",
+    "note": "Crop cột dự án 02 Homestay từ slide PDF; TODO: thay bằng ảnh gốc độ phân giải cao từ DST nếu có."
   },
   {
     "file": "/assets/showcase/service-collage-showcase.webp",

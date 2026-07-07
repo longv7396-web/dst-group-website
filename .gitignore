@@ -2,6 +2,10 @@ node_modules/
 dist/
 outputs/
 wordpress-theme-backups/
+public/assets/animation-download-inbox/
+public/assets/animations/lab-candidates/
+
+ANIMATION_*.md
 
 *.log
 .env
