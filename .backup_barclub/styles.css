@@ -26,9 +26,6 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
-  -webkit-overflow-scrolling: touch;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
 
 body {
@@ -41,8 +38,6 @@ body {
     linear-gradient(180deg, #050707 0%, #080b0b 48%, #050707 100%);
   color: #ffffff;
   overflow-x: clip;
-  overscroll-behavior-y: none;
-  -webkit-font-smoothing: antialiased;
 }
 
 #root {
@@ -83,7 +78,6 @@ section[id] {
 
   .premium-button {
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-dst-gold px-5 py-3 text-sm font-black uppercase text-dst-ink shadow-[0_0_38px_rgba(231,161,58,0.34)] transition duration-300 hover:-translate-y-0.5 hover:bg-white;
-    min-height: 48px;
     font-size: clamp(0.82rem, 0.86vw, 0.92rem);
     line-height: 1.1;
     letter-spacing: 0.015em;
@@ -91,7 +85,6 @@ section[id] {
 
   .ghost-button {
     @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-black uppercase text-white backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-dst-gold/50 hover:text-dst-gold;
-    min-height: 48px;
     font-size: clamp(0.82rem, 0.86vw, 0.92rem);
     line-height: 1.1;
     letter-spacing: 0.015em;
@@ -1653,14 +1646,8 @@ section[id] {
 .barclub-timeline-grid {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(0.95rem, 1.6vw, 1.45rem);
-}
-
-@media (min-width: 1024px) {
-  .barclub-timeline-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 .barclub-timeline-grid::before {
@@ -1672,13 +1659,6 @@ section[id] {
   height: 1px;
   pointer-events: none;
   background: linear-gradient(90deg, transparent, rgba(231, 161, 58, 0.38), rgba(34, 212, 212, 0.24), transparent);
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .barclub-timeline-grid::before {
-    display: block;
-  }
 }
 
 .barclub-timeline-card {
@@ -1825,14 +1805,8 @@ section[id] {
 
 .barclub-faq-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.95rem;
-}
-
-@media (min-width: 768px) {
-  .barclub-faq-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .barclub-faq-card {
@@ -2020,102 +1994,6 @@ section[id] {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
   will-change: auto;
-}
-
-/* Phase 2: Mobile Responsive Optimization for Bar Club */
-.barclub-page button,
-.barclub-page a.premium-button,
-.barclub-page a.ghost-button,
-.barclub-page input[type="submit"],
-.barclub-page .barclub-need-chip {
-  min-height: 48px;
-}
-
-.barclub-page section[id] {
-  scroll-margin-top: 90px !important;
-}
-
-@media (max-width: 767px) {
-  /* Mobile dưới 768px toàn bộ grid thành 1 cột & không có 3 card ngang */
-  .barclub-page .grid,
-  .barclub-service-grid,
-  .barclub-timeline-grid,
-  .barclub-deliverable-grid,
-  .barclub-faq-grid,
-  .barclub-seven-day-timeline {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-
-  /* Before/During/After stack dọc trên mobile, ẩn đường line nối ngang */
-  .barclub-page .barclub-timeline-grid::before,
-  .barclub-page .barclub-seven-day-timeline::before {
-    display: none !important;
-  }
-
-  /* Không overflow ngang */
-  html,
-  body,
-  #root,
-  .barclub-page {
-    overflow-x: clip !important;
-    max-width: 100vw !important;
-  }
-
-  .barclub-page img,
-  .barclub-page video,
-  .barclub-page svg,
-  .barclub-page canvas {
-    max-width: 100% !important;
-    height: auto;
-  }
-
-  .bar-section {
-    padding-left: clamp(1rem, 4.2vw, 1.5rem) !important;
-    padding-right: clamp(1rem, 4.2vw, 1.5rem) !important;
-    overflow-x: clip !important;
-  }
-
-  /* Text dễ đọc ở 360/375/390/414px */
-  .barclub-hero h1,
-  .barclub-section-title {
-    font-size: clamp(1.5rem, 6.8vw, 2.2rem) !important;
-    line-height: 1.22 !important;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-  }
-
-  .barclub-page p,
-  .barclub-page li,
-  .barclub-page span {
-    word-break: break-word;
-    overflow-wrap: anywhere;
-  }
-
-  /* Tránh overflow và tối ưu padding trên màn hình nhỏ */
-  .bar-card,
-  .barclub-card,
-  .barclub-service-card,
-  .barclub-timeline-card,
-  .barclub-package-card,
-  .barclub-project-card,
-  .barclub-faq-card,
-  .barclub-brief-form {
-    min-width: 0 !important;
-    width: 100% !important;
-    overflow-x: clip !important;
-  }
-}
-
-@media (max-width: 414px) {
-  .barclub-page .bar-card,
-  .barclub-page .barclub-service-card,
-  .barclub-page .barclub-timeline-card,
-  .barclub-page .barclub-package-card,
-  .barclub-page .barclub-project-card,
-  .barclub-page .barclub-faq-card,
-  .barclub-page .barclub-brief-form {
-    padding: clamp(1rem, 4vw, 1.25rem) !important;
-  }
 }
 
 .hospitality-page {
@@ -3261,55 +3139,6 @@ header nav a {
   .services-industry-media,
   .services-project-media {
     aspect-ratio: 4 / 3;
-  }
-}
-
-/* Tối ưu hóa siêu mượt mà cho Mobile & Touch (iOS Safari & Android WebKit/Chrome) */
-@media (max-width: 1024px), (hover: none) {
-  header {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: rgba(5, 7, 7, 0.96) !important;
-  }
-
-  .barclub-card,
-  .barclub-service-card,
-  .barclub-package-card,
-  .barclub-timeline-card,
-  .barclub-mini-timeline-card,
-  .barclub-deliverable-card,
-  .barclub-brief-form,
-  .barclub-faq-card,
-  .command-center-card {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
-    transition: transform 150ms ease, border-color 150ms ease !important;
-  }
-
-  /* Tắt hiệu ứng hover transform bị kích hoạt khi vuốt tay (touch scrolling) trên màn hình cảm ứng */
-  .barclub-card:hover,
-  .barclub-service-card:hover,
-  .barclub-package-card:hover,
-  .barclub-project-card:hover,
-  .barclub-timeline-card:hover,
-  .barclub-mini-timeline-card:hover,
-  .barclub-deliverable-card:hover,
-  .barclub-brief-form:hover,
-  .barclub-faq-card:hover {
-    transform: none !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
-  }
-
-  /* Đảm bảo tất cả các thẻ và section được tạo GPU layer riêng để vuốt cuộn 60fps */
-  .bar-section,
-  .bar-card,
-  .barclub-card,
-  .barclub-service-card,
-  .barclub-package-card,
-  .barclub-project-card {
-    transform: translateZ(0);
-    will-change: auto;
   }
 }
 

@@ -122,3 +122,22 @@ Logo dùng từ file người dùng cung cấp:
 - `npm run build`: đã chạy thành công.
 - `npm run lint`: đã chạy thành công.
 - Đã quét project, loại trừ `node_modules` và `dist`, không thấy lorem ipsum, Unsplash, Pexels, placeholder image, ảnh stock hoặc dữ liệu fake.
+
+## Cập nhật giọng văn và dữ liệu UI
+
+| Text hiển thị | File code chứa text | Source PDF | Page | Confidence | Ghi chú |
+|---|---|---|---:|---|---|
+| Dịch vụ truyền thông cho Bar/Club | `src/data/barClubData.ts` | `BAO GIA.pdf` | 26-27 | high | paraphrase từ PDF |
+| Hạng mục truyền thông cho event | `src/data/barClubData.ts` | `BAO GIA.pdf` | 26-27 | high | paraphrase từ PDF; đổi từ tên pack tự đặt |
+| Nội dung duy trì hằng tháng | `src/data/barClubData.ts` | `BAO GIA.pdf` | 26 | high | paraphrase từ PDF; đổi từ tên pack tự đặt |
+| Hướng triển khai cho Bar/Club | `src/data/barClubData.ts` | `BAO GIA.pdf` | 26-27 | high | paraphrase từ PDF; đổi từ tên pack tự đặt |
+| Chi phí được tư vấn theo quy mô, số lượng hạng mục và thời điểm triển khai | `src/pages/BarClubPage.tsx` | `BAO GIA.pdf` | 26-27 | medium | paraphrase; thay ghi chú nội bộ |
+| Dịch vụ truyền thông cho nhà hàng, cafe và khách sạn | `src/data/hospitalityData.ts` | `Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf` | 36-37 | high | paraphrase từ PDF |
+| Báo giá theo phạm vi triển khai | `src/pages/HospitalityPage.tsx` | `Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf` | 36-37 | high | paraphrase từ PDF |
+| Dịch vụ truyền thông và media của DST Group | `src/data/servicesPageData.ts` | `HSNL CTY DST.pdf` | 8-10 | high | paraphrase từ PDF |
+| Một số hình ảnh/dự án trong hồ sơ DST | `src/pages/ServicesPage.tsx` | `HSNL CTY DST.pdf`; `Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf` | nhiều trang | high | paraphrase từ PDF |
+| Dự án xuất hiện trong báo giá DST. Tài liệu xác nhận tên và hình ảnh dự án. | `src/data/projects.ts` | `Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf` | 3-4, 16-17, 19-20 | high | paraphrase; bỏ mô tả suy diễn |
+| Dự án nhà hàng xuất hiện trong báo giá DST. Tài liệu xác nhận tên dự án. | `src/data/projects.ts` | `Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf` | 25, 31 | high | paraphrase; bỏ mô tả suy diễn |
+| Event Launch Pack | `src/data/barClubData.ts` | Không có xác nhận tên gói trong audit | - | low | removed vì không đủ nguồn |
+| Monthly Content Pack | `src/data/barClubData.ts` | Không có xác nhận tên gói trong audit | - | low | removed vì không đủ nguồn |
+| Full Nightlife Media Pack | `src/data/barClubData.ts` | Không có xác nhận tên gói trong audit | - | low | removed vì không đủ nguồn |

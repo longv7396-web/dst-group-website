@@ -88,7 +88,7 @@ export const company = {
   } satisfies SourcedText,
   intro: {
     value:
-      "DST Group có đội ngũ nhân sự trẻ trung, nhiệt huyết, chuyên nghiệp, tận tình với công việc; đề cao tinh thần trách nhiệm và đạo đức nghề nghiệp.",
+      "DST Group sở hữu đội ngũ chuyên gia truyền thông và sáng tạo trẻ trung, nhiệt huyết, tận tâm với từng dự án; luôn đề cao trách nhiệm, tính hiệu quả và chuẩn mực nghề nghiệp cao nhất.",
     source: {
       sourceFile: "HSNL CTY DST.pdf",
       page: 5,

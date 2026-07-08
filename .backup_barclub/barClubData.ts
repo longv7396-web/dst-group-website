@@ -15,11 +15,11 @@ const barClubWorkflowSource = {
 export const barClubFacebookUrl = company.fanpage.value;
 
 export const barClubHero = {
-  eyebrow: "Truyền thông & Sản xuất nội dung Nightlife",
-  title: "Làm nóng trước giờ G — Bắt trọn đêm diễn — Kín bàn event tiếp theo",
+  eyebrow: "Truyền thông chuyên biệt cho Bar / Club / Event",
+  title: "Biến mỗi đêm diễn thành nội dung kéo khách quay lại",
   subtitle:
-    "Khách chơi đêm chỉ đặt bàn khi nhìn thấy vibe. DST hỗ trợ Bar, Club và Lounge tạo hình ảnh cuốn hút trước sự kiện, ghi lại những khoảnh khắc cháy nhất trong đêm diễn và tái sử dụng tư liệu thành quảng cáo kéo khách quay lại.",
-  chips: ["Visual trước giờ G", "Quay/chụp Real-time", "Video Recap High-end", "Reels & TikTok Cutdown", "Remarketing kéo booking"],
+    "DST hỗ trợ bar, club và lounge chuẩn bị visual trước event, ghi lại khoảnh khắc trong đêm diễn và tái sử dụng tư liệu thành video, album, reels và quảng cáo sau sự kiện.",
+  chips: ["Visual trước event", "Quay/chụp real-time", "Video recap", "Reels & TikTok", "Ads kéo booking"],
   video: "/assets/videos/bar-club-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/showcase/valley-beach-club-hero.webp",
@@ -28,23 +28,23 @@ export const barClubHero = {
 
 export const barClubProblems = [
   {
-    title: "Line-up cực căng nhưng thông báo muộn — Khách không kịp chốt bàn",
-    description: "Nhắc lịch rời rạc, poster thiếu nhịp điệu làm mất đi độ nóng, khiến khách hàng lướt qua và chọn một tụ điểm khác cho ngày cuối tuần.",
+    title: "Thông báo muộn — Khách lướt qua, quên lịch",
+    description: "Line-up chốt sát giờ, bài đăng và story nhắc lịch ra muộn khiến khách hàng không kịp sắp xếp lịch đặt bàn.",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "medium" } satisfies SourceMeta,
   },
   {
-    title: "Khách chọn quán vì Vibe — Visual yếu là mất khách ngay từ cửa",
-    description: "Trước khi đặt bàn, khách sẽ soi fanpage và story. Một hình ảnh thiếu chất Nightlife sẽ khiến họ mặc định event đêm nay rất 'nhạt'.",
+    title: "Visual nhạt nhòa — Khó tạo cảm giác muốn đến",
+    description: "Poster thiếu vibe đêm diễn, thông tin line-up và ưu đãi không rõ ràng khiến khách hàng do dự khi chốt booking.",
     source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Đêm party cháy hết mình — Nhưng không ai ghi lại khoảnh khắc đỉnh nhất",
-    description: "4 tiếng đồng hồ đám đông bùng nổ, DJ highlight, ánh sáng đỉnh cao bị trôi qua lãng phí vì không có ekip quay chụp chuyên nghiệp bắt trọn.",
+    title: "Đêm diễn cực sung — Nhưng không ai ghi lại",
+    description: "Khoảnh khắc crowd cháy hết mình, DJ highlight và không khí thực tế bị bỏ lỡ, làm mất chất liệu thu hút khách mới.",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Phí hoài tư liệu — Event xong là Fanpage rơi vào cảnh 'đóng băng'",
-    description: "Hàng gigabyte ảnh thô không được dựng thành recap hay Reels, khiến fanpage tụt tương tác và thiếu vũ khí để chạy quảng cáo remarketing cho tuần tiếp theo.",
+    title: "Phí hoài tư liệu — Fanpage trống trải sau đêm diễn",
+    description: "Hàng trăm clip, ảnh thô không được dựng thành recap, reels hay album, khiến fanpage tụt tương tác và thiếu tài liệu chạy ads.",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
 ];
@@ -53,15 +53,13 @@ export const barClubEventJourney = [
   {
     phase: "BEFORE EVENT",
     label: "Trước sự kiện",
-    title: "Làm nóng event trước giờ mở cửa",
-    description: "Tạo cảm giác không-thể-bỏ-lỡ (FOMO). Khiến khách nhìn thấy visual là gọi Hotline/Zalo giữ bàn ngay.",
+    title: "Làm nóng sự kiện — Kéo khách chốt booking sớm",
     deliverables: [
-      "Key visual & Poster line-up",
-      "Teaser Reels & Video hype",
-      "Story countdown đếm ngược",
-      "Nội dung kích thích booking",
-      "Quảng cáo target dân chơi đêm",
-      "Tối ưu nút chốt bàn Zalo/Hotline",
+      "Visual & Poster mang đúng vibe đêm diễn",
+      "Bài công bố Line-up & Teaser reel cuốn hút",
+      "Story countdown giữ nhiệt mỗi ngày",
+      "Nội dung Ads nhắm trúng tệp khách đi đêm",
+      "Tối ưu CTA điều hướng booking Zalo / Inbox",
     ],
     source: { sourceFile: barClubQuoteSource, page: 27, confidence: "medium" } satisfies SourceMeta,
     confidenceNote: barClubWorkflowNote,
@@ -69,15 +67,13 @@ export const barClubEventJourney = [
   {
     phase: "DURING EVENT",
     label: "Trong sự kiện",
-    title: "Bắt đúng khoảnh khắc đông, vui, cháy nhất",
-    description: "Ekip trực tiếp thực chiến tại quán. Ghi lại năng lượng thật để khách xem qua màn hình cũng muốn có mặt ngay lập tức.",
+    title: "Bắt trọn khoảnh khắc cháy — Ghi lại không khí thật",
     deliverables: [
-      "Cập nhật Story Real-time nóng hổi",
-      "Quay video Short-form thực chiến",
-      "Bắt cận cảnh Crowd Moment bùng nổ",
-      "Highlight DJ, Artist & VIP Guest",
-      "Góc quay FPV / 4K chuẩn Nightlife",
-      "Bàn giao tư liệu nhanh trong đêm",
+      "Cập nhật Story real-time nóng hổi tại sự kiện",
+      "Quay video short-form bắt khoảnh khắc đám đông",
+      "Ghi hình DJ, Artist & điểm nhấn âm nhạc thăng hoa",
+      "Góc quay Behind-the-scenes chân thực, cảm xúc",
+      "Giữ cho social media luôn sống động suốt đêm diễn",
     ],
     source: { sourceFile: barClubQuoteSource, page: 27, confidence: "medium" } satisfies SourceMeta,
     confidenceNote: barClubWorkflowNote,
@@ -85,15 +81,13 @@ export const barClubEventJourney = [
   {
     phase: "AFTER EVENT",
     label: "Sau sự kiện",
-    title: "Biến 4 tiếng party thành nội dung cho cả tuần",
-    description: "Tận dụng triệt để từng giây tư liệu. Khách tìm ảnh check-in, tự nguyện share bài, lan tỏa hình ảnh quán mạnh mẽ nhất.",
+    title: "Biến 1 đêm diễn thành nội dung bán hàng nhiều ngày",
     deliverables: [
-      "Video Recap mang âm hưởng lễ hội",
-      "Album ảnh nét căng trả cho khách",
-      "Cắt nhỏ Reels/TikTok duy trì tương tác",
-      "Bài đăng Thank-you giữ chân VIP",
-      "Teaser hé lộ Line-up tuần tiếp theo",
-      "Chạy Ads remarketing tệp khách đã đến",
+      "Video Recap chất lượng cao dựng theo nhịp nhạc",
+      "Album ảnh sắc nét, chọn góc đẹp nhất cho khách",
+      "Cắt nhỏ Reels / TikTok duy trì tương tác cả tuần",
+      "Bài đăng Thank-you kết nối và tri ân khách tham dự",
+      "Nội dung Remarketing kéo khách quay lại lần sau",
     ],
     source: { sourceFile: barClubQuoteSource, page: 27, confidence: "medium" } satisfies SourceMeta,
     confidenceNote: barClubWorkflowNote,
@@ -172,32 +166,46 @@ export const barClubDeliverables = [
 
 export const barClubServiceCards = [
   {
-    title: "Content trước event",
-    tag: "Before Event",
-    summary: "Làm nóng không khí và thúc đẩy đặt bàn sớm bằng hệ thống visual, poster line-up và story countdown đếm ngược đều đặn.",
-    items: ["Key Visual / Poster", "Bài công bố Line-up", "Teaser Reels video", "Story Countdown"],
+    title: "Poster & Line-up sự kiện",
+    tag: "Visual",
+    summary: "Thiết kế poster, banner và hình ảnh giới thiệu line-up sắc nét — giúp khách nhìn là cảm nhận được ngay độ nóng và vibe của sự kiện.",
+    items: ["Key Visual", "Poster Line-up", "Story Banner", "Teaser"],
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Quay/chụp trong event",
-    tag: "During Event",
-    summary: "Trực tiếp có mặt tại quán để bắt trọn khoảnh khắc đám đông cháy hết mình, DJ highlight và cập nhật story real-time nóng hổi.",
-    items: ["Story Real-time", "Quay video short-form", "Crowd Moment", "DJ / Artist Highlight"],
+    title: "Quản trị Fanpage & Content",
+    tag: "Social",
+    summary: "Xây dựng nhịp đăng bài đều đặn với ngôn từ cuốn hút — giữ cho fanpage luôn sống động, chuyên nghiệp và không bị bỏ trống giữa các tuần.",
+    items: ["Content Plan", "Bài viết sự kiện", "Story tương tác", "Copywriting"],
+    source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,
+  },
+  {
+    title: "Quay chụp Recap & Media",
+    tag: "Media",
+    summary: "Ghi lại trọn vẹn sự bùng nổ của âm thanh, ánh sáng và cảm xúc đám đông — biến một đêm diễn thành kho tư liệu bán hàng giá trị.",
+    items: ["Video Recap", "Photo Album", "Crowd Moment", "DJ Highlight"],
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Recap, reels & album sau event",
-    tag: "After Event",
-    summary: "Dựng video recap chất lượng cao theo nhịp nhạc, chọn lọc album ảnh đẹp nhất cho khách và cắt nhỏ Reels/TikTok duy trì tương tác cả tuần.",
-    items: ["Video Recap sự kiện", "Album ảnh cho khách", "Reels / TikTok cutdown", "Bài đăng Thank-you"],
+    title: "Quảng cáo & Tối ưu Booking",
+    tag: "Booking",
+    summary: "Chạy quảng cáo nhắm trúng tệp khách yêu thích nightlife, điều hướng hành động trực tiếp về Inbox, Zalo hoặc Hotline đặt bàn.",
+    items: ["Ads Facebook/TikTok", "Tối ưu Inbox", "Zalo CTA", "Remarketing"],
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Quảng cáo & remarketing",
-    tag: "Growth Ads",
-    summary: "Chạy chiến dịch quảng cáo nhắm trúng tệp khách Nightlife, remarketing những người đã quan tâm và tối ưu phễu điều hướng booking Zalo/Inbox.",
-    items: ["Ads Facebook / TikTok", "Remarketing campaign", "Tối ưu Inbox / Zalo", "Báo cáo chuyển đổi"],
-    source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
+    title: "Nội dung duy trì hằng tháng",
+    tag: "Monthly",
+    summary: "Gói đồng hành toàn diện giúp duy trì tương tác và xây dựng thương hiệu đường dài cho các venue có lịch hoạt động thường xuyên.",
+    items: ["Lịch đăng tháng", "Reels / TikTok", "Concept hình ảnh", "Báo cáo chi tiết"],
+    source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,
+  },
+  {
+    title: "Landing Page cho Event lớn",
+    tag: "Online hub",
+    summary: "Xây dựng trang web giới thiệu sự kiện đặc biệt, festival hoặc kỷ niệm quán — tạo điểm nhấn chuyên nghiệp và thu thập lead hiệu quả.",
+    items: ["Landing Page", "Thông tin Line-up", "Form Booking", "Tích hợp Ads"],
+    source: { sourceFile: "HSNL CTY DST.pdf", page: 26, confidence: "medium" } satisfies SourceMeta,
   },
 ];
 
@@ -205,33 +213,18 @@ export const barClubProjects = projects
   .filter((project) => project.category === "barclub")
   .map((project) => ({
     ...project,
-    tags: ["Bar / Club", "Nightlife", "Truyền thông sự kiện"],
+    tags: ["Bar / Club", "Nguồn PDF", "Tư vấn theo nhu cầu"],
     handled:
       project.name === "Valley Beach Club"
-        ? [
-            "Quản trị Fanpage & Social Media",
-            "Sản xuất Content Event & Nightlife",
-            "Thiết kế Key Visual & Nhận diện",
-            "Chạy quảng cáo Ads chuyển đổi booking",
-          ]
-        : [
-            "Thiết kế bộ nhận diện & Menu quán",
-            "Chụp ảnh không gian & món ăn tiêu biểu",
-            "Sản xuất Poster & Visual sự kiện",
-            "Tư vấn chiến lược truyền thông quán Beer",
-          ],
+        ? ["Quản trị Fanpage", "Viết content", "Thiết kế hình ảnh", "Chạy ads"]
+        : ["Tên và hình ảnh có trong tài liệu DST"],
     outputs:
       project.name === "Valley Beach Club"
         ? [
-            "Fanpage định hình phong cách bãi biển & âm nhạc",
-            "Bộ hình ảnh & video quảng bá sự kiện chuyên nghiệp",
-            "Gia tăng nhận diện thương hiệu mạnh mẽ tại Quảng Ninh",
+            "Quản trị Fanpage, content, thiết kế hình ảnh và ads",
+            project.outcome ?? "Giải pháp thiết kế riêng cho các mô hình Nightlife và F&B tương tự",
           ]
-        : [
-            "Bộ hình ảnh không gian & menu chuẩn nhận diện",
-            "Ấn phẩm quảng bá sự kiện cuốn hút khách hàng",
-            "Tối ưu hình ảnh thương hiệu trên các kênh Social",
-          ],
+        : ["Hình ảnh/dự án tham khảo", "Linh hoạt tùy biến hạng mục theo quy mô & mục tiêu kinh doanh"],
   }));
 
 export const barClubProcess = [
@@ -267,28 +260,28 @@ export const barClubProcess = [
 
 export const barClubPackages = [
   {
-    title: "Gói Single Event — Bùng nổ 1 đêm diễn",
+    title: "Truyền thông cho 1 Event riêng lẻ",
     label: "THEO SỰ KIỆN",
-    audience: "Bar/Club chuẩn bị có Guest DJ, ca sĩ hoặc event đặc biệt cần đẩy mạnh truyền thông và chốt bàn nhanh trong vài ngày",
-    includes: ["Thiết kế Key Visual & Poster Line-up chuẩn vibe", "Video Teaser & Story countdown đếm ngược trước event", "Ekip trực tiếp quay/chụp thực chiến trong đêm diễn", "Dựng 1 Video Recap high-end + Album ảnh trả khách", "Hỗ trợ nội dung & tư vấn chạy Ads chốt bàn sát giờ"],
-    cta: "Trao đổi lịch event ngay",
+    audience: "Quán sắp có guest DJ, ca sĩ hoặc sự kiện đặc biệt cần bùng nổ nhận diện nhanh",
+    includes: ["Thiết kế Key Visual & Poster chương trình", "Video Teaser & Story countdown đếm ngược", "Bài viết công bố & cập nhật Fanpage", "Quay dựng Recap video sau sự kiện", "Hỗ trợ nội dung & tư vấn chạy Ads cơ bản"],
+    cta: "Đăng ký gói Event",
     source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Gói Monthly — Đồng hành truyền thông tháng",
+    title: "Đồng hành truyền thông hằng tháng",
     label: "PHỔ BIẾN NHẤT",
-    audience: "Lounge, Bar, Club muốn duy trì sức nóng liên tục, fanpage luôn sống động mỗi ngày, không phụ thuộc vào event lớn",
-    includes: ["Lên chiến lược nội dung & lịch đăng bài chi tiết cả tháng", "Thiết kế trọn gói poster sự kiện, banner, story đều đặn", "Sản xuất 20 video Reels/TikTok short-form giữ tương tác", "Ekip quay hình thực chiến các đêm sự kiện trong tháng", "Tối ưu phễu điều hướng booking về Zalo / Hotline quán"],
-    cta: "Nhận tư vấn truyền thông",
+    audience: "Bar, Club, Lounge muốn fanpage luôn sống động, hình ảnh chỉn chu và đều đặn mỗi ngày",
+    includes: ["Xây dựng kế hoạch nội dung chi tiết theo tháng", "Thiết kế trọn gói poster, banner, story đều đặn", "Quay & dựng 20 video ngắn xây kênh Reels/TikTok", "Quay hình các đêm sự kiện trong tháng (đến 4 buổi)", "Báo cáo, tối ưu hiệu quả và hỗ trợ quảng cáo"],
+    cta: "Đăng ký gói Tháng",
     featured: true,
     source: { sourceFile: "BAO GIA.pdf", page: 26, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Gói Grand Opening & Chiến dịch lớn",
-    label: "TOÀN DIỆN & PREMIUM",
-    audience: "Địa điểm chuẩn bị khai trương, tái định vị thương hiệu hoặc chuỗi sự kiện quy mô lớn cần hiệu ứng truyền thông áp đảo",
-    includes: ["Quy trình sản xuất khép kín 3 giai đoạn: Trước - Trong - Sau", "Đội ngũ Media cấp cao (quay FPV, máy cinema 4K, lighting)", "Thiết lập & tối ưu chiến dịch quảng cáo đa kênh (FB/IG/TikTok)", "Remarketing tệp khách hàng VIP & tạo hiệu ứng truyền miệng", "Đồng hành sát sao cùng quản lý kinh doanh & PR team của quán"],
-    cta: "Trao đổi lịch event ngay",
+    title: "Giải pháp tổng thể & Quảng cáo",
+    label: "TOÀN DIỆN",
+    audience: "Địa điểm cần phối hợp mạnh mẽ giữa sản xuất content, quay dựng và chạy ads tối ưu lead",
+    includes: ["Quy trình khép kín: Trước - Trong - Sau sự kiện", "Sản xuất media chất lượng cao (FPV, quay 4K)", "Chiến dịch quảng cáo Facebook, Google, Zalo", "Tối ưu phễu chuyển đổi về Inbox / Zalo booking", "Đội ngũ theo sát nhịp hoạt động thực tế của quán"],
+    cta: "Nhận báo giá tối ưu",
     source: { sourceFile: "BAO GIA.pdf", page: 27, confidence: "high" } satisfies SourceMeta,
   },
 ];

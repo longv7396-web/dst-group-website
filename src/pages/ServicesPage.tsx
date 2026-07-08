@@ -293,8 +293,8 @@ function OverviewSection() {
   return (
     <section id="services-overview" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Tổng quan dịch vụ" title="DST tư vấn theo nhu cầu thực tế">
-          Bạn gửi tình trạng hiện tại — DST sẽ xem nên bắt đầu từ website, fanpage, media, thiết kế hay ads.
+        <ServicesHeading eyebrow="Tổng quan dịch vụ" title="Hệ sinh thái truyền thông toàn diện cho doanh nghiệp">
+          Giải quyết triệt để bài toán phân mảnh truyền thông, tối ưu nguồn lực và quy chuẩn hình ảnh thương hiệu trên mọi nền tảng.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-3">
           {servicesOverview.map((item, index) => (
@@ -320,8 +320,8 @@ function ServiceGroupsSection() {
   return (
     <section id="service-groups" className="services-section bg-[#080b0b] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Nhóm dịch vụ chính" title="Dịch vụ dễ hiểu — không cần rành kỹ thuật">
-          Mỗi nhóm giải thích bằng lợi ích thực tế. Chọn phần phù hợp với nhu cầu hiện tại của bạn.
+        <ServicesHeading eyebrow="Nhóm dịch vụ chính" title="Danh mục giải pháp truyền thông tối ưu">
+          Các gói giải pháp được thiết kế sắc bén, trực diện vào hiệu quả và dễ dàng đo lường tăng trưởng cho thương hiệu.
         </ServicesHeading>
         <div className="services-card-grid">
           {serviceGroups.map((group, index) => {
@@ -346,7 +346,7 @@ function ServiceGroupsSection() {
                   ))}
                 </div>
                 <a href="#service-contact" className="mt-7 inline-flex items-center gap-2 text-sm font-black uppercase text-dst-gold">
-                  Trao đổi nhu cầu
+                  Nhận tư vấn ngay
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
               </article>
@@ -362,7 +362,7 @@ function PricingSection() {
   return (
     <section id="service-pricing" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Bảng giá / hạng mục" title="Chi phí theo tài liệu và phạm vi tư vấn">
+        <ServicesHeading eyebrow="Bảng giá / hạng mục" title="Báo giá quy chuẩn & chi phí minh bạch">
           Hạng mục có giá được giữ đúng theo tài liệu. Hạng mục chưa có giá sẽ tư vấn theo quy mô triển khai.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -390,8 +390,8 @@ function IndustryLinksSection() {
   return (
     <section id="service-industries" className="services-section bg-[#080b0b] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Dịch vụ theo ngành" title="Chọn nhóm phù hợp với mô hình của bạn">
-          Mỗi mô hình có nhu cầu khác nhau. DST sẽ trao đổi thêm trước khi chốt hạng mục.
+        <ServicesHeading eyebrow="Giải pháp theo chuyên ngành" title="Truyền thông chuyên sâu cho từng mô hình">
+          Mỗi ngành hàng đòi hỏi một chiến lược tiếp cận riêng biệt. Khám phá các giải pháp được đo ni đóng giày cho lĩnh vực của bạn.
         </ServicesHeading>
         <div className="grid gap-5 lg:grid-cols-3">
           {industryLinks.map((item) => (
@@ -427,8 +427,8 @@ function ProcessSection() {
   return (
     <section id="service-process" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Quy trình triển khai" title="Làm rõ nhu cầu trước khi báo giá">
-          DST nghe bạn nói trước — rồi mới đề xuất hạng mục, lịch và phạm vi công việc cần bàn giao.
+        <ServicesHeading eyebrow="Quy trình triển khai" title="Lộ trình hợp tác bài bản & chuyên nghiệp">
+          Từng bước tiếp cận có hệ thống, minh bạch về quyền lợi, chi phí và rõ ràng về các chỉ số cam kết hiệu quả.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {serviceProcess.map((step, index) => {
@@ -511,9 +511,9 @@ function WhyChooseSection() {
       <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-8">
         <div className="services-reveal" data-services-reveal>
           <p className="section-eyebrow">Vì sao chọn DST Group</p>
-          <h2 className="services-section-title mt-3 text-white">Một đầu mối để trao đổi hạng mục cần làm</h2>
+          <h2 className="services-section-title mt-3 text-white">Hệ sinh thái dịch vụ toàn diện dưới một đầu mối duy nhất</h2>
           <p className="mt-5 text-base leading-8 text-white/68">
-            DST xem nhu cầu trước, sau đó tư vấn hạng mục phù hợp. Bạn có thể bắt đầu từ việc nhỏ trước.
+            Chúng tôi phân tích sâu mục tiêu kinh doanh, thiết kế giải pháp linh hoạt và tối ưu hóa chi phí theo từng giai đoạn phát triển của doanh nghiệp.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -542,10 +542,10 @@ function FinalCtaSection() {
       <div className="services-cta-glow" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-6 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:gap-8 lg:p-10">
         <div>
-          <p className="section-eyebrow">Trao đổi với DST Group</p>
-          <h2 className="services-section-title mt-4 text-white">Bạn chưa rõ nên bắt đầu từ đâu?</h2>
+          <p className="section-eyebrow">Đăng ký tư vấn</p>
+          <h2 className="services-section-title mt-4 text-white">Sẵn sàng tối ưu hiệu quả truyền thông & gia tăng doanh số?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
-            Chia sẻ tình trạng hiện tại. DST sẽ xem website, fanpage, video hay ads nên làm trước.
+            Kết nối ngay cùng chuyên gia DST Group để nhận giải pháp chiến lược và báo giá được thiết kế riêng cho mô hình của bạn.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">

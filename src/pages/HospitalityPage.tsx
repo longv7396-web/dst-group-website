@@ -257,7 +257,7 @@ function HospitalityHero() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a href="#hospitality-contact" className="ghost-button">
-              Trao đổi nhu cầu
+              Nhận tư vấn truyền thông
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
@@ -433,8 +433,8 @@ function ProcessSection() {
   return (
     <section id="hospitality-process" className="hospitality-section bg-[#050707] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <HospitalityHeading eyebrow="Quy trình triển khai" title="Trao đổi rõ trước khi làm">
-          DST xem nhu cầu, chốt phạm vi, triển khai nội dung rồi trao đổi lại theo phản hồi thực tế.
+        <HospitalityHeading eyebrow="Quy trình triển khai" title="Lộ trình hợp tác minh bạch & bài bản">
+          DST nghiên cứu sâu mô hình, thống nhất danh mục và triển khai chuẩn xác theo mục tiêu tăng trưởng của quán.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {hospitalityProcess.map((step, index) => (
@@ -461,7 +461,7 @@ function PackagesSection() {
     <section className="hospitality-section bg-[#080706] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <HospitalityHeading eyebrow="Chi phí và hạng mục" title="Báo giá theo phạm vi triển khai">
-          Một số hạng mục có giá trong tài liệu. Phần còn lại sẽ được tư vấn theo nhu cầu thực tế.
+          Bảng giá quy chuẩn minh bạch theo tài liệu. Các gói linh hoạt sẽ được tư vấn và thiết kế tối ưu theo quy mô thực tế của doanh nghiệp.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {hospitalityPackages.map((item, index) => (
@@ -492,10 +492,10 @@ function FinalContactSection() {
       <div className="hospitality-cta-glow" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-6 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:gap-8 lg:p-10">
         <div>
-          <p className="section-eyebrow">Trao đổi dự án</p>
-          <h2 className="hospitality-section-title mt-4 text-white">Bạn cần tư vấn cho nhà hàng, cafe, khách sạn hoặc homestay?</h2>
+          <p className="section-eyebrow">Đăng ký tư vấn</p>
+          <h2 className="hospitality-section-title mt-4 text-white">Sẵn sàng bứt phá doanh thu cho nhà hàng, cafe hay khách sạn của bạn?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
-            Gửi nhu cầu hiện tại — DST xem mô hình, kênh đang có và ngân sách dự kiến trước khi đề xuất hạng mục.
+            Đội ngũ chuyên gia DST Group sẵn sàng lắng nghe mục tiêu, phân tích mô hình và đề xuất giải pháp truyền thông tối ưu nhất cho bạn.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">

@@ -15,9 +15,9 @@ const hospitalityWorkflowSource = {
 
 export const hospitalityHero = {
   eyebrow: "Truyền thông cho Nhà hàng / Cafe / Khách sạn",
-  title: "Khi không gian đẹp mà khách chưa thấy đủ rõ",
+  title: "Đưa không gian & ẩm thực của bạn chạm đúng khách hàng tiềm năng",
   subtitle:
-    "Không gian tốt, món ngon hay phòng nghỉ chỉ phát huy giá trị khi khách nhìn thấy chúng rõ ràng và đủ thuyết phục. DST hỗ trợ fanpage, video, thiết kế, website và quảng cáo theo từng mô hình.",
+    "Một không gian kiến trúc độc đáo hay thực đơn xuất sắc cần được truyền tải bằng hình ảnh và video chỉn chu. DST cung cấp giải pháp truyền thông toàn diện từ quay chụp, xây dựng fanpage, website đến tối ưu quảng cáo chuyên sâu cho F&B và Hospitality.",
   video: "/assets/videos/hospitality-hero.mp4?v=final-20260628",
   fallbackVideo: "/assets/videos/hero.mp4",
   poster: "/assets/showcase/birds-nest-cafe-showcase.webp",
@@ -26,23 +26,23 @@ export const hospitalityHero = {
 
 export const hospitalityProblems = [
   {
-    title: "Khách quyết định bằng mắt trước",
-    description: "Họ lướt qua rất nhanh. Ảnh món, không gian hoặc phòng nghỉ chưa đủ rõ — họ chuyển sang chỗ khác mà chưa nhắn tin.",
+    title: "Khách hàng quyết định bằng trực quan",
+    description: "Khách hàng lướt qua hàng loạt lựa chọn mỗi ngày. Nếu hình ảnh món ăn, không gian hay phòng nghỉ thiếu sự đầu tư và sắc nét, họ sẽ dễ dàng rời đi mà không để lại tương tác.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Fanpage im lìm quá lâu",
-    description: "Không có lịch đăng, bài viết hay visual nhất quán — khách khó cảm nhận quán còn hoạt động và đáng tin.",
+    title: "Fanpage thiếu nhịp sống và sự đồng bộ",
+    description: "Việc đăng bài ngắt quãng, thiếu quy chuẩn hình ảnh hay nội dung nghèo nàn khiến thương hiệu giảm đi sự uy tín và chuyên nghiệp trong mắt thực khách.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Thiếu video ngắn để gây chú ý",
-    description: "Một đoạn Reels hoặc TikTok ngắn có thể giúp món ăn, không gian hoặc sự kiện dễ được chia sẻ hơn ảnh tĩnh.",
+    title: "Chưa khai thác sức mạnh của Video Short-form",
+    description: "Những thước phim Reels hay TikTok chân thực về không gian ẩm thực, trải nghiệm dịch vụ có sức lan tỏa và khả năng kích thích tương tác gấp nhiều lần ảnh tĩnh truyền thống.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   {
-    title: "Website và ads nói hai ngôn ngữ khác nhau",
-    description: "Thông tin lệch nhau giữa fanpage, website và quảng cáo — khách khó tin và chần chừ liên hệ.",
+    title: "Sự phân mảnh thông tin giữa Website và Social",
+    description: "Khi thông tin ưu đãi, menu hay hình ảnh giữa Fanpage, Website và bài Quảng cáo không đồng nhất, khách hàng sẽ do dự và mất thời gian khi quyết định đặt bàn.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 37, confidence: "high" } satisfies SourceMeta,
   },
 ];
@@ -65,32 +65,32 @@ export const hospitalityProjects = projects
 
 export const hospitalityGoals = [
   {
-    title: "Hình ảnh dễ nhận ra hơn",
-    description: "Ảnh món, không gian và visual thiết kế theo cùng một hướng — khách nhìn là biết đây là thương hiệu của bạn.",
+    title: "Hình ảnh nhận diện sang trọng & đồng bộ",
+    description: "Quy chuẩn visual từ hình ảnh món ăn, kiến trúc không gian đến thiết kế menu, giúp thương hiệu thể hiện rõ đẳng cấp và phong cách riêng biệt trên mọi kênh truyền thông.",
     source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "low" } satisfies SourceMeta,
     confidenceNote: hospitalityWorkflowNote,
   },
   {
-    title: "Khách hiểu dịch vụ trước khi gọi",
-    description: "Website, fanpage và quảng cáo cung cấp đủ thông tin — khách tự tin hơn khi đặt bàn, đặt phòng hoặc nhắn tin.",
+    title: "Thông tin minh bạch, kích thích đặt bàn",
+    description: "Hệ thống Website, Fanpage và Quảng cáo được xây dựng nội dung rõ ràng, chuyên nghiệp — thúc đẩy khách hàng đưa ra quyết định đặt bàn và trải nghiệm dịch vụ nhanh chóng.",
     source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "low" } satisfies SourceMeta,
     confidenceNote: hospitalityWorkflowNote,
   },
   {
-    title: "Fanpage có nhịp, không bị bỏ trống",
-    description: "Bài viết, thiết kế và video ngắn theo lịch đăng đã trao đổi — quán vẫn xuất hiện đều với khách.",
+    title: "Fanpage duy trì sức hút đều đặn",
+    description: "Kế hoạch nội dung được lên lịch chỉn chu với visual bài bản, giữ cho kênh truyền thông của bạn luôn năng động và xuất hiện đều đặn trong tâm trí thực khách.",
     source: { sourceFile: hospitalityQuoteSource, page: 36, confidence: "medium" } satisfies SourceMeta,
     confidenceNote: hospitalityWorkflowNote,
   },
   {
-    title: "Món mới, ưu đãi và sự kiện được nhìn thấy",
-    description: "Poster, video giới thiệu và nội dung nhắc lịch theo từng chương trình — khách biết có gì mới.",
+    title: "Lan tỏa thực đơn mới & ưu đãi hấp dẫn",
+    description: "Các chiến dịch giới thiệu món mới, chương trình ưu đãi hay sự kiện đặc biệt được truyền tải bằng Video teaser, Poster thiết kế nổi bật và chiến lược phân phối tới đúng đối tượng.",
     source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "medium" } satisfies SourceMeta,
     confidenceNote: hospitalityWorkflowNote,
   },
   {
-    title: "Menu, banner và ads nói cùng một giọng",
-    description: "Ảnh không gian, dịch vụ, menu và ads được chuẩn bị cùng hướng — thông tin nhất quán, dễ hiểu.",
+    title: "Đồng nhất thông điệp trên toàn bộ hệ sinh thái",
+    description: "Mọi tư liệu từ menu, hình ảnh tại quán đến chiến dịch quảng cáo online đều được thiết kế chung một ngôn ngữ thương hiệu, tạo nên trải nghiệm liền mạch cho khách hàng.",
     source: { sourceFile: hospitalityQuoteSource, page: 37, confidence: "low" } satisfies SourceMeta,
     confidenceNote: hospitalityWorkflowNote,
   },
@@ -99,29 +99,29 @@ export const hospitalityGoals = [
 export const hospitalityProcess = [
   {
     step: "01",
-    title: "Nghe bạn nói về mô hình",
-    description: "DST xem nhóm khách, dịch vụ chủ lực, kênh đang dùng và phần nào cần ưu tiên trước.",
+    title: "Nghiên cứu mô hình & định vị thương hiệu",
+    description: "DST phân tích sâu về thực đơn, không gian kiến trúc, tệp khách hàng mục tiêu và các kênh truyền thông hiện tại để xác định lợi thế cạnh tranh cần làm nổi bật.",
     source: hospitalityWorkflowSource,
     confidenceNote: hospitalityWorkflowNote,
   },
   {
     step: "02",
-    title: "Chọn hạng mục phù hợp",
-    description: "Hai bên trao đổi ảnh, bài viết, video, website hoặc ads — theo tình trạng và ngân sách thực tế.",
+    title: "Thiết kế giải pháp & kế hoạch truyền thông",
+    description: "Đề xuất danh mục triển khai tối ưu (quay chụp media, xây dựng Fanpage, video short-form, chạy ads) phù hợp nhất với mục tiêu kinh doanh và ngân sách thực tế.",
     source: hospitalityWorkflowSource,
     confidenceNote: hospitalityWorkflowNote,
   },
   {
     step: "03",
-    title: "Triển khai nội dung đã duyệt",
-    description: "DST làm bài viết, poster, video ngắn, website hoặc quảng cáo theo phạm vi đã thống nhất.",
+    title: "Sản xuất nội dung & triển khai chiến dịch",
+    description: "Đội ngũ chuyên gia tiến hành quay dựng video chất lượng cao, thiết kế visual sang trọng và viết nội dung chuẩn văn phong ẩm thực / dịch vụ lưu trú.",
     source: hospitalityWorkflowSource,
     confidenceNote: hospitalityWorkflowNote,
   },
   {
     step: "04",
-    title: "Trao đổi và điều chỉnh",
-    description: "DST cập nhật theo phản hồi trong quá trình triển khai — giữ đúng nhịp với vận hành quán.",
+    title: "Báo cáo hiệu quả & đồng hành tối ưu",
+    description: "Liên tục theo dõi các chỉ số quảng cáo, lắng nghe phản hồi thị trường và tinh chỉnh nội dung chiến dịch nhằm đảm bảo tỷ lệ chuyển đổi đặt bàn/đặt phòng cao nhất.",
     source: hospitalityWorkflowSource,
     confidenceNote: hospitalityWorkflowNote,
   },
@@ -133,10 +133,10 @@ const hospitalityPricingSources = pricing.filter((item) =>
 
 export const hospitalityPackages = [
   {
-    title: "Tư vấn theo nhu cầu",
-    price: "Liên hệ tư vấn",
+    title: "Tư vấn thiết kế gói theo nhu cầu",
+    price: "Liên hệ nhận báo giá",
     description:
-      "Chi phí được tư vấn theo quy mô, số lượng hạng mục và thời điểm triển khai.",
+      "Giải pháp truyền thông được thiết kế linh hoạt dựa trên quy mô doanh nghiệp, số lượng hạng mục và mục tiêu cụ thể của từng giai đoạn.",
     source: { sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf", page: 36, confidence: "high" } satisfies SourceMeta,
   },
   ...hospitalityPricingSources.map((item) => ({
