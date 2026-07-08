@@ -471,7 +471,7 @@ function Header() {
           <img
             src={assetPath("/assets/brand/dst-logo-marketing-media.png")}
             alt="DST Marketing Media"
-            className="h-8 w-auto"
+            className="h-6 w-auto sm:h-8"
           />
         </a>
         <div className="no-scrollbar ml-auto hidden gap-1 overflow-x-auto text-sm font-semibold text-white/70 lg:flex">

@@ -181,7 +181,7 @@ function ServicesHeader() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#050707]/74 text-white shadow-[0_18px_80px_rgba(0,0,0,0.34)] backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex min-w-fit items-center gap-3" aria-label="DST Group homepage">
-          <img src={assetPath("/assets/brand/dst-logo-marketing-media.png")} alt="DST Marketing Media" className="h-8 w-auto" />
+          <img src={assetPath("/assets/brand/dst-logo-marketing-media.png")} alt="DST Marketing Media" className="h-6 w-auto sm:h-8" />
         </Link>
         <div className="ml-auto hidden items-center gap-1 text-sm font-semibold text-white/70 xl:flex">
           {nav.map(([label, href]) => (

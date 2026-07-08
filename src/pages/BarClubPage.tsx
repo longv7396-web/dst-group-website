@@ -211,7 +211,7 @@ function BarClubHeader() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050707]/96 text-white shadow-none transition-none">
       <nav className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex min-w-fit items-center gap-3" aria-label="DST Group homepage">
-          <img src={assetPath("/assets/brand/dst-logo-marketing-media.png")} alt="DST Marketing Media" className="h-8 w-auto" />
+          <img src={assetPath("/assets/brand/dst-logo-marketing-media.png")} alt="DST Marketing Media" className="h-6 w-auto sm:h-8" />
         </Link>
         <div className="ml-auto hidden items-center gap-1 text-sm font-semibold text-white/80 lg:flex">
           {nav.map(([label, href]) => (
