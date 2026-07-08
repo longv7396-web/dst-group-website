@@ -2803,6 +2803,21 @@ header nav a {
   line-height: 1.15;
 }
 
+header nav a[aria-label^="DST"] > img {
+  display: block;
+  width: auto !important;
+  height: 1.35rem !important;
+  max-height: 1.35rem !important;
+  flex: 0 0 auto;
+}
+
+@media (min-width: 640px) {
+  header nav a[aria-label^="DST"] > img {
+    height: 2rem !important;
+    max-height: 2rem !important;
+  }
+}
+
 .hero-subtitle,
 .barclub-hero-content > p:not(.section-eyebrow),
 .hospitality-hero-content > p:not(.section-eyebrow),
