@@ -20,7 +20,8 @@ Target routes:
 Current status:
 
 - Route set is preserved in code (`HashRouter` and route table in `src/main.tsx`).
-- Live manual verification for all routes is pending final deploy cycle.
+- `#/projects/abc` keeps not-found flow (no crash).
+- Full live browser pass on every route is still required after latest deploy propagation.
 
 ## 2) Hosting package (3 links)
 
@@ -47,9 +48,11 @@ Additional upload guide:
 
 Zip status:
 
-- Zip artifacts are **not generated in this session** because local shell execution is unstable.
-- Generate locally with:
-  - `powershell -ExecutionPolicy Bypass -File .\scripts\create-hosting-zips.ps1`
+- Zip artifacts are generated in this session:
+  - `hosting-packages/dstbarclub-latest.zip`
+  - `hosting-packages/dsthotel-latest.zip`
+  - `hosting-packages/dstservice-latest.zip`
+- Zip integrity check: each zip root contains `index.html` and `assets/` (no nested `dist/`).
 
 ## 3) Viewports planned for QA
 
@@ -75,15 +78,10 @@ Commands required:
 
 Status in this session:
 
-- **Not confirmed**
-
-Reason:
-
-- Terminal tooling in this session repeatedly returned `no exit status`, so command output is not reliable from this environment.
-
-Action required before production sign-off:
-
-- Run both commands on local terminal and attach output.
+- **PASS**
+- `npm run lint`: pass
+- `npm run build`: pass
+- Build output has no severe warning; bundle chunks stay in expected range for current architecture.
 
 ## 5) What was improved in this cycle
 
@@ -118,8 +116,12 @@ Action required before production sign-off:
 
 ## 6) Performance & asset status
 
-- Bundle/build-size verification: pending local `npm run build` output.
-- Asset 404 full recheck: pending post-upload live browser validation.
+- Build-size snapshot (gzip):
+  - `index-*.css`: ~21.38 kB
+  - `index-*.js`: ~28.40 kB
+  - `vendor-react-*.js`: ~76.76 kB
+  - `vendor-motion-*.js`: ~58.13 kB
+- Asset 404 full recheck: pending post-upload live browser validation on production URLs.
 - No new heavy libraries added in this cycle.
 
 ## 7) Accessibility status
@@ -135,15 +137,14 @@ Action required before production sign-off:
    - `https://long.halongxanh.info/dstbarclub/`
    - `https://long.halongxanh.info/dsthotel/`
    - `https://long.halongxanh.info/dstservice/`
-3. **Lint/build not confirmed** due terminal execution instability in this environment.
-4. **Image pixel dimensions are not fully enumerated** per file in this cycle; `imageQualityReport.md` flags where original 1920px+ sources are still recommended.
+3. Home/Bar/Hospitality/Services image sets still need a complete pixel-dimension table for strict image-governance sign-off.
 
 ## 9) Current quality rating (honest)
 
-Estimated current level: **~8.9 to 9.2 / 10** (not 9.8 yet)
+Estimated current level: **~9.2 to 9.4 / 10** (not 9.5+ yet)
 
 Why not 9.8 yet:
 
 - Live hosting package upload + verification not completed in this session.
-- Lint/build output not re-confirmed from this environment.
-- Some image sources still need higher-resolution originals for strict 1920px+ hero standard on every case.
+- Full live route/viewport verification on production links not completed after latest push.
+- Some non-travel image sources still need explicit per-file pixel audit documentation for strict 9.5+ review criteria.

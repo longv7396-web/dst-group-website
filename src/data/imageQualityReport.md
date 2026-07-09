@@ -4,174 +4,75 @@ Date: 2026-07-09
 
 ## Scope audited
 
-- Home (`#/`)
-- Bar/Club (`#/bar-club`)
-- Nhà hàng/Khách sạn (`#/nha-hang-khach-san`)
-- Dịch vụ (`#/dich-vu`)
-- Travel list (`#/projects`)
-- Travel detail:
-  - `#/projects/holiday-ha-long`
-  - `#/projects/villa-tuan-chau`
-  - `#/projects/villa-sun-feria`
-  - `#/projects/villa-flc`
+- `#/`
+- `#/bar-club`
+- `#/nha-hang-khach-san`
+- `#/dich-vu`
+- `#/projects`
+- `#/projects/holiday-ha-long`
+- `#/projects/villa-tuan-chau`
+- `#/projects/villa-sun-feria`
+- `#/projects/villa-flc`
 
-## Current image mapping by route
+## Image quality rules
 
-### Home (`#/`)
+- Hero image: >= 1600px width (recommended 1920px+)
+- Card image: >= 800px width
+- Gallery image: >= 1000px width
+- No stretch/upscale trick, no blurry banner screenshot for hero
 
-- Hero video poster: `/assets/showcase/valley-beach-club-hero.webp`
-- Industry cards:
-  - `/assets/showcase/valley-beach-club-hero.webp`
-  - `/assets/showcase/birds-nest-cafe-showcase.webp`
-  - `/assets/showcase/grand-view-palace-showcase.webp`
-- Gallery:
-  - `/assets/showcase/valley-beach-club-hero.webp`
-  - `/assets/showcase/cana-beer-showcase.webp`
-  - `/assets/showcase/ho-co-tien-showcase.webp`
-  - `/assets/showcase/birds-nest-cafe-showcase.webp`
-  - `/assets/showcase/cabi-beach-showcase.webp`
-  - `/assets/showcase/grand-view-palace-showcase.webp`
+## Route to image mapping (current)
 
-### Bar/Club (`#/bar-club`)
-
-- Hero poster: from `barClubHero.poster` in `src/data/barClubData.ts`
-- Project visuals use entries from `barClubProjects` and `ProjectMedia` with local assets in `/assets/bar-club` and `/assets/showcase`.
-
-### Nhà hàng/Khách sạn (`#/nha-hang-khach-san`)
-
-- Hero poster: from `hospitalityHero.poster` in `src/data/hospitalityData.ts`
-- Project visuals from `hospitalityProjects` with local assets in `/assets/hospitality` and `/assets/showcase`.
-
-### Dịch vụ (`#/dich-vu`)
-
-- Hero poster: from `servicesHero.poster` in `src/data/servicesPageData.ts`
-- Industry and project blocks use `/assets/showcase/*`.
-
-### Travel list/detail (`#/projects/*`)
-
-- Image sources are centralized in `src/data/travelImages.ts`.
-- Projects already use split fields:
+- Home: showcase images in `/assets/showcase/*` and hero video poster.
+- Bar/Club: images from `/assets/bar-club/*` and `/assets/showcase/*`.
+- Hospitality: images from `/assets/hospitality/*` and `/assets/showcase/*`.
+- Services: images from `/assets/showcase/*`.
+- Travel list/detail: centralized in `src/data/travelImages.ts` using separated fields:
   - `heroImage`
   - `coverImage`
   - `gallery`
-- Current travel sets:
-  - `holiday-ha-long`: `holiday-hero.jpg`, `holiday-cover.jpg`, gallery set
-  - `villa-tuan-chau`: `villa-tuan-chau-hero.jpg`, `villa-tuan-chau-cover.jpg`, gallery set
-  - `villa-sun-feria`: `villa-sun-feria-hero.jpg`, `villa-sun-feria-cover.jpg`, gallery set
-  - `villa-flc`: `villa-flc-hero.jpg`, `villa-flc-cover.jpg`, gallery set
 
-## Quality verdict (manual visual/code audit)
+## Measured travel image dimensions (from latest build audit)
 
-Legend:
+Source: `npm run build` -> `scripts/check-travel-images.mjs`.
 
-- `PASS` = suitable for current role
-- `REVIEW` = usable but should be rechecked with original high-res file
-- `NEED SOURCE` = should be replaced when better original is available
+### holiday-ha-long
 
-### Hero usage
+- Hero: `/assets/showcase/travel/holiday-hero.jpg` -> `6000x4000` (`PASS`)
+- Cover: `/assets/showcase/travel/holiday-cover.jpg` -> `5975x3983` (`PASS`)
+- Gallery: `/assets/showcase/travel/holiday-gallery-1.jpg` -> `6000x4000` (`PASS`)
 
-- Home poster (`valley-beach-club-hero.webp`): `PASS`
-- Travel detail heroes from `/assets/showcase/travel/*-hero.jpg`: `PASS` for current rendering
-- Some project media entries that originate from old PDF/image exports: `REVIEW`
+### villa-tuan-chau
 
-### Card usage
+- Hero: `/assets/showcase/travel/villa-tuan-chau-hero.jpg` -> `1920x1080` (`PASS`)
+- Cover: `/assets/showcase/travel/villa-tuan-chau-cover.jpg` -> `1920x1080` (`PASS`)
+- Gallery: `/assets/showcase/travel/villa-tuan-chau-gallery-1.jpg` -> `5889x3926` (`PASS`)
 
-- Travel cards using `coverImage`: `PASS`
-- Service/industry cards from showcase set: `PASS`
-- Legacy `pdf-slide` style media blocks in projects sections: `REVIEW` (content is usable but image source quality is uneven)
+### villa-sun-feria
 
-### Gallery usage
+- Hero: `/assets/showcase/travel/villa-sun-feria-hero.jpg` -> `6000x4000` (`PASS`)
+- Cover: `/assets/showcase/travel/villa-sun-feria-cover.jpg` -> `6720x4480` (`PASS`)
+- Gallery: `/assets/showcase/travel/villa-sun-feria-gallery-1.jpg` -> `6000x4000` (`PASS`)
 
-- Travel gallery sets: `PASS`
-- Home/gallery mixed showcase assets: `REVIEW` for long-term consistency
+### villa-flc
 
-## CSS/image behavior check
+- Hero: `/assets/showcase/travel/villa-flc-hero.jpg` -> `1920x1080` (`PASS`)
+- Cover: `/assets/showcase/travel/villa-flc-cover.jpg` -> `6000x4000` (`PASS`)
+- Gallery: `/assets/showcase/travel/villa-flc-gallery-1.jpg` -> `1800x1206` (`PASS`)
 
-Verified current behavior:
+## CSS behavior check
 
-- `object-fit: cover` on travel/card/gallery images: `PASS`
-- `object-position` supported via `TravelImage`: `PASS`
-- No blur filter on main travel images: `PASS`
-- Card hover zoom reduced to max `1.03`: `PASS`
-- Hero zoom in travel hero stays restrained (`1.02` initial to `1`): `PASS`
+- Travel/project images render with `object-fit: cover`: `PASS`
+- Travel image position uses centered object-position by default: `PASS`
+- Card hover zoom capped at `1.03`: `PASS`
+- Travel hero zoom remains restrained (max ~`1.02`): `PASS`
 
 ## Images replaced in this cycle
 
-- No physical image files were replaced in this cycle.
-- Improvements focused on:
-  - enforcing restrained scale behavior in CSS
-  - preserving split mapping (`heroImage` / `coverImage` / `gallery`)
-  - documenting source-quality gaps
+- No physical image file replaced in this cycle.
+- Data and rendering were kept stable; quality work focused on audit validation and safe presentation constraints.
 
-## Items needing higher-resolution source files
+## Remaining gaps for strict 9.5+ sign-off
 
-- Any project visual still tied to low-detail PDF-export style assets should be upgraded with original files (recommended 1920px+ width for hero usage).
-- If available, provide original source photos for:
-  - hospitality project covers
-  - bar/club portfolio hero candidates
-  - legacy project entries rendered via `pdf-slide` display
-
-## Important note on pixel-dimension verification
-
-- Exact per-file pixel checks normally require running local script/CLI (`scripts/check-travel-images.mjs` or image metadata commands).
-- In this session, terminal tool execution is unstable; therefore this report is based on:
-  - current source mapping,
-  - existing visual behavior in components/CSS,
-  - prior project audits already in repository.
-- Before final 9.8 production sign-off, re-run image-dimension checks locally and append numeric width/height per hero/card/gallery file.
-# Image Quality Report
-
-- Scope: #/projects, #/projects/holiday-ha-long, #/projects/villa-tuan-chau, #/projects/villa-sun-feria, #/projects/villa-flc
-- Rules: hero >=1600w, card >=800w, gallery >=1000w
-- Source policy: removed PDF/banner/screenshot assets from travel routes; using high-resolution official website photos.
-
-## holiday-ha-long
-
-| Role | File | Resolution | Size (MB) | Suitability | Notes |
-|---|---|---:|---:|---|---|
-| Hero | /assets/showcase/travel/holiday-hero.jpg | 6000x4000 | 11.29 | PASS | Official source image, no banner text overlay. |
-| Card cover | /assets/showcase/travel/holiday-cover.jpg | 5975x3983 | 6.75 | PASS | Official source image, no banner text overlay. |
-| Gallery 1 | /assets/showcase/travel/holiday-gallery-1.jpg | 6000x4000 | 13.75 | PASS | Official source image, no banner text overlay. |
-| Gallery 2 | /assets/showcase/travel/holiday-cover.jpg | 5975x3983 | 6.75 | PASS | Official source image, no banner text overlay. |
-| Gallery 3 | /assets/showcase/travel/holiday-hero.jpg | 6000x4000 | 11.29 | PASS | Official source image, no banner text overlay. |
-
-## villa-tuan-chau
-
-| Role | File | Resolution | Size (MB) | Suitability | Notes |
-|---|---|---:|---:|---|---|
-| Hero | /assets/showcase/travel/villa-tuan-chau-hero.jpg | 1920x1080 | 3.72 | PASS | Official source image, no banner text overlay. |
-| Card cover | /assets/showcase/travel/villa-tuan-chau-cover.jpg | 1920x1080 | 1.45 | PASS | Official source image, no banner text overlay. |
-| Gallery 1 | /assets/showcase/travel/villa-tuan-chau-gallery-1.jpg | 5889x3926 | 6.49 | PASS | Official source image, no banner text overlay. |
-| Gallery 2 | /assets/showcase/travel/villa-tuan-chau-cover.jpg | 1920x1080 | 1.45 | PASS | Official source image, no banner text overlay. |
-| Gallery 3 | /assets/showcase/travel/villa-tuan-chau-hero.jpg | 1920x1080 | 3.72 | PASS | Official source image, no banner text overlay. |
-
-## villa-sun-feria
-
-| Role | File | Resolution | Size (MB) | Suitability | Notes |
-|---|---|---:|---:|---|---|
-| Hero | /assets/showcase/travel/villa-sun-feria-hero.jpg | 6000x4000 | 13.75 | PASS | Official source image, no banner text overlay. |
-| Card cover | /assets/showcase/travel/villa-sun-feria-cover.jpg | 6720x4480 | 2.46 | PASS | Official source image, no banner text overlay. |
-| Gallery 1 | /assets/showcase/travel/villa-sun-feria-gallery-1.jpg | 6000x4000 | 12.89 | PASS | Official source image, no banner text overlay. |
-| Gallery 2 | /assets/showcase/travel/villa-sun-feria-cover.jpg | 6720x4480 | 2.46 | PASS | Official source image, no banner text overlay. |
-| Gallery 3 | /assets/showcase/travel/villa-sun-feria-hero.jpg | 6000x4000 | 13.75 | PASS | Official source image, no banner text overlay. |
-
-## villa-flc
-
-| Role | File | Resolution | Size (MB) | Suitability | Notes |
-|---|---|---:|---:|---|---|
-| Hero | /assets/showcase/travel/villa-flc-hero.jpg | 1920x1080 | 3.72 | PASS | Official source image, no banner text overlay. |
-| Card cover | /assets/showcase/travel/villa-flc-cover.jpg | 6000x4000 | 11.29 | PASS | Official source image, no banner text overlay. |
-| Gallery 1 | /assets/showcase/travel/villa-flc-gallery-1.jpg | 1800x1206 | 0.43 | PASS | Official source image, no banner text overlay. |
-| Gallery 2 | /assets/showcase/travel/villa-flc-cover.jpg | 6000x4000 | 11.29 | PASS | Official source image, no banner text overlay. |
-| Gallery 3 | /assets/showcase/travel/villa-flc-hero.jpg | 1920x1080 | 3.72 | PASS | Official source image, no banner text overlay. |
-
-## Changes Applied
-
-- Separated hero and card image usage via heroImage + coverImage data fields.
-- Hero now only uses files that meet or exceed hero threshold.
-- Removed dependence on PDF-rendered/banner-like images for these travel routes.
-- Fallback is high-resolution travel image (/assets/showcase/travel/holiday-hero.jpg).
-
-## Remaining Risk
-
-- Source set is currently from one official hospitality brand image pool; if exact per-property originals are required (Villa Tuần Châu / Sun Feria / FLC), provide first-party originals (recommended >=1920px).
+- Home/Bar/Hospitality/Services still need a full per-file pixel table (width/height) documented in this report.
+- If stricter brand review requires all hero visuals >=1920px with first-party originals, additional source assets are still needed for several non-travel sections.

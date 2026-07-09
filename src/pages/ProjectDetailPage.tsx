@@ -121,8 +121,6 @@ export default function ProjectDetailPage() {
   }
 
   const contactHref = company.zalo.value;
-  const sheetHref = project.showSheetLink ? project.sheetUrl : undefined;
-
   return (
     <div className="travel-page travel-page--detail bg-[#050707] text-white">
       <div className="travel-detail-orb travel-detail-orb--gold" aria-hidden="true" />
@@ -139,7 +137,7 @@ export default function ProjectDetailPage() {
           </Link>
         </div>
 
-        <ProjectHero project={project} contactHref={contactHref} sheetHref={sheetHref} />
+        <ProjectHero project={project} contactHref={contactHref} />
 
         <ProjectDetailNav />
 

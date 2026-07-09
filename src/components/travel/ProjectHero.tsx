@@ -10,7 +10,6 @@ import { TravelImage } from "./TravelImage";
 type ProjectHeroProps = {
   project: TravelProject;
   contactHref: string;
-  sheetHref?: string;
 };
 
 export function ProjectHero({ project, contactHref }: ProjectHeroProps) {
