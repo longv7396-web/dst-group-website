@@ -69,4 +69,22 @@ export const assetSources = [
     page: 68,
     confidence: "high",
   },
+  {
+    file: "/assets/showcase/travel-diamond-palace-hero.webp",
+    sourceFile: "HSNL CTY DST.pdf",
+    page: 71,
+    confidence: "high",
+  },
+  {
+    file: "/assets/showcase/travel-homestay-cover.webp",
+    sourceFile: "HSNL CTY DST.pdf",
+    page: 71,
+    confidence: "high",
+  },
+  {
+    file: "/assets/showcase/travel-grand-view-ballroom.webp",
+    sourceFile: "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    page: 20,
+    confidence: "high",
+  },
 ] satisfies Array<SourceMeta & { file: string }>;

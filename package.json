@@ -10,7 +10,10 @@
     "lint": "tsc --noEmit",
     "preview": "vite preview --host 127.0.0.1",
     "extract:pdf": "node scripts/extract-pdf-content.mjs",
-    "extract:showcase": "node scripts/extract-high-quality-assets.js"
+    "extract:showcase": "node scripts/extract-high-quality-assets.js",
+    "images:audit": "node scripts/check-travel-images.mjs",
+    "travel:import": "node scripts/convert-travel-csv.mjs",
+    "prebuild": "node scripts/convert-travel-csv.mjs && node scripts/check-travel-images.mjs"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.19.7",

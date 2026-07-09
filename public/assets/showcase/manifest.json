@@ -4,8 +4,8 @@
     "sourceFile": "HSNL CTY DST.pdf",
     "page": 68,
     "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-68.png",
-    "width": 1800,
-    "height": 1168,
+    "width": 2000,
+    "height": 1298,
     "confidence": "high",
     "note": "Nguồn PDF trang này rộng 1305px; crop chọn phần sân khấu ít chữ nhất và upscale cho hero."
   },
@@ -17,27 +17,27 @@
     "width": 1920,
     "height": 984,
     "confidence": "high",
-    "note": "WebP quality 96 từ PDF render scale cao."
+    "note": "WebP quality 0.98 từ PDF render scale 5.2."
   },
   {
     "file": "/assets/showcase/ho-co-tien-showcase.webp",
     "sourceFile": "HSNL CTY DST.pdf",
     "page": 70,
     "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
-    "width": 1000,
-    "height": 822,
+    "width": 1600,
+    "height": 1315,
     "confidence": "high",
-    "note": "Nguồn PDF ~1305px; giữ output vừa card, không upscale mạnh."
+    "note": "Render PDF scale 5.2x; crop giữ nguyên khung dự án Hồ Cô Tiên."
   },
   {
     "file": "/assets/showcase/birds-nest-cafe-showcase.webp",
     "sourceFile": "HSNL CTY DST.pdf",
     "page": 70,
     "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-70.png",
-    "width": 1000,
-    "height": 822,
+    "width": 1600,
+    "height": 1315,
     "confidence": "high",
-    "note": "Nguồn PDF ~1305px; giữ output vừa card, không upscale mạnh."
+    "note": "Render PDF scale 5.2x; crop giữ nguyên khung Bird's Nest Cafe."
   },
   {
     "file": "/assets/showcase/cabi-beach-showcase.webp",
@@ -47,35 +47,35 @@
     "width": 1920,
     "height": 1010,
     "confidence": "high",
-    "note": "WebP quality 96 từ PDF render scale cao."
+    "note": "WebP quality 0.98 từ PDF render scale 5.2."
   },
   {
     "file": "/assets/showcase/grand-view-palace-showcase.webp",
     "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
     "page": 20,
     "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-20.png",
-    "width": 1800,
-    "height": 1026,
+    "width": 1920,
+    "height": 1094,
     "confidence": "high",
-    "note": "WebP quality 96 từ PDF render scale cao."
+    "note": "WebP quality 0.98 từ PDF render scale 5.2."
   },
   {
     "file": "/assets/showcase/diamond-palace-showcase.webp",
     "sourceFile": "HSNL CTY DST.pdf",
     "page": 71,
     "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-71.png",
-    "width": 1100,
-    "height": 617,
+    "width": 1800,
+    "height": 1010,
     "confidence": "high",
-    "note": "Nguồn PDF ~1305px; giữ output vừa card, không upscale mạnh."
+    "note": "Render PDF scale cao; crop slide Diamond Palace giữ nguyên bố cục."
   },
   {
     "file": "/assets/showcase/nha-hang-thien-anh-showcase.webp",
     "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
     "page": 26,
     "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-26.png",
-    "width": 1600,
-    "height": 878,
+    "width": 1920,
+    "height": 1054,
     "confidence": "high",
     "note": "Portfolio DST: poster, social post và mockup fanpage Nhà hàng Thiên Anh."
   },
@@ -84,8 +84,8 @@
     "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
     "page": 32,
     "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-32.png",
-    "width": 1600,
-    "height": 878,
+    "width": 1920,
+    "height": 1054,
     "confidence": "high",
     "note": "Portfolio DST: poster World Cup, ảnh món và không gian Nhà hàng Thanh Thư."
   },
@@ -94,19 +94,49 @@
     "sourceFile": "HSNL CTY DST.pdf",
     "page": 71,
     "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-71.png",
-    "width": 900,
-    "height": 737,
+    "width": 1600,
+    "height": 1310,
     "confidence": "high",
-    "note": "Crop cột dự án 02 Homestay từ slide PDF; TODO: thay bằng ảnh gốc độ phân giải cao từ DST nếu có."
+    "note": "Render PDF scale 5.2x; crop cột 02 Homestay giữ nguyên bố cục slide."
   },
   {
     "file": "/assets/showcase/service-collage-showcase.webp",
     "sourceFile": "HSNL CTY DST.pdf",
     "page": 8,
     "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-08.png",
-    "width": 1600,
-    "height": 1132,
+    "width": 1920,
+    "height": 1358,
     "confidence": "high",
     "note": "Nguồn PDF trang này rộng 1305px nên có upscale nhẹ."
+  },
+  {
+    "file": "/assets/showcase/travel-diamond-palace-hero.webp",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 71,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-71.png",
+    "width": 1600,
+    "height": 900,
+    "confidence": "high",
+    "note": "Hero du lịch: ảnh thật Diamond Palace — crop sát khung ảnh, không chữ portfolio."
+  },
+  {
+    "file": "/assets/showcase/travel-homestay-cover.webp",
+    "sourceFile": "HSNL CTY DST.pdf",
+    "page": 71,
+    "derivedFrom": "/assets/pdf-images/hsnl-cty-dst-page-71.png",
+    "width": 1600,
+    "height": 1000,
+    "confidence": "high",
+    "note": "Hero du lịch: 02 Homestay — view vịnh, crop 16:10 sát ảnh gốc."
+  },
+  {
+    "file": "/assets/showcase/travel-grand-view-ballroom.webp",
+    "sourceFile": "Báo giá TT Sự kiện, Nhà hàng, khách sạn.pdf",
+    "page": 20,
+    "derivedFrom": "/assets/pdf-images/bao-gia-tt-su-kien-nha-hang-khach-san-page-20.png",
+    "width": 1600,
+    "height": 900,
+    "confidence": "high",
+    "note": "Gallery du lịch: ảnh sảnh Grand View Palace — chỉ phần ảnh, không mockup Facebook."
   }
 ]

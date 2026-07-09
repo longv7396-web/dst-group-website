@@ -19,16 +19,20 @@ import {
   Phone,
   Store,
   Video,
+  X,
   Zap,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useLayoutEffect } from "react";
+import { heroStaggerContainer, heroStaggerItem, MOTION_DURATION, MOTION_EASE } from "./lib/motion";
+import { useEffect, useLayoutEffect, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AnimatedLottie } from "./components/AnimatedLottie";
 import { MotionIcon } from "./components/MotionIcon";
 import type { MotionIconName } from "./components/MotionIcon";
+import { ProjectCard as TravelProjectCard } from "./components/travel/ProjectCard";
 import { ProjectMedia } from "./components/ProjectMedia";
 import { animations } from "./data/animationMap";
 import {
@@ -41,6 +45,7 @@ import {
 import { company } from "./data/company";
 import { pricing } from "./data/pricing";
 import { projects, type Project, type ProjectImageDisplay } from "./data/projects";
+import { travelProjects } from "./data/travelProjects";
 import { assetPath, hashRouteHref } from "./lib/assetPath";
 
 const navItems = [
@@ -49,6 +54,7 @@ const navItems = [
   { label: "Nhà hàng/KS", href: hashRouteHref("/nha-hang-khach-san") },
   { label: "Lĩnh vực", href: "#industries" },
   { label: "Dịch vụ", href: hashRouteHref("/dich-vu") },
+  { label: "Du lịch", href: hashRouteHref("/projects") },
   { label: "Dự án", href: "#projects" },
   { label: "Quy trình", href: "#process" },
   { label: "Liên hệ", href: "#contact" },
@@ -241,7 +247,7 @@ function usePremiumScrollMotion() {
     const ctx = gsap.context(() => {
       const sectionTargets = gsap.utils.toArray<HTMLElement>(".section-reveal");
       const cardTargets = gsap.utils.toArray<HTMLElement>(
-        ".stat-card, .service-card, .service-highlight, .industry-card, .why-card, .pricing-card, .process-card, .segment-service, .mini-project, .featured-project, .project-card",
+        ".stat-card, .service-card, .service-highlight, .dst-service-card, .industry-card, .why-card, .pricing-card, .process-card, .segment-service, .mini-project, .featured-project, .project-card, .travel-project-card",
       );
       const revealTargets = gsap
         .utils
@@ -423,6 +429,67 @@ function useHomeSectionScroll() {
   }, []);
 }
 
+function useHomeSeoMeta() {
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = "DST Group | Nhận diện thương hiệu, website, media và marketing tại Quảng Ninh";
+
+    const ensureMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
+      const created = !meta;
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.name = name;
+        document.head.appendChild(meta);
+      }
+      const previous = meta.content;
+      meta.content = content;
+      return () => {
+        if (created && meta?.parentNode) meta.parentNode.removeChild(meta);
+        else if (meta) meta.content = previous;
+      };
+    };
+
+    const cleanupDescription = ensureMeta(
+      "description",
+      "DST Group cung cấp website, content, media, video, design và ads cho nhà hàng, khách sạn, bar/club và doanh nghiệp dịch vụ tại Quảng Ninh.",
+    );
+
+    const cleanupKeywords = ensureMeta(
+      "keywords",
+      "DST Group, marketing Quang Ninh, website nha hang khach san, media, content, ads",
+    );
+
+    const schemaNode = document.createElement("script");
+    schemaNode.type = "application/ld+json";
+    schemaNode.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "DST Group",
+      url: company.websiteUrl.value,
+      logo: assetPath("/assets/brand/dst-logo.png"),
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: company.phone.value,
+          contactType: "customer service",
+          areaServed: "VN",
+          availableLanguage: ["vi"],
+        },
+      ],
+      sameAs: [company.fanpage.value, company.zalo.value],
+    });
+    document.head.appendChild(schemaNode);
+
+    return () => {
+      cleanupDescription();
+      cleanupKeywords();
+      if (schemaNode.parentNode) schemaNode.parentNode.removeChild(schemaNode);
+      document.title = previousTitle;
+    };
+  }, []);
+}
+
 function Reveal({
   children,
   className = "",
@@ -464,22 +531,24 @@ function SectionHeading({
 }
 
 function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#050707]/70 text-white shadow-[0_18px_80px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
-      <nav className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#home" className="flex min-w-fit items-center gap-3" aria-label="DST Group">
+    <header className="dst-site-header fixed left-0 right-0 top-0 z-50 border-b border-white/10 text-white">
+      <nav className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:gap-4 lg:px-8">
+        <a href="#home" className="dst-site-logo flex min-w-fit items-center gap-3" aria-label="DST Group">
           <img
             src={assetPath("/assets/brand/dst-logo-marketing-media.png")}
             alt="DST Marketing Media"
-            className="h-6 w-auto sm:h-8"
+            className="h-7 w-auto sm:h-9"
           />
         </a>
-        <div className="no-scrollbar ml-auto hidden gap-1 overflow-x-auto text-sm font-semibold text-white/70 lg:flex">
+        <div className="no-scrollbar ml-auto hidden items-center gap-0.5 overflow-x-auto text-sm font-semibold text-white/72 lg:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 transition hover:bg-white/10 hover:text-white"
+              className="dst-nav-link rounded-full px-3 py-2 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dst-gold"
             >
               {item.label}
             </a>
@@ -487,18 +556,52 @@ function Header() {
         </div>
         <a
           href="#contact"
-          className="ml-auto hidden rounded-full border border-dst-gold/50 px-4 py-2 text-sm font-bold text-dst-gold transition hover:bg-dst-gold hover:text-dst-ink lg:inline-flex"
+          className="dst-header-cta ml-auto hidden rounded-full border border-dst-gold/55 px-4 py-2.5 text-sm font-bold text-dst-gold transition hover:bg-dst-gold hover:text-dst-ink lg:inline-flex"
         >
-          Liên hệ tư vấn
+          Liên hệ cộng tác viên DST
         </a>
-        <a
-          href="#services"
-          aria-label="Mở nhanh dịch vụ"
-          className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white lg:hidden"
+        <button
+          type="button"
+          aria-expanded={mobileOpen}
+          aria-controls="dst-mobile-menu"
+          aria-label={mobileOpen ? "Đóng menu" : "Mở menu"}
+          onClick={() => setMobileOpen((open) => !open)}
+          className="dst-mobile-menu-btn ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/18 bg-white/8 text-white transition hover:border-dst-gold/45 lg:hidden"
         >
-          <Menu className="h-5 w-5" aria-hidden="true" />
-        </a>
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </nav>
+
+      {mobileOpen ? (
+        <div id="dst-mobile-menu" className="dst-mobile-nav dst-mobile-nav--open border-t border-white/10 lg:hidden">
+          <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+            <div className="grid gap-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="dst-mobile-nav-link rounded-xl px-4 py-3 text-sm font-semibold text-white/82"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+            <div className="mt-4 grid gap-2">
+              <a href="#contact" className="premium-button w-full justify-center" onClick={() => setMobileOpen(false)}>
+                Liên hệ cộng tác viên DST
+              </a>
+              <Link
+                to="/projects"
+                className="ghost-button w-full justify-center"
+                onClick={() => setMobileOpen(false)}
+              >
+                Sản phẩm du lịch
+              </Link>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }
@@ -598,25 +701,30 @@ function HeroCommandCenter() {
 
 function Hero() {
   const reduceMotion = useReducedMotion();
-  const fadeUp = reduceMotion ? {} : { opacity: 0, y: 34 };
-  const fadeIn = reduceMotion ? {} : { opacity: 1, y: 0 };
 
   return (
     <section id="home" className="technology-hero relative min-h-[100svh] overflow-hidden bg-[#030405] text-white">
-      <video
-        className="hero-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster={assetPath("/assets/showcase/valley-beach-club-hero.webp")}
+      <motion.div
+        className="hero-video-wrap"
         aria-hidden="true"
+        initial={reduceMotion ? false : { scale: 1.05 }}
+        animate={reduceMotion ? undefined : { scale: 1 }}
+        transition={{ duration: MOTION_DURATION.heroImage, ease: MOTION_EASE }}
       >
-        <source src={assetPath("/assets/videos/hero.mp4?v=final-20260628")} type="video/mp4" />
-      </video>
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={assetPath("/assets/showcase/valley-beach-club-hero.webp")}
+        >
+          <source src={assetPath("/assets/videos/hero.mp4?v=final-20260628")} type="video/mp4" />
+        </video>
+      </motion.div>
       <div className="hero-video-fallback" aria-hidden="true" />
-      <div className="hero-video-overlay" aria-hidden="true" />
+      <div className="hero-video-overlay hero-video-overlay--pulse" aria-hidden="true" />
       <div className="hero-bottom-gradient" aria-hidden="true" />
       <div className="hero-tech-grid" aria-hidden="true" />
       <div className="light-beam light-beam-one" aria-hidden="true" />
@@ -624,48 +732,43 @@ function Hero() {
       <div className="noise-layer" aria-hidden="true" />
 
       <div className="hero-content-wrap relative z-10 mx-auto grid min-h-[100svh] w-full max-w-[94rem] items-center gap-10 px-4 py-28 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-24">
-        <div className="hero-content relative mx-auto w-full max-w-[42rem] text-center lg:mx-0 lg:text-left">
+        <motion.div
+          className="hero-content relative mx-auto w-full max-w-[42rem] text-center lg:mx-0 lg:text-left"
+          variants={reduceMotion ? undefined : heroStaggerContainer}
+          initial={reduceMotion ? false : "hidden"}
+          animate={reduceMotion ? undefined : "visible"}
+        >
           <div className="headline-glow" aria-hidden="true" />
-          <motion.p
-            className="section-eyebrow"
-            initial={fadeUp}
-            animate={fadeIn}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Truyền thông, media và hiện diện số cho thương hiệu dịch vụ
+          <motion.p className="section-eyebrow" variants={reduceMotion ? undefined : heroStaggerItem}>
+            DST Group · Quảng Ninh
           </motion.p>
-          <motion.h1
-            className="hero-headline mt-5 font-black text-white"
-            initial={fadeUp}
-            animate={fadeIn}
-            transition={{ duration: 0.85, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Giúp nhà hàng, cafe và khách sạn <span className="hero-gold-text">xuất hiện chuyên nghiệp hơn</span> trên nền tảng số
+          <motion.h1 className="hero-headline mt-5 font-black text-white" variants={reduceMotion ? undefined : heroStaggerItem}>
+            Website, content, media và quảng cáo cho <span className="hero-gold-text">nhà hàng, khách sạn và bar/club</span>
           </motion.h1>
           <motion.p
             className="hero-subtitle mx-auto mt-7 max-w-3xl text-white/76 lg:mx-0"
-            initial={fadeUp}
-            animate={fadeIn}
-            transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            variants={reduceMotion ? undefined : heroStaggerItem}
           >
-            Từ hình ảnh, nội dung đến quảng cáo — DST giúp thương hiệu dịch vụ của bạn dễ được khách hàng chú ý và liên hệ hơn.
+            Khi hình ảnh chưa rõ hoặc fanpage thiếu nhịp, khách khó tin và khó liên hệ. DST là một đầu mối tư vấn website, nội dung, video, thiết kế và ads — giúp thương hiệu dịch vụ trông chỉn chu và dễ được chú ý hơn.
           </motion.p>
           <motion.div
             className="hero-actions mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap lg:justify-start"
-            initial={fadeUp}
-            animate={fadeIn}
-            transition={{ duration: 0.85, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            variants={reduceMotion ? undefined : heroStaggerItem}
           >
             <a href="#contact" className="premium-button hero-primary-button">
-              Nhận tư vấn phù hợp
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              Liên hệ ngay
+              <ArrowRight className="h-4 w-4 motion-arrow" aria-hidden="true" />
             </a>
-            <a href="#industries" className="ghost-button hero-secondary-button">
-              Xem hạng mục dịch vụ
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <a href="#services" className="ghost-button hero-secondary-button">
+              Tư vấn dịch vụ
+              <ArrowRight className="h-4 w-4 motion-arrow" aria-hidden="true" />
             </a>
+            <Link to="/projects" className="ghost-button hero-secondary-button">
+              Xem sản phẩm du lịch
+              <Compass className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </motion.div>
-        </div>
+        </motion.div>
         <div className="relative hidden lg:block">
           <HeroCommandCenter />
         </div>
@@ -910,39 +1013,44 @@ function HighlightServiceCard({
   index: number;
 }) {
   return (
-    <Reveal delay={index * 0.04} className="service-highlight group">
-      <div className="flex items-start justify-between gap-5">
-        <div className="service-highlight-icon">
-          <MotionIcon
-            name={pickVisual(homeFeaturedServiceVisuals, index, service.motionIcon)}
-            size="clamp(4.3rem, 5.4vw, 5.55rem)"
-            variant={serviceVariants[index % serviceVariants.length]}
-            title={service.title}
-          />
+    <Reveal delay={index * 0.04}>
+      <a href="#contact" className="service-highlight dst-service-card group block h-full">
+        <div className="dst-service-card-top">
+          <div className="service-highlight-icon">
+            <MotionIcon
+              name={pickVisual(homeFeaturedServiceVisuals, index, service.motionIcon)}
+              size="2.35rem"
+              variant={serviceVariants[index % serviceVariants.length]}
+              title={service.title}
+            />
+          </div>
         </div>
-        <ArrowRight className="h-5 w-5 text-white/30 transition group-hover:translate-x-1 group-hover:text-dst-gold" aria-hidden="true" />
-      </div>
-      <h3 className="mt-7 text-2xl font-black leading-tight text-white">{service.title}</h3>
-      <p className="mt-3 text-sm leading-7 text-white/66">{service.summary}</p>
-      <div className="mt-6 flex flex-wrap gap-2">
-        {service.items.map((item) => (
-          <span key={item} className="rounded-full border border-white/10 bg-black/25 px-3 py-1 text-xs font-bold text-white/68">
-            {item}
-          </span>
-        ))}
-      </div>
+        <h3 className="dst-service-card-title">{service.title}</h3>
+        <p className="dst-service-card-summary">{service.summary}</p>
+        <div className="dst-chip-row">
+          {service.items.map((item) => (
+            <span key={item} className="dst-chip">
+              {item}
+            </span>
+          ))}
+        </div>
+        <span className="dst-service-card-cta">
+          Tư vấn hạng mục này
+          <ArrowRight className="h-4 w-4 motion-arrow" aria-hidden="true" />
+        </span>
+      </a>
     </Reveal>
   );
 }
 
 function Services() {
   return (
-    <section id="services" className="section-reveal bg-[#050707] py-24 text-white lg:py-32" data-reveal>
-      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Dịch vụ nổi bật" title="Chọn hạng mục theo nhu cầu hiện tại">
-          Không cần làm hết mọi thứ cùng lúc. DST tư vấn website, fanpage, content, media, thiết kế hoặc ads — bắt đầu từ phần cần nhất.
+    <section id="services" className="section-reveal dst-section-services py-20 text-white lg:py-28" data-reveal>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading eyebrow="Dịch vụ DST" title="Giải pháp truyền thông và vận hành cho hospitality">
+          Từ nội dung, hình ảnh, quảng cáo đến website và sản phẩm du lịch — DST hỗ trợ triển khai theo nhu cầu thực tế, một đầu mối dễ theo dõi.
         </SectionHeading>
-        <div className="responsive-card-grid">
+        <div className="responsive-card-grid dst-services-grid">
           {featuredServices.map((service, index) => (
             <HighlightServiceCard key={service.title} service={service} index={index} />
           ))}
@@ -1038,6 +1146,29 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </a>
       </div>
     </Reveal>
+  );
+}
+
+function TravelProducts() {
+  return (
+    <section id="travel" className="section-reveal dst-section-travel py-20 text-white lg:py-28" data-reveal>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading eyebrow="Sản phẩm du lịch" title="Căn hộ & villa nghỉ dưỡng Hạ Long">
+          DST check lịch trống nhanh, gợi ý căn phù hợp gia đình, nhóm bạn hoặc đoàn công ty. Giá thay đổi theo ngày — liên hệ để xác nhận trước khi đặt.
+        </SectionHeading>
+        <div className="travel-project-grid">
+          {travelProjects.map((project, index) => (
+            <TravelProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+        <Reveal className="cta-inline-panel mt-8 flex justify-center">
+          <Link to="/projects" className="premium-button">
+            Xem tất cả dự án du lịch
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 
@@ -1178,7 +1309,7 @@ function FinalCTA() {
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <a href="#contact" className="premium-button">
-            Nhận tư vấn phù hợp
+            Liên hệ cộng tác viên DST
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
           <a href="#services" className="ghost-button">
@@ -1187,6 +1318,41 @@ function FinalCTA() {
           </a>
         </div>
       </Reveal>
+    </section>
+  );
+}
+
+function HomeFaq() {
+  const items = [
+    {
+      q: "DST phù hợp với doanh nghiệp nào?",
+      a: "Phù hợp với nhà hàng, cafe, khách sạn, bar/club và doanh nghiệp dịch vụ cần hình ảnh và kênh online chỉn chu hơn.",
+    },
+    {
+      q: "Có bắt buộc làm trọn gói không?",
+      a: "Không. DST tư vấn theo nhu cầu thực tế: bạn có thể bắt đầu từ website, content, media hoặc ads trước.",
+    },
+    {
+      q: "Bao lâu nhận được hướng triển khai ban đầu?",
+      a: "Thông thường trong ngày làm việc, sau khi bạn gửi mục tiêu chính, ngành và kênh hiện tại.",
+    },
+  ];
+
+  return (
+    <section className="section-reveal bg-[#070909] py-20 text-white lg:py-28" data-reveal>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading eyebrow="FAQ" title="Câu hỏi thường gặp trước khi bắt đầu">
+          Giải đáp nhanh để bạn quyết định bước tiếp theo dễ hơn.
+        </SectionHeading>
+        <div className="travel-faq-grid">
+          {items.map((item, index) => (
+            <Reveal key={item.q} delay={index * 0.04} className="travel-faq-card">
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
@@ -1294,11 +1460,15 @@ function Contact() {
 function App() {
   usePremiumScrollMotion();
   useHomeSectionScroll();
+  useHomeSeoMeta();
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Bỏ qua đến nội dung chính
+      </a>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <Marquee />
         <Stats />
@@ -1306,13 +1476,26 @@ function App() {
         <Industries />
         <Services />
         <Gallery />
+        <TravelProducts />
         <Projects />
         <Process />
         <WhyChoose />
         <Pricing />
         <FinalCTA />
+        <HomeFaq />
         <Contact />
       </main>
+      <div className="mobile-sticky-cta lg:hidden">
+        <a href="#contact" className="premium-button">
+          Liên hệ cộng tác viên
+          <MessageCircle className="h-4 w-4" aria-hidden="true" />
+        </a>
+        <a href={hashRouteHref("/projects")} className="ghost-button">
+          Xem sản phẩm du lịch
+          <Compass className="h-4 w-4" aria-hidden="true" />
+        </a>
+      </div>
+      <div className="mobile-sticky-spacer lg:hidden" aria-hidden="true" />
       <footer className="border-t border-white/10 bg-[#050707] px-4 py-12 text-white sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
           <div>
