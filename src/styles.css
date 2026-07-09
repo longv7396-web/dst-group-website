@@ -1672,13 +1672,7 @@ section[id] {
   height: 1px;
   pointer-events: none;
   background: linear-gradient(90deg, transparent, rgba(231, 161, 58, 0.38), rgba(34, 212, 212, 0.24), transparent);
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .barclub-timeline-grid::before {
-    display: block;
-  }
+  display: none !important;
 }
 
 .barclub-timeline-card {
