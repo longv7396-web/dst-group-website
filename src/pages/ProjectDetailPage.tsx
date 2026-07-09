@@ -18,6 +18,7 @@ import { company } from "../data/company";
 import { getTravelProjectBySlug, TRAVEL_PRICE_SECTION_LEAD, TRAVEL_REFERENCE_PRICE_LABEL } from "../data/travelProjects";
 import { assetPath } from "../lib/assetPath";
 import { getStaggerDelay } from "../lib/motion";
+import { usePageSeo } from "../lib/seo";
 
 function TravelNotFound() {
   return (
@@ -80,43 +81,19 @@ export default function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? getTravelProjectBySlug(slug) : undefined;
   const reduceMotion = useReducedMotion();
+  usePageSeo({
+    title: project?.seoTitle ?? "Dự án du lịch DST",
+    description:
+      project?.seoDescription ??
+      "Trang chi tiết sản phẩm du lịch DST: tổng quan dự án, điểm nổi bật, giá tham khảo và tư vấn lịch trống theo ngày.",
+    canonical: project ? `${company.websiteUrl.value}/#/projects/${project.slug}` : `${company.websiteUrl.value}/#/projects`,
+    ogTitle: project?.seoTitle ?? `${project?.name ?? "Dự án du lịch"} | DST Group`,
+    ogDescription: project?.seoDescription ?? project?.shortDescription,
+    ogImage: project?.heroImage ?? "/assets/showcase/travel/holiday-hero.jpg",
+  });
+
   useEffect(() => {
     if (!project) return;
-
-    const previousTitle = document.title;
-    document.title = project.seoTitle ?? `${project.name} | DST Group`;
-
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    const createdMeta = !meta;
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.name = "description";
-      document.head.appendChild(meta);
-    }
-    const previousDescription = meta.content;
-    if (project.seoDescription) {
-      meta.content = project.seoDescription;
-    }
-
-    let ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
-    const createdOgTitle = !ogTitle;
-    if (!ogTitle) {
-      ogTitle = document.createElement("meta");
-      ogTitle.setAttribute("property", "og:title");
-      document.head.appendChild(ogTitle);
-    }
-    const previousOgTitle = ogTitle.content;
-    ogTitle.content = project.seoTitle ?? `${project.name} | DST Group`;
-
-    let ogDescription = document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null;
-    const createdOgDescription = !ogDescription;
-    if (!ogDescription) {
-      ogDescription = document.createElement("meta");
-      ogDescription.setAttribute("property", "og:description");
-      document.head.appendChild(ogDescription);
-    }
-    const previousOgDescription = ogDescription.content;
-    ogDescription.content = project.seoDescription ?? project.shortDescription;
 
     const faqSchemaNode = document.createElement("script");
     faqSchemaNode.type = "application/ld+json";
@@ -135,18 +112,6 @@ export default function ProjectDetailPage() {
     document.head.appendChild(faqSchemaNode);
 
     return () => {
-      document.title = previousTitle;
-      if (project.seoDescription) {
-        if (createdMeta && meta?.parentNode) {
-          meta.parentNode.removeChild(meta);
-        } else if (meta) {
-          meta.content = previousDescription;
-        }
-      }
-      if (createdOgTitle && ogTitle?.parentNode) ogTitle.parentNode.removeChild(ogTitle);
-      else if (ogTitle) ogTitle.content = previousOgTitle;
-      if (createdOgDescription && ogDescription?.parentNode) ogDescription.parentNode.removeChild(ogDescription);
-      else if (ogDescription) ogDescription.content = previousOgDescription;
       if (faqSchemaNode.parentNode) faqSchemaNode.parentNode.removeChild(faqSchemaNode);
     };
   }, [project]);

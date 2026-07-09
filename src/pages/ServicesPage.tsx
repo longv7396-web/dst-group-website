@@ -47,7 +47,9 @@ import {
   servicesOverview,
   whyChooseServices,
 } from "../data/servicesPageData";
+import { company } from "../data/company";
 import { assetPath, hashRouteHref } from "../lib/assetPath";
+import { usePageSeo } from "../lib/seo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -293,8 +295,8 @@ function OverviewSection() {
   return (
     <section id="services-overview" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Tổng quan dịch vụ" title="Hệ sinh thái truyền thông toàn diện cho doanh nghiệp">
-          Giải quyết triệt để bài toán phân mảnh truyền thông, tối ưu nguồn lực và quy chuẩn hình ảnh thương hiệu trên mọi nền tảng.
+        <ServicesHeading eyebrow="Tổng quan dịch vụ" title="Dịch vụ truyền thông cho doanh nghiệp dịch vụ">
+          DST giúp bạn gom các đầu việc website, nội dung, media và quảng bá về một đầu mối để theo dõi và triển khai dễ hơn.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-3">
           {servicesOverview.map((item, index) => (
@@ -320,8 +322,8 @@ function ServiceGroupsSection() {
   return (
     <section id="service-groups" className="services-section bg-[#080b0b] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Nhóm dịch vụ chính" title="Danh mục giải pháp truyền thông tối ưu">
-          Các gói giải pháp được thiết kế sắc bén, trực diện vào hiệu quả và dễ dàng đo lường tăng trưởng cho thương hiệu.
+        <ServicesHeading eyebrow="Nhóm dịch vụ chính" title="Danh mục hạng mục triển khai theo nhu cầu">
+          Mỗi nhóm dịch vụ có mục tiêu rõ, đầu ra cụ thể và cách phối hợp linh hoạt theo nguồn lực thực tế của doanh nghiệp.
         </ServicesHeading>
         <div className="services-card-grid">
           {serviceGroups.map((group, index) => {
@@ -427,8 +429,8 @@ function ProcessSection() {
   return (
     <section id="service-process" className="services-section bg-[#050707] py-24 text-white lg:py-32" data-services-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ServicesHeading eyebrow="Quy trình triển khai" title="Lộ trình hợp tác bài bản & chuyên nghiệp">
-          Từng bước tiếp cận có hệ thống, minh bạch về quyền lợi, chi phí và rõ ràng về các chỉ số cam kết hiệu quả.
+        <ServicesHeading eyebrow="Quy trình triển khai" title="Lộ trình triển khai rõ đầu việc">
+          Từng bước được thống nhất từ mục tiêu, phạm vi đến cách phối hợp để bạn dễ theo dõi tiến độ và điều chỉnh khi cần.
         </ServicesHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {serviceProcess.map((step, index) => {
@@ -511,9 +513,9 @@ function WhyChooseSection() {
       <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-8">
         <div className="services-reveal" data-services-reveal>
           <p className="section-eyebrow">Vì sao chọn DST Group</p>
-          <h2 className="services-section-title mt-3 text-white">Hệ sinh thái dịch vụ toàn diện dưới một đầu mối duy nhất</h2>
+          <h2 className="services-section-title mt-3 text-white">Một đầu mối để phối hợp website, nội dung, media và quảng bá</h2>
           <p className="mt-5 text-base leading-8 text-white/68">
-            Chúng tôi phân tích sâu mục tiêu kinh doanh, thiết kế giải pháp linh hoạt và tối ưu hóa chi phí theo từng giai đoạn phát triển của doanh nghiệp.
+            DST phân tích mục tiêu kinh doanh và đề xuất tổ hợp hạng mục phù hợp với ngân sách, giai đoạn và ưu tiên hiện tại của doanh nghiệp.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -543,7 +545,7 @@ function FinalCtaSection() {
       <div className="relative mx-auto grid max-w-7xl gap-6 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:gap-8 lg:p-10">
         <div>
           <p className="section-eyebrow">Đăng ký tư vấn</p>
-          <h2 className="services-section-title mt-4 text-white">Sẵn sàng tối ưu hiệu quả truyền thông & gia tăng doanh số?</h2>
+          <h2 className="services-section-title mt-4 text-white">Sẵn sàng nâng chất lượng hiện diện số và quy trình truyền thông?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
             Kết nối ngay cùng chuyên gia DST Group để nhận giải pháp chiến lược và báo giá được thiết kế riêng cho mô hình của bạn.
           </p>
@@ -587,6 +589,16 @@ function FinalCtaSection() {
 
 export default function ServicesPage() {
   const rootRef = useServicesMotion();
+  usePageSeo({
+    title: "DST Service - Dịch vụ truyền thông và vận hành",
+    description:
+      "Dịch vụ DST gồm content, media, ads, website và tư vấn triển khai theo từng mục tiêu kinh doanh. Phù hợp doanh nghiệp dịch vụ tại Quảng Ninh.",
+    canonical: `${company.websiteUrl.value}/#/dich-vu`,
+    ogTitle: "DST Service - Dịch vụ truyền thông và vận hành",
+    ogDescription:
+      "Khám phá các nhóm dịch vụ của DST: nội dung, media, quảng bá và website, cùng lộ trình triển khai theo nhu cầu thực tế.",
+    ogImage: "/assets/showcase/grand-view-palace-showcase.webp",
+  });
 
   return (
     <div ref={rootRef} className="services-page bg-[#050707] text-white">

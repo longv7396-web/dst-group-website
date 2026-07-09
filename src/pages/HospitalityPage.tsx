@@ -44,7 +44,9 @@ import {
   hospitalityProjects,
   hospitalityServiceCards,
 } from "../data/hospitalityData";
+import { company } from "../data/company";
 import { assetPath } from "../lib/assetPath";
+import { usePageSeo } from "../lib/seo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -434,7 +436,7 @@ function ProcessSection() {
     <section id="hospitality-process" className="hospitality-section bg-[#050707] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <HospitalityHeading eyebrow="Quy trình triển khai" title="Lộ trình hợp tác minh bạch & bài bản">
-          DST nghiên cứu sâu mô hình, thống nhất danh mục và triển khai chuẩn xác theo mục tiêu tăng trưởng của quán.
+          DST cùng bạn xác định ưu tiên, thống nhất hạng mục và triển khai theo mục tiêu vận hành từng giai đoạn.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {hospitalityProcess.map((step, index) => (
@@ -461,7 +463,7 @@ function PackagesSection() {
     <section className="hospitality-section bg-[#080706] py-24 text-white lg:py-32" data-hospitality-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <HospitalityHeading eyebrow="Chi phí và hạng mục" title="Báo giá theo phạm vi triển khai">
-          Bảng giá quy chuẩn minh bạch theo tài liệu. Các gói linh hoạt sẽ được tư vấn và thiết kế tối ưu theo quy mô thực tế của doanh nghiệp.
+          Bảng giá tham khảo theo từng nhóm hạng mục. Gói phù hợp sẽ được tư vấn theo quy mô và nhu cầu thực tế của doanh nghiệp.
         </HospitalityHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {hospitalityPackages.map((item, index) => (
@@ -493,9 +495,9 @@ function FinalContactSection() {
       <div className="relative mx-auto grid max-w-7xl gap-6 rounded-2xl border border-white/10 bg-white/[0.055] p-6 shadow-[0_34px_120px_rgba(0,0,0,0.48)] sm:p-8 lg:grid-cols-[1fr_0.85fr] lg:gap-8 lg:p-10">
         <div>
           <p className="section-eyebrow">Đăng ký tư vấn</p>
-          <h2 className="hospitality-section-title mt-4 text-white">Sẵn sàng bứt phá doanh thu cho nhà hàng, cafe hay khách sạn của bạn?</h2>
+          <h2 className="hospitality-section-title mt-4 text-white">Sẵn sàng nâng chất lượng hiện diện số cho nhà hàng, cafe hay khách sạn của bạn?</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/70">
-            Đội ngũ chuyên gia DST Group sẵn sàng lắng nghe mục tiêu, phân tích mô hình và đề xuất giải pháp truyền thông tối ưu nhất cho bạn.
+            DST lắng nghe mục tiêu, phân tích mô hình và đề xuất hạng mục phù hợp để bạn triển khai theo nguồn lực thực tế.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={`tel:${phoneHref}`} className="premium-button">
@@ -537,6 +539,16 @@ function FinalContactSection() {
 
 export default function HospitalityPage() {
   const rootRef = useHospitalityMotion();
+  usePageSeo({
+    title: "DST Nhà hàng Khách sạn - Dịch vụ Hospitality",
+    description:
+      "Dịch vụ truyền thông cho nhà hàng, cafe, khách sạn: hình ảnh, nội dung, website và tư vấn triển khai theo mục tiêu vận hành thực tế.",
+    canonical: `${company.websiteUrl.value}/#/nha-hang-khach-san`,
+    ogTitle: "DST Nhà hàng Khách sạn - Dịch vụ Hospitality",
+    ogDescription:
+      "DST hỗ trợ hospitality với hạng mục social content, media, website và quảng bá phù hợp mô hình nhà hàng, cafe, khách sạn.",
+    ogImage: "/assets/showcase/birds-nest-cafe-showcase.webp",
+  });
 
   return (
     <div ref={rootRef} className="hospitality-page bg-[#050707] text-white">

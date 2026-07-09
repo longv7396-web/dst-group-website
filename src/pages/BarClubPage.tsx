@@ -28,7 +28,9 @@ import {
   barClubProjects,
   barClubServiceCards,
 } from "../data/barClubData";
+import { company } from "../data/company";
 import { assetPath } from "../lib/assetPath";
+import { usePageSeo } from "../lib/seo";
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
@@ -652,7 +654,7 @@ function FinalContactSection() {
           <p className="section-eyebrow">Đăng ký tư vấn</p>
           <h2 className="barclub-section-title mt-3 text-white">Có event sắp diễn ra? Gửi lịch event cho DST</h2>
           <p className="mt-4 text-base leading-8 text-white/70">
-            Kết nối cùng Đội ngũ chuyên gia DST Group để lập kế hoạch truyền thông đo ni đóng giày, bứt phá hình ảnh và gia tăng tối đa doanh thu cho đêm diễn của bạn.
+            Gửi lịch event và mục tiêu truyền thông, DST sẽ đề xuất hạng mục phù hợp ngân sách, kênh triển khai và nhịp vận hành của quán.
           </p>
           <div className="mt-7 grid gap-3">
             <a href={`tel:${phoneHref}`} className="barclub-contact-tile">
@@ -743,6 +745,16 @@ function FinalContactSection() {
 export default function BarClubPage() {
   const rootRef = useBarClubMotion();
   useBarClubSectionLinks();
+  usePageSeo({
+    title: "DST Bar Club - Giải pháp truyền thông Bar/Club",
+    description:
+      "Dịch vụ truyền thông Bar/Club của DST: visual event, content, recap video và ads theo mục tiêu. Tư vấn theo lịch vận hành thực tế.",
+    canonical: `${company.websiteUrl.value}/#/bar-club`,
+    ogTitle: "DST Bar Club - Giải pháp truyền thông Bar/Club",
+    ogDescription:
+      "Trang dịch vụ Bar/Club với lộ trình before-during-after event, gói triển khai và liên hệ tư vấn nhanh cùng DST Group.",
+    ogImage: "/assets/showcase/valley-beach-club-hero.webp",
+  });
 
   return (
     <div ref={rootRef} className="barclub-page bg-[#050707] text-white">

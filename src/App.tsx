@@ -47,6 +47,7 @@ import { pricing } from "./data/pricing";
 import { projects, type Project, type ProjectImageDisplay } from "./data/projects";
 import { travelProjects } from "./data/travelProjects";
 import { assetPath, hashRouteHref } from "./lib/assetPath";
+import { usePageSeo } from "./lib/seo";
 
 const navItems = [
   { label: "Giới thiệu", href: "#about" },
@@ -429,36 +430,17 @@ function useHomeSectionScroll() {
   }, []);
 }
 
-function useHomeSeoMeta() {
+function useHomeOrganizationSchema() {
   useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "DST Group | Nhận diện thương hiệu, website, media và marketing tại Quảng Ninh";
-
-    const ensureMeta = (name: string, content: string) => {
-      let meta = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
-      const created = !meta;
-      if (!meta) {
-        meta = document.createElement("meta");
-        meta.name = name;
-        document.head.appendChild(meta);
-      }
-      const previous = meta.content;
-      meta.content = content;
-      return () => {
-        if (created && meta?.parentNode) meta.parentNode.removeChild(meta);
-        else if (meta) meta.content = previous;
-      };
-    };
-
-    const cleanupDescription = ensureMeta(
-      "description",
-      "DST Group cung cấp website, content, media, video, design và ads cho nhà hàng, khách sạn, bar/club và doanh nghiệp dịch vụ tại Quảng Ninh.",
-    );
-
-    const cleanupKeywords = ensureMeta(
-      "keywords",
-      "DST Group, marketing Quang Ninh, website nha hang khach san, media, content, ads",
-    );
+    let keywordsMeta = document.querySelector('meta[name="keywords"]') as HTMLMetaElement | null;
+    const createdKeywords = !keywordsMeta;
+    if (!keywordsMeta) {
+      keywordsMeta = document.createElement("meta");
+      keywordsMeta.name = "keywords";
+      document.head.appendChild(keywordsMeta);
+    }
+    const previousKeywords = keywordsMeta.content;
+    keywordsMeta.content = "DST Group, marketing Quang Ninh, website nha hang khach san, media, content, ads";
 
     const schemaNode = document.createElement("script");
     schemaNode.type = "application/ld+json";
@@ -482,10 +464,9 @@ function useHomeSeoMeta() {
     document.head.appendChild(schemaNode);
 
     return () => {
-      cleanupDescription();
-      cleanupKeywords();
+      if (createdKeywords && keywordsMeta?.parentNode) keywordsMeta.parentNode.removeChild(keywordsMeta);
+      else if (keywordsMeta) keywordsMeta.content = previousKeywords;
       if (schemaNode.parentNode) schemaNode.parentNode.removeChild(schemaNode);
-      document.title = previousTitle;
     };
   }, []);
 }
@@ -1460,7 +1441,17 @@ function Contact() {
 function App() {
   usePremiumScrollMotion();
   useHomeSectionScroll();
-  useHomeSeoMeta();
+  usePageSeo({
+    title: "DST Group - Dịch vụ truyền thông, website và du lịch Hạ Long",
+    description:
+      "DST Group cung cấp website, content, media và ads cho bar/club, nhà hàng, khách sạn tại Quảng Ninh; đồng thời hỗ trợ tư vấn căn hộ và villa nghỉ dưỡng Hạ Long.",
+    canonical: `${company.websiteUrl.value}/#/`,
+    ogTitle: "DST Group - Dịch vụ truyền thông, website và du lịch Hạ Long",
+    ogDescription:
+      "Giải pháp truyền thông và vận hành nội dung cho bar/club, nhà hàng, khách sạn cùng sản phẩm du lịch nghỉ dưỡng tại Hạ Long.",
+    ogImage: "/assets/showcase/valley-beach-club-hero.webp",
+  });
+  useHomeOrganizationSchema();
 
   return (
     <>

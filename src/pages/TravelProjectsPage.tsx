@@ -7,9 +7,20 @@ import { travelProjects } from "../data/travelProjects";
 import { heroStaggerContainer, heroStaggerItem, MOTION_EASE } from "../lib/motion";
 import { assetPath } from "../lib/assetPath";
 import { MotionReveal } from "../components/common/MotionReveal";
+import { usePageSeo } from "../lib/seo";
 
 export default function TravelProjectsPage() {
   const reduceMotion = useReducedMotion();
+  usePageSeo({
+    title: "Sản phẩm du lịch DST - Quỹ căn nghỉ dưỡng Hạ Long",
+    description:
+      "Danh sách căn hộ và villa nghỉ dưỡng Hạ Long do DST hỗ trợ tư vấn. Xem dự án, giá tham khảo và liên hệ để kiểm tra lịch trống theo ngày.",
+    canonical: `${company.websiteUrl.value}/#/projects`,
+    ogTitle: "Sản phẩm du lịch DST - Quỹ căn nghỉ dưỡng Hạ Long",
+    ogDescription:
+      "Khám phá Holiday Hạ Long, Villa Tuần Châu, Villa Sun Feria và Villa FLC. DST hỗ trợ check lịch trống, tư vấn căn phù hợp và báo giá theo ngày.",
+    ogImage: "/assets/showcase/travel/holiday-hero.jpg",
+  });
 
   return (
     <div className="travel-page travel-page--list bg-[#050707] text-white">

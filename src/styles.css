@@ -5218,7 +5218,7 @@ button:focus-visible .motion-arrow,
 
 .motion-card-hover:hover .motion-image-zoom,
 .motion-card-hover:focus-visible .motion-image-zoom {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .motion-card-shade {
